@@ -1,0 +1,318 @@
+.header {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: var(--color-text-inverse);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  min-height: 6rem;
+  grid-template-columns: minmax(13rem, 1fr) auto minmax(13rem, 1fr);
+  align-items: center;
+  gap: var(--space-6);
+  padding-inline: var(--page-gutter);
+  border-bottom: 0.0625rem solid var(--color-border-inverse);
+  background: rgb(22 23 18 / 74%);
+  backdrop-filter: blur(1rem);
+  animation: headerIn 0.85s var(--ease-emphasized) both;
+}
+
+@keyframes headerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  display: grid;
+  justify-self: start;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.logo > span {
+  font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+}
+
+.logo small {
+  margin-top: 0.45rem;
+  color: var(--color-text-inverse-muted);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+}
+
+.desktopNav,
+.actions,
+.socials,
+.mobileSocials {
+  display: flex;
+  align-items: center;
+}
+
+.desktopNav {
+  gap: clamp(1rem, 1.7vw, 2rem);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.desktopNav > a,
+.more > button {
+  position: relative;
+  padding-block: var(--space-2);
+  color: var(--color-text-inverse-muted);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.desktopNav > a:hover,
+.more > button:hover {
+  color: var(--color-white);
+}
+
+.desktopNav > a::after,
+.more > button::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.0625rem;
+  background: var(--color-accent);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.desktopNav > a:hover::after,
+.more > button:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.more {
+  position: relative;
+}
+
+.more > button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-inline: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.more > button span {
+  color: var(--color-accent-hover);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.morePanel {
+  position: absolute;
+  top: calc(100% + 1.75rem);
+  left: 50%;
+  display: grid;
+  width: 17rem;
+  padding: var(--space-4);
+  border-top: 0.125rem solid var(--color-accent);
+  background: var(--color-brand);
+  box-shadow: var(--shadow-modal);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.75rem);
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
+}
+
+.morePanel[data-open='true'] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.morePanel a {
+  padding: 0.85rem 0.75rem;
+  border-bottom: 0.0625rem solid var(--color-border-inverse);
+  color: var(--color-text-inverse-muted);
+}
+
+.morePanel a:hover {
+  color: var(--color-white);
+}
+
+.actions {
+  justify-self: end;
+  gap: var(--space-6);
+}
+
+.socials,
+.mobileSocials {
+  gap: var(--space-3);
+}
+
+.socials a,
+.mobileSocials a {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 0.0625rem solid var(--color-border-inverse);
+  border-radius: 50%;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+}
+
+.socials a:hover,
+.mobileSocials a:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.socials svg,
+.mobileSocials svg {
+  width: 1rem;
+  height: 1rem;
+  margin: auto;
+}
+
+.menuButton {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.9rem;
+  border: 0.0625rem solid var(--color-border-inverse);
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuButton span {
+  display: block;
+  width: 100%;
+  height: 0.0625rem;
+  margin-block: 0.35rem;
+  background: currentColor;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.menuButton[aria-expanded='true'] span:first-child {
+  transform: translateY(0.2rem) rotate(45deg);
+}
+
+.menuButton[aria-expanded='true'] span:last-child {
+  transform: translateY(-0.2rem) rotate(-45deg);
+}
+
+.mobilePanel {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 8rem var(--page-gutter) var(--space-8);
+  overflow-y: auto;
+  background: var(--color-brand);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-1rem);
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.mobilePanel[data-open='true'] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobilePanel nav {
+  display: grid;
+  align-content: start;
+}
+
+.mobilePanel nav a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-6);
+  padding-block: 0.75rem;
+  border-bottom: 0.0625rem solid var(--color-border-inverse);
+  font-size: clamp(1.45rem, 5vw, 2.25rem);
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: 1.1;
+}
+
+.mobilePanel nav a span {
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.mobileFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-top: var(--space-8);
+}
+
+@media (max-width: 78rem) {
+  .inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+}
+
+@media (max-width: 40rem) {
+  .inner {
+    min-height: 4.75rem;
+  }
+
+  .logo small,
+  .socials,
+  .cta {
+    display: none;
+  }
+
+  .actions {
+    gap: var(--space-3);
+  }
+
+  .mobilePanel {
+    padding-top: 6rem;
+  }
+
+  .mobileFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

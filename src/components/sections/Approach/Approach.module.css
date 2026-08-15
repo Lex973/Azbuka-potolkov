@@ -1,0 +1,129 @@
+.section {
+  scroll-margin-top: 6rem;
+  padding-block: clamp(4rem, 7vw, 7rem);
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+}
+
+.heading :global(h2) {
+  max-width: 10ch;
+}
+
+.statement {
+  padding-top: var(--space-8);
+  border-top: 0.0625rem solid var(--color-border-inverse);
+  color: var(--color-text-inverse-muted);
+  font-size: var(--font-size-lead);
+}
+
+.statValue {
+  margin-bottom: var(--space-6);
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-h3);
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: 1;
+}
+
+.label {
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.reasonsBlock {
+  margin-top: clamp(3rem, 6vw, 6rem);
+}
+
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: var(--space-8);
+  border-top: 0.0625rem solid var(--color-border-inverse);
+}
+
+.reason {
+  min-height: 13rem;
+  padding: var(--space-6) var(--space-6) var(--space-6) 0;
+  border-right: 0.0625rem solid var(--color-border-inverse);
+}
+
+.reason + .reason {
+  padding-left: var(--space-6);
+}
+
+.reason:last-child {
+  border-right: 0;
+}
+
+.reason > span {
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.reason h3 {
+  margin-top: var(--space-8);
+  font-size: var(--font-size-h5);
+  font-weight: 450;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: 1.2;
+}
+
+.reason p {
+  margin-top: var(--space-4);
+  color: var(--color-text-inverse-muted);
+  font-size: var(--font-size-small);
+}
+
+@media (max-width: 64rem) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .statement {
+    max-width: 42rem;
+  }
+
+  .reasons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reason:nth-child(2) {
+    border-right: 0;
+  }
+
+  .reason:nth-child(n + 3) {
+    border-top: 0.0625rem solid var(--color-border-inverse);
+  }
+}
+
+@media (max-width: 40rem) {
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .reason,
+  .reason + .reason {
+    min-height: 0;
+    padding: var(--space-8) 0;
+    border-top: 0.0625rem solid var(--color-border-inverse);
+    border-right: 0;
+  }
+
+  .reason:first-child {
+    border-top: 0;
+  }
+
+  .reason h3 {
+    margin-top: var(--space-6);
+  }
+}

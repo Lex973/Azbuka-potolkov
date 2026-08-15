@@ -1,0 +1,27 @@
+.form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.note {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.submit {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.success {
+  display: grid;
+  gap: var(--space-6);
+  color: var(--color-text-soft);
+}
+
+.successTitle {
+  color: var(--color-text);
+  font-size: var(--font-size-h5);
+  font-weight: 500;
+}

@@ -1,0 +1,145 @@
+.button {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  border: 0.0625rem solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    background-color var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.small {
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.medium {
+  min-height: 3.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.large {
+  min-height: 4.25rem;
+  padding: 1.25rem 1.75rem;
+}
+
+.primary.default {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+
+.primary.default:hover,
+.primary.default[data-preview-state='hover'] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.primary.default:active,
+.primary.default[data-preview-state='active'] {
+  border-color: var(--color-accent-active);
+  background: var(--color-accent-active);
+  transform: translateY(0.0625rem);
+}
+
+.secondary.default {
+  border-color: var(--color-border-strong);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.secondary.default:hover,
+.secondary.default[data-preview-state='hover'] {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+
+.secondary.default:active,
+.secondary.default[data-preview-state='active'] {
+  border-color: var(--color-accent-active);
+  background: var(--color-accent-active);
+  color: var(--color-white);
+  transform: translateY(0.0625rem);
+}
+
+.primary.inverse {
+  border-color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-brand);
+}
+
+.primary.inverse:hover,
+.primary.inverse[data-preview-state='hover'] {
+  border-color: var(--color-accent-hover);
+  background: var(--color-accent-hover);
+  color: var(--color-white);
+}
+
+.primary.inverse:active,
+.primary.inverse[data-preview-state='active'] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-white);
+  transform: translateY(0.0625rem);
+}
+
+.secondary.inverse {
+  border-color: var(--color-border-inverse);
+  background: transparent;
+  color: var(--color-text-inverse);
+}
+
+.secondary.inverse:hover,
+.secondary.inverse[data-preview-state='hover'] {
+  border-color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-brand);
+}
+
+.secondary.inverse:active,
+.secondary.inverse[data-preview-state='active'] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-white);
+  transform: translateY(0.0625rem);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.64;
+  pointer-events: none;
+}
+
+.arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.button:hover .arrow {
+  transform: translateX(0.25rem);
+}
+
+@media (max-width: 40rem) {
+  .large {
+    min-height: 3.75rem;
+    padding: 1rem 1.25rem;
+  }
+}

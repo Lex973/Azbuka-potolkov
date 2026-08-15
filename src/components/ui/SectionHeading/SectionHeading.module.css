@@ -1,0 +1,48 @@
+.heading {
+  display: grid;
+  align-content: start;
+}
+
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  color: var(--color-accent);
+}
+
+.title {
+  max-width: 13ch;
+  margin-top: var(--space-6);
+  font-size: var(--font-size-h2);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
+}
+
+.line {
+  width: min(8rem, 36%);
+  height: 0.0625rem;
+  margin-top: var(--space-8);
+  background: var(--color-accent);
+}
+
+.description {
+  max-width: 38rem;
+  margin-top: var(--space-8);
+  color: var(--color-text-soft);
+  font-size: var(--font-size-lead);
+}
+
+.inverse .eyebrow,
+.inverse .description {
+  color: var(--color-text-inverse-muted);
+}
+
+.inverse .title {
+  color: var(--color-text-inverse);
+}

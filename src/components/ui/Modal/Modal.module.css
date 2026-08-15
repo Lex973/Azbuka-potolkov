@@ -1,0 +1,128 @@
+.dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: var(--page-gutter);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  opacity: 0;
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    display var(--duration-base) allow-discrete,
+    overlay var(--duration-base) allow-discrete;
+}
+
+.dialog::backdrop {
+  background: rgb(19 20 16 / 72%);
+  opacity: 0;
+  backdrop-filter: blur(0.375rem);
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    display var(--duration-base) allow-discrete,
+    overlay var(--duration-base) allow-discrete;
+}
+
+.dialog[open] {
+  display: grid;
+  place-items: center;
+  opacity: 1;
+}
+
+.dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .dialog[open],
+  .dialog[open]::backdrop {
+    opacity: 0;
+  }
+
+  .dialog[open] .panel {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+.panel {
+  position: relative;
+  width: min(100%, 42rem);
+  max-height: calc(100dvh - (var(--page-gutter) * 2));
+  overflow-y: auto;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border-top: 0.125rem solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-modal);
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--duration-slow) var(--ease-emphasized),
+    transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.close:hover {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-white);
+}
+
+.close svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-6);
+  color: var(--color-accent);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 11ch;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: 1.02;
+}
+
+.content {
+  margin-top: var(--space-12);
+}
+
+@media (max-width: 40rem) {
+  .dialog {
+    align-items: end;
+    padding: 0;
+  }
+
+  .panel {
+    width: 100%;
+    max-height: 92dvh;
+    padding: 4.5rem var(--space-6) var(--space-8);
+  }
+}

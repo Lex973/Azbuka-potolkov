@@ -1,0 +1,112 @@
+.controls,
+.arrows,
+.dots,
+.counter {
+  display: flex;
+  align-items: center;
+}
+
+.controls {
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.arrows {
+  gap: var(--space-2);
+}
+
+.arrow {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 0.0625rem solid var(--color-border-strong);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.arrow:hover {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-white);
+}
+
+.arrow:active {
+  transform: scale(0.94);
+}
+
+.arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.dots {
+  gap: var(--space-3);
+}
+
+.dot {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dot::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+  content: '';
+  transform: translate(-50%, -50%);
+  transition:
+    width var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+}
+
+.dot[data-active='true']::before {
+  width: 1.25rem;
+  border-radius: 1rem;
+  background: var(--color-accent);
+}
+
+.counter {
+  min-width: 7rem;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.counter span:first-child {
+  color: var(--color-text);
+}
+
+.counterLine {
+  width: 2rem;
+  height: 0.0625rem;
+  background: var(--color-accent);
+}
+
+@media (max-width: 40rem) {
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .dots {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}

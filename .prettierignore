@@ -1,0 +1,6 @@
+README.md
+.next/
+node_modules/
+public/images/
+photos/
+photos-for-prompt/

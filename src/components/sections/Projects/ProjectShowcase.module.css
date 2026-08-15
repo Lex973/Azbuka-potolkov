@@ -1,0 +1,271 @@
+.section {
+  scroll-margin-top: 5.5rem;
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+.mirroredSection {
+  background: var(--color-canvas);
+}
+
+.sectionIntro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.heading {
+  max-width: 64rem;
+}
+
+.swipeHint {
+  max-width: 14rem;
+  padding-bottom: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  text-align: right;
+}
+
+.viewport {
+  position: relative;
+  min-height: clamp(44rem, 54vw, 52rem);
+  margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.project {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: start;
+  touch-action: pan-y;
+}
+
+.project.mirrored {
+  grid-template-columns: minmax(0, 0.66fr) minmax(15rem, 0.34fr);
+}
+
+.mirrored .copy {
+  grid-column: 2;
+}
+
+.mirrored .gallery {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.copy {
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+  padding-top: var(--space-8);
+}
+
+.location {
+  color: var(--color-accent);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.copy h3 {
+  max-width: 12ch;
+  margin-top: var(--space-8);
+  font-size: var(--font-size-h3);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: 1.02;
+}
+
+.description {
+  max-width: 32rem;
+  margin-top: var(--space-8);
+  color: var(--color-text-soft);
+  font-size: var(--font-size-lead);
+}
+
+.features {
+  display: grid;
+  margin-top: var(--space-12);
+  border-top: 0.0625rem solid var(--color-border);
+  list-style: none;
+}
+
+.features li {
+  position: relative;
+  padding: var(--space-4) 0 var(--space-4) var(--space-6);
+  border-bottom: 0.0625rem solid var(--color-border);
+  color: var(--color-text-soft);
+  font-size: var(--font-size-small);
+}
+
+.features li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  content: '';
+  transform: translateY(-50%);
+}
+
+.gallery {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.mainImage,
+.detailImage {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.mainImage {
+  aspect-ratio: 16 / 10;
+}
+
+.mainImage img,
+.detailImage img {
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.mainImage:hover img {
+  transform: scale(1.015);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.detailImage {
+  aspect-ratio: 4 / 3;
+}
+
+.detailImage img {
+  transform: scale(1.55);
+}
+
+.detailImage:hover img {
+  transform: scale(1.62);
+}
+
+.controls {
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 64rem) {
+  .viewport {
+    min-height: clamp(52rem, 115vw, 64rem);
+  }
+
+  .project,
+  .project.mirrored {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .mirrored .copy,
+  .mirrored .gallery {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .copy {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.8fr);
+    column-gap: var(--space-12);
+  }
+
+  .location,
+  .copy h3 {
+    grid-column: 1;
+  }
+
+  .description,
+  .features {
+    grid-column: 2;
+  }
+
+  .description {
+    grid-row: 1 / span 2;
+    align-self: end;
+    margin-top: 0;
+  }
+
+  .features {
+    margin-top: var(--space-8);
+  }
+
+  .mirrored .gallery {
+    order: 2;
+  }
+}
+
+@media (max-width: 40rem) {
+  .sectionIntro {
+    display: grid;
+  }
+
+  .swipeHint {
+    text-align: left;
+  }
+
+  .viewport {
+    min-height: clamp(53rem, 195vw, 62rem);
+    margin-top: var(--space-12);
+  }
+
+  .project,
+  .project.mirrored {
+    gap: var(--space-8);
+  }
+
+  .copy {
+    display: block;
+    padding-top: var(--space-6);
+  }
+
+  .copy h3 {
+    margin-top: var(--space-6);
+  }
+
+  .description {
+    margin-top: var(--space-6);
+    font-size: 1rem;
+  }
+
+  .features {
+    display: none;
+  }
+
+  .mainImage {
+    aspect-ratio: 4 / 5;
+  }
+
+  .mainImage img {
+    object-position: 50% 50%;
+  }
+
+  .details {
+    gap: var(--space-2);
+  }
+
+  .detailImage {
+    aspect-ratio: 1;
+  }
+
+  .controls {
+    margin-top: var(--space-3);
+  }
+}

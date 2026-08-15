@@ -1,0 +1,108 @@
+.showcase {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 0.0625rem solid var(--color-border-inverse);
+  border-radius: var(--radius-sm);
+  background: var(--color-brand-raised);
+  color: var(--color-text-inverse);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.label {
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.note {
+  max-width: 30rem;
+  margin-top: var(--space-3);
+  color: var(--color-text-inverse-muted);
+}
+
+.sequence {
+  display: grid;
+  margin-top: clamp(3rem, 7vw, 6rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.item {
+  position: relative;
+  display: grid;
+  min-height: 8rem;
+  align-content: space-between;
+  gap: var(--space-6);
+}
+
+.point {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 0.0625rem solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--color-brand-raised);
+  color: var(--color-accent-hover);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.itemLabel {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.line {
+  position: absolute;
+  z-index: 0;
+  top: 1.5rem;
+  right: 0;
+  left: 3rem;
+  height: 0.0625rem;
+  background: linear-gradient(90deg, var(--color-accent), rgb(157 130 78 / 28%));
+  transform-origin: left;
+}
+
+@media (max-width: 45rem) {
+  .header {
+    display: grid;
+  }
+
+  .sequence {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    min-height: 8.5rem;
+    padding-left: 4.5rem;
+    align-content: start;
+  }
+
+  .point {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .line {
+    top: 3rem;
+    right: auto;
+    bottom: 0;
+    left: 1.5rem;
+    width: 0.0625rem;
+    height: auto;
+    background: linear-gradient(180deg, var(--color-accent), rgb(157 130 78 / 28%));
+    transform-origin: top;
+  }
+}
