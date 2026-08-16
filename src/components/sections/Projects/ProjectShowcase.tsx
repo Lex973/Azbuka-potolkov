@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import Image from 'next/image'
 import { useState } from 'react'
 
+import { fadeUpVariants, softStaggerContainerVariants } from '@/components/motion/transitions'
 import { Container } from '@/components/ui/Container/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading'
 import { SliderControls } from '@/components/ui/SliderControls/SliderControls'
@@ -102,22 +103,34 @@ export function ProjectShowcase({
                 if (info.offset.x > 70) showPrevious()
               }}
             >
-              <div className={styles.copy} aria-live="polite">
-                <p className={styles.location}>{activeProject.location}</p>
-                <h3>{activeProject.title}</h3>
-                <p className={styles.description}>{activeProject.description}</p>
-                <ul className={styles.features}>
+              <motion.div
+                className={styles.copy}
+                aria-live="polite"
+                variants={softStaggerContainerVariants}
+                initial={reduceMotion ? false : 'hidden'}
+                animate="visible"
+              >
+                <motion.p className={styles.location} variants={fadeUpVariants}>
+                  {activeProject.location}
+                </motion.p>
+                <motion.h3 variants={fadeUpVariants}>{activeProject.title}</motion.h3>
+                <motion.p className={styles.description} variants={fadeUpVariants}>
+                  {activeProject.description}
+                </motion.p>
+                <motion.ul className={styles.features} variants={softStaggerContainerVariants}>
                   {activeProject.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
+                    <motion.li key={feature} variants={fadeUpVariants}>
+                      {feature}
+                    </motion.li>
                   ))}
-                </ul>
-              </div>
+                </motion.ul>
+              </motion.div>
 
               <div className={styles.gallery}>
                 <motion.figure
                   className={styles.mainImage}
-                  initial={{ opacity: 0, scale: 1.06 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, clipPath: 'inset(0 0 0 100%)' }}
+                  animate={{ opacity: 1, clipPath: 'inset(0 0 0 0%)' }}
                   transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Image

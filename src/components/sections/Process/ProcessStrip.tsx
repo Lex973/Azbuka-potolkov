@@ -1,4 +1,5 @@
 import { Container } from '@/components/ui/Container/Container'
+import { Reveal } from '@/components/motion/Reveal/Reveal'
 
 import { CoordinationTimeline } from '../Approach/CoordinationTimeline'
 
@@ -8,9 +9,9 @@ export function ProcessStrip() {
   return (
     <section className={styles.section} aria-labelledby="process-strip-title">
       <Container>
-        <div className={styles.heading}>
+        <Reveal className={styles.heading}>
           <h2 id="process-strip-title">Одна отметка для всей команды</h2>
-        </div>
+        </Reveal>
         <CoordinationTimeline />
       </Container>
     </section>

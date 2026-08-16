@@ -123,6 +123,11 @@
   color: var(--color-accent-hover);
   font-size: 1rem;
   font-weight: 400;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.more > button[aria-expanded='true'] span {
+  transform: rotate(45deg);
 }
 
 .morePanel {
@@ -262,6 +267,57 @@
   font-size: clamp(1.45rem, 5vw, 2.25rem);
   letter-spacing: var(--letter-spacing-heading);
   line-height: 1.1;
+  opacity: 0;
+  transform: translateY(0.8rem);
+  transition:
+    color var(--duration-base) var(--ease-standard),
+    opacity var(--duration-slow) var(--ease-emphasized),
+    transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.mobilePanel[data-open='true'] nav a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(2) {
+  transition-delay: 60ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(3) {
+  transition-delay: 120ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(4) {
+  transition-delay: 180ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(5) {
+  transition-delay: 240ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(6) {
+  transition-delay: 300ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(7) {
+  transition-delay: 360ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(8) {
+  transition-delay: 420ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(9) {
+  transition-delay: 480ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(10) {
+  transition-delay: 540ms;
+}
+
+.mobilePanel[data-open='true'] nav a:nth-child(11) {
+  transition-delay: 600ms;
 }
 
 .mobilePanel nav a span {

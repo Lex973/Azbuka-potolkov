@@ -46,7 +46,20 @@ export function CoordinationTimeline() {
           }}
         >
           <div className={styles.rail}>
-            <span className={styles.dot} />
+            <motion.span
+              className={styles.dot}
+              variants={{
+                hidden: { opacity: 0, scale: 0.3 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: {
+                    duration: reduceMotion ? 0 : 0.55,
+                    ease: [0.16, 1, 0.3, 1],
+                  },
+                },
+              }}
+            />
             <motion.span
               className={styles.connector}
               data-tail={index === steps.length - 1}
