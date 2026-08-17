@@ -8,7 +8,7 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: var(--font-size-label);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: var(--letter-spacing-label);
   line-height: 1;
   text-transform: uppercase;

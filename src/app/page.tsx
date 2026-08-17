@@ -1,9 +1,13 @@
 import { Header } from '@/components/layout/Header/Header'
+import { Footer } from '@/components/layout/Footer/Footer'
 import { ApproachSection } from '@/components/sections/Approach/ApproachSection'
+import { CeilingTypes } from '@/components/sections/CeilingTypes/CeilingTypes'
+import { ContactSection } from '@/components/sections/Contact/ContactSection'
+import { Estimates } from '@/components/sections/Estimates/Estimates'
 import { Hero } from '@/components/sections/Hero/Hero'
 import { LightingCalculation } from '@/components/sections/LightingCalculation/LightingCalculation'
-import { ProcessStrip } from '@/components/sections/Process/ProcessStrip'
 import { ProjectShowcase } from '@/components/sections/Projects/ProjectShowcase'
+import { Testimonials } from '@/components/sections/Testimonials/Testimonials'
 import { commercialProjects, privateProjects } from '@/content/projects'
 
 import styles from './page.module.css'
@@ -28,9 +32,13 @@ export default function HomePage() {
           projects={commercialProjects}
           mirrored
         />
-        <ProcessStrip />
         <LightingCalculation />
+        <CeilingTypes />
+        <Estimates />
+        <Testimonials />
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   )
 }

@@ -19,13 +19,45 @@
   border-bottom: 0.0625rem solid var(--color-border-inverse);
   background: rgb(22 23 18 / 74%);
   backdrop-filter: blur(1rem);
-  animation: headerIn 0.85s var(--ease-emphasized) both;
+  animation: headerSurfaceIn 1.05s var(--ease-emphasized) both;
 }
 
-@keyframes headerIn {
+@keyframes headerSurfaceIn {
   from {
     opacity: 0;
-    transform: translateY(-1.25rem);
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(-1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
+}
+
+.logo,
+.desktopNav,
+.actions {
+  animation: headerContentIn 0.75s var(--ease-emphasized) both;
+}
+
+.logo {
+  animation-delay: 0.18s;
+}
+
+.desktopNav {
+  animation-delay: 0.28s;
+}
+
+.actions {
+  animation-delay: 0.38s;
+}
+
+@keyframes headerContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.65rem);
   }
 
   to {
@@ -42,8 +74,8 @@
 }
 
 .logo > span {
-  font-size: clamp(0.95rem, 1.2vw, 1.25rem);
-  font-weight: 600;
+  font-size: clamp(1.05rem, 1.3vw, 1.35rem);
+  font-weight: 500;
   letter-spacing: 0.09em;
 }
 
@@ -64,8 +96,8 @@
 
 .desktopNav {
   gap: clamp(1rem, 1.7vw, 2rem);
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -169,6 +201,12 @@
   gap: var(--space-6);
 }
 
+.actions .cta {
+  min-height: 3.125rem;
+  padding-inline: 1.25rem;
+  font-size: 0.75rem;
+}
+
 .socials,
 .mobileSocials {
   gap: var(--space-3);
@@ -177,13 +215,13 @@
 .socials a,
 .mobileSocials a {
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   place-items: center;
   border: 0.0625rem solid var(--color-border-inverse);
   border-radius: 50%;
   font-size: 0.55rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.08em;
   transition:
     border-color var(--duration-base) var(--ease-standard),
@@ -361,6 +399,10 @@
 
   .actions {
     gap: var(--space-3);
+  }
+
+  .actions .cta {
+    min-height: 2.75rem;
   }
 
   .mobilePanel {

@@ -1,11 +1,11 @@
-import type { ElementType } from 'react'
+import type { ElementType, ReactNode } from 'react'
 
 import styles from './SectionHeading.module.css'
 
 type SectionHeadingProps = {
   number: string
   eyebrow: string
-  title: string
+  title: ReactNode
   description?: string
   tone?: 'default' | 'inverse'
   as?: ElementType

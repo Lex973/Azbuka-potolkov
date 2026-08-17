@@ -45,26 +45,19 @@ export function ApproachSection() {
           <SectionHeading
             number="02"
             eyebrow="Подход"
-            title="Входим в проект первыми"
+            title="Подключаемся к проекту первыми"
             description="Не просто устанавливаем потолок, а собираем все решения над головой в понятную систему — от чертежа до финальной проверки."
             tone="inverse"
             className={styles.heading}
             id="approach-title"
           />
-          <Reveal className={styles.statement}>
-            <p className={styles.statValue}>7 из 10</p>
-            <p>
-              проектов содержат узлы, которые важно согласовать до отделки. Мы находим их на
-              чертежах — спокойно и вместе с командой проекта.
-            </p>
-          </Reveal>
         </motion.div>
 
         <div className={styles.reasonsBlock}>
-          <p className={styles.label}>[ Почему выбирают нас ]</p>
+          <p className={styles.label}>[ Почему выбирают именно нас? ]</p>
           <div className={styles.reasons}>
             {reasons.map((reason, index) => (
-              <Reveal key={reason.number} className={styles.reason} delay={index * 0.18}>
+              <Reveal key={reason.number} className={styles.reason} delay={index * 0.12}>
                 <span>{reason.number}</span>
                 <h3>{reason.title}</h3>
                 <p>{reason.text}</p>

@@ -18,7 +18,7 @@ type ContactDialogButtonProps = {
 }
 
 export function ContactDialogButton({
-  children = 'Обсудить задачу',
+  children = 'Обсудить проект',
   size = 'medium',
   variant = 'primary',
   tone = 'default',

@@ -19,8 +19,9 @@ export function LightingCalculation() {
             <SectionHeading
               number="06"
               eyebrow="Светотехнический расчёт"
-              title="Свет, который сначала считают"
+              title="Проверка освещённости"
               description="До монтажа проверяем, как свет будет работать в реальном помещении — не только визуально, но и в точных значениях."
+              tone="inverse"
               className={styles.heading}
               id="lighting-calculation-title"
             />

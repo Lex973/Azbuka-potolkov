@@ -32,14 +32,14 @@
 
   /* Typography */
   --font-sans: var(--font-manrope), 'Segoe UI', sans-serif;
-  --font-size-display: clamp(3.5rem, 8.6vw, 8.5rem);
-  --font-size-h1: clamp(3rem, 6.6vw, 6.5rem);
-  --font-size-h2: clamp(2.5rem, 5vw, 5rem);
-  --font-size-h3: clamp(2rem, 3.3vw, 3.5rem);
-  --font-size-h4: clamp(1.5rem, 2vw, 2.25rem);
-  --font-size-h5: clamp(1.25rem, 1.4vw, 1.625rem);
+  --font-size-display: clamp(3.15rem, 7.2vw, 7rem);
+  --font-size-h1: clamp(2.75rem, 5.5vw, 5.5rem);
+  --font-size-h2: clamp(2rem, 3.75vw, 3.875rem);
+  --font-size-h3: clamp(1.75rem, 2.7vw, 2.75rem);
+  --font-size-h4: clamp(1.375rem, 1.75vw, 1.875rem);
+  --font-size-h5: clamp(1.125rem, 1.25vw, 1.375rem);
   --font-size-h6: 1rem;
-  --font-size-lead: clamp(1.125rem, 1.5vw, 1.375rem);
+  --font-size-lead: clamp(1.0625rem, 1.25vw, 1.25rem);
   --font-size-body: 1rem;
   --font-size-small: 0.875rem;
   --font-size-label: 0.6875rem;
@@ -55,7 +55,7 @@
   --container-max: 90rem;
   --container-text: 48rem;
   --page-gutter: clamp(1rem, 3.4vw, 3.5rem);
-  --section-space: clamp(6rem, 11vw, 11rem);
+  --section-space: clamp(2rem, 4vw, 4.5rem);
   --grid-gap: clamp(1rem, 2vw, 2rem);
 
   /* Spacing */
@@ -99,7 +99,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   font-size: var(--font-size-body);
-  font-weight: 400;
+  font-weight: 350;
   line-height: var(--line-height-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

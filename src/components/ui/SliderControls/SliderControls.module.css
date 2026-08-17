@@ -11,6 +11,10 @@
   gap: var(--space-8);
 }
 
+.controls[data-compact='true'] {
+  justify-content: space-between;
+}
+
 .arrows {
   gap: var(--space-2);
 }
@@ -93,6 +97,15 @@
   color: var(--color-text);
 }
 
+.counter[data-format='compact'] {
+  min-width: auto;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
 .counterLine {
   width: 2rem;
   height: 0.0625rem;
@@ -101,12 +114,25 @@
 
 @media (max-width: 40rem) {
   .controls {
-    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .arrow {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .dots {
-    order: 3;
-    width: 100%;
+    width: auto;
     justify-content: center;
+  }
+
+  .counter {
+    min-width: 4rem;
+    gap: var(--space-2);
+  }
+
+  .counterLine {
+    width: 1rem;
   }
 }

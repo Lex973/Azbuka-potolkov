@@ -2,9 +2,10 @@ import type { Project } from '@/types/project'
 
 export const privateProjects: Project[] = [
   {
-    id: 'skyline-apartment',
+    slug: 'skyline-apartment',
     title: 'Квартира над городом',
-    location: 'Новосибирск · 118 м²',
+    city: 'Новосибирск',
+    area: '118 м²',
     description:
       'Единая спокойная плоскость объединила гостиную и кухню. Треки, ниши и встроенный свет согласовали ещё на чертежах.',
     image: '/images/projects/private-skyline.webp',
@@ -17,9 +18,10 @@ export const privateProjects: Project[] = [
     features: ['Теневой профиль', 'Встроенный трек', 'Ниша под шторы'],
   },
   {
-    id: 'quiet-line-apartment',
+    slug: 'quiet-line-apartment',
     title: 'Тихая линия',
-    location: 'Новосибирск · 146 м²',
+    city: 'Новосибирск',
+    area: '146 м²',
     description:
       'Свет, вентиляция и примыкания собраны в одну геометрию. Потолок не спорит с интерьером — он удерживает его ритм.',
     image: '/images/projects/private-quiet-line.webp',
@@ -35,9 +37,10 @@ export const privateProjects: Project[] = [
 
 export const commercialProjects: Project[] = [
   {
-    id: 'ember-restaurant',
+    slug: 'ember-restaurant',
     title: 'Ресторан «Тёплый свет»',
-    location: 'Новосибирск · 420 м²',
+    city: 'Новосибирск',
+    area: '420 м²',
     description:
       'Мягкий свет ведёт гостя по залу, а инженерные линии остаются частью архитектуры. Все потолочные узлы сведены до начала отделки.',
     image: '/images/projects/commercial-restaurant.webp',
@@ -50,9 +53,10 @@ export const commercialProjects: Project[] = [
     features: ['Световой контур', 'Климатические щели', 'Сценарный свет'],
   },
   {
-    id: 'material-studio',
+    slug: 'material-studio',
     title: 'Студия материалов',
-    location: 'Новосибирск · 280 м²',
+    city: 'Новосибирск',
+    area: '280 м²',
     description:
       'Рабочий свет, климат и чистая плоскость потолка собраны без визуального шума — для пространства, где важны образцы и детали.',
     image: '/images/projects/commercial-studio.webp',

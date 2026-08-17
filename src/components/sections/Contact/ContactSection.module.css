@@ -1,0 +1,58 @@
+.section {
+  scroll-margin-top: 5.5rem;
+  padding-block: var(--section-space);
+  border-top: 0.0625rem solid var(--color-border);
+  background: var(--color-paper);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.28fr);
+  align-items: end;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.copy {
+  max-width: 34rem;
+}
+
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  color: var(--color-accent);
+}
+
+.copy h2 {
+  margin-top: var(--space-6);
+  font-size: var(--font-size-h3);
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
+  text-wrap: balance;
+}
+
+.copy > p:last-child {
+  max-width: 30rem;
+  margin-top: var(--space-6);
+  color: var(--color-text-soft);
+}
+
+.formWrap {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 0.0625rem solid var(--color-border);
+  border-top-color: var(--color-accent);
+  background: var(--color-canvas);
+}
+
+@media (max-width: 64rem) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+}

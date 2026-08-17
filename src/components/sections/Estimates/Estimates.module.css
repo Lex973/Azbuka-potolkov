@@ -1,0 +1,82 @@
+.section {
+  scroll-margin-top: 5.5rem;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+
+.intro {
+  max-width: none;
+}
+
+.heading :global(h2) {
+  max-width: none;
+  text-wrap: balance;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  width: min(100%, 68rem);
+  margin: clamp(2.5rem, 4vw, 4rem) 0 0;
+}
+
+.card {
+  min-width: 0;
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 0.0625rem solid var(--color-border-inverse);
+  background: var(--color-paper);
+}
+
+.imageFrame::after {
+  position: absolute;
+  inset: 0;
+  border: 0.0625rem solid rgb(255 255 255 / 18%);
+  content: '';
+  pointer-events: none;
+}
+
+.imageFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cardContent {
+  padding-top: var(--space-5, 1.25rem);
+}
+
+.cardContent h3 {
+  font-size: var(--font-size-h4);
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: 1.15;
+}
+
+.cardContent p {
+  max-width: 34rem;
+  margin-top: var(--space-4);
+  color: var(--color-text-inverse-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 48rem) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    width: min(100%, 34rem);
+    margin: var(--space-8) 0 0;
+  }
+
+  .imageFrame {
+    aspect-ratio: 16 / 10;
+  }
+}

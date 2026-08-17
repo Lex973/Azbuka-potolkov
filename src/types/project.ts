@@ -4,9 +4,10 @@ export type ProjectDetail = {
 }
 
 export type Project = {
-  id: string
+  slug: string
   title: string
-  location: string
+  city: string
+  area: string
   description: string
   image: string
   imageAlt: string

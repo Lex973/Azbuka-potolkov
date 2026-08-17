@@ -25,7 +25,7 @@
   flex: 0 0 auto;
   border: 0.125rem solid var(--color-accent);
   border-radius: 50%;
-  background: var(--color-canvas);
+  background: var(--color-brand);
   box-shadow: 0 0 0 0.35rem rgb(157 130 78 / 12%);
 }
 
@@ -33,7 +33,7 @@
   width: 100%;
   height: 0.0625rem;
   flex: 1 1 auto;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-border));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-border-inverse));
   transform-origin: left;
 }
 
@@ -45,16 +45,16 @@
 
 .timelineStep h3 {
   margin-top: var(--space-3);
-  color: var(--color-text);
+  color: var(--color-text-inverse);
   font-size: var(--font-size-h5);
-  font-weight: 450;
+  font-weight: 350;
   letter-spacing: var(--letter-spacing-heading);
   line-height: 1.2;
 }
 
 .timelineStep > p:last-child {
   margin-top: var(--space-3);
-  color: var(--color-text-soft);
+  color: var(--color-text-inverse-muted);
   font-size: var(--font-size-small);
 }
 
@@ -84,7 +84,7 @@
     width: 0.0625rem;
     height: 100%;
     margin-left: 0.34rem;
-    background: linear-gradient(180deg, var(--color-accent), var(--color-border));
+    background: linear-gradient(180deg, var(--color-accent), var(--color-border-inverse));
   }
 
   .connector[data-tail='true'] {

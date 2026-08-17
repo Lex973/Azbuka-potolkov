@@ -237,7 +237,8 @@ export default function UiKitPage() {
             <article>
               <p className={styles.sampleLabel}>Lead / 22 / 1.55</p>
               <p className={styles.leadText}>
-                Входим в проект на этапе чертежей и ведём потолочное решение до спокойной сдачи.
+                Подключаемся к проекту на этапе чертежей и ведём потолочное решение до спокойной
+                сдачи.
               </p>
             </article>
             <article>

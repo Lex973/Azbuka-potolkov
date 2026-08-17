@@ -19,7 +19,7 @@ export function ModalDemo() {
       <Modal
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        eyebrow="Обсудить задачу"
+        eyebrow="Обсудить проект"
         title="Начнём с вашего проекта"
       >
         <form

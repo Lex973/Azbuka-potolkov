@@ -4,17 +4,15 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import Image from 'next/image'
 import { useRef } from 'react'
 
-import { ContactDialogButton } from '@/components/forms/ContactDialog/ContactDialogButton'
 import { maskedLineVariants, softStaggerContainerVariants } from '@/components/motion/transitions'
-import { ButtonLink } from '@/components/ui/Button/Button'
 import { Container } from '@/components/ui/Container/Container'
 
 import styles from './Hero.module.css'
 
 const heroFacts = [
-  { value: '2014', label: 'работаем с проектами' },
+  { value: 'с 2014', label: 'работаем с потолками' },
   { value: '98%', label: 'объектов по дизайн-проектам' },
-  { value: '≈100', label: 'объектов в год' },
+  { value: '>100', label: 'объектов в год' },
 ]
 
 export function Hero() {
@@ -73,7 +71,7 @@ export function Hero() {
             animate="visible"
           >
             <motion.p className={styles.eyebrow} variants={maskedLineVariants}>
-              Технический партнёр · Новосибирск
+              Технический партнёр дизайнеров и архитекторов
             </motion.p>
             <h1 className={styles.title} id="hero-title">
               <span className={styles.titleLine}>
@@ -84,20 +82,8 @@ export function Hero() {
               </span>
             </h1>
             <motion.p className={styles.lead} variants={maskedLineVariants}>
-              Входим в проект на этапе чертежей и ведём потолки и свет до спокойной сдачи.
+              Подключаемся к проекту на этапе чертежей. <br/> Ведём потолки и свет до спокойной сдачи
             </motion.p>
-            <motion.div className={styles.buttons} variants={maskedLineVariants}>
-              <ContactDialogButton size="large" tone="inverse" />
-              <ButtonLink
-                href="#private-projects"
-                size="large"
-                variant="secondary"
-                tone="inverse"
-                showArrow
-              >
-                Смотреть проекты
-              </ButtonLink>
-            </motion.div>
           </motion.div>
 
           <dl className={styles.facts}>

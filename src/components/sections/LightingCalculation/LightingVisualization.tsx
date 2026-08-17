@@ -5,24 +5,6 @@ import Image from 'next/image'
 
 import styles from './LightingCalculation.module.css'
 
-const results = [
-  {
-    number: '01',
-    label: 'Модель',
-    value: 'Геометрия помещения',
-  },
-  {
-    number: '02',
-    label: 'Проверка',
-    value: 'Освещённость в люксах',
-  },
-  {
-    number: '03',
-    label: 'Результат',
-    value: 'Точная схема света',
-  },
-]
-
 export function LightingVisualization() {
   const shouldReduceMotion = useReducedMotion()
 
@@ -34,14 +16,6 @@ export function LightingVisualization() {
       viewport={{ once: true, amount: 0.16 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.82, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className={styles.toolbar}>
-        <p>
-          <span className={styles.statusDot} aria-hidden="true" />
-          Расчёт освещения
-        </p>
-        <p>Модель помещения / сценарий 01</p>
-      </div>
-
       <div className={styles.workspace}>
         <motion.figure
           className={styles.panel}
@@ -121,28 +95,6 @@ export function LightingVisualization() {
             Видим интенсивность и равномерность света ещё до начала монтажных работ.
           </figcaption>
         </motion.figure>
-      </div>
-
-      <div className={styles.results}>
-        {results.map((result, index) => (
-          <motion.div
-            className={styles.result}
-            key={result.number}
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{
-              duration: shouldReduceMotion ? 0 : 0.54,
-              delay: shouldReduceMotion ? 0 : 0.32 + index * 0.09,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            <p>
-              <span>{result.number}</span> / {result.label}
-            </p>
-            <strong>{result.value}</strong>
-          </motion.div>
-        ))}
       </div>
     </motion.div>
   )
