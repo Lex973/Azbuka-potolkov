@@ -94,6 +94,11 @@
   display: block;
 }
 
+.titleLine strong {
+  display: block;
+  font-weight: 600;
+}
+
 .lead {
   max-width: 41rem;
   margin-top: var(--space-8);

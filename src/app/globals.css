@@ -2,25 +2,25 @@
   color-scheme: light;
 
   /* Brand */
-  --color-brand: #22231c;
-  --color-brand-raised: #2b2d24;
-  --color-accent: #9d824e;
-  --color-accent-hover: #b09765;
-  --color-accent-active: #80683f;
+  --color-brand: #22221f;
+  --color-brand-raised: #2a2a26;
+  --color-accent: #9c8355;
+  --color-accent-hover: #b19a70;
+  --color-accent-active: #7e6944;
 
   /* Surfaces */
-  --color-canvas: #f2f0ea;
-  --color-paper: #fbfaf7;
-  --color-surface: #e8e5dc;
-  --color-surface-strong: #d9d5ca;
+  --color-canvas: #f4f2ee;
+  --color-paper: #ffffff;
+  --color-surface: #f4f2ee;
+  --color-surface-strong: #e7e2d9;
   --color-white: #ffffff;
 
   /* Text */
-  --color-text: #22231c;
-  --color-text-soft: #4d4e47;
-  --color-text-muted: #73746d;
-  --color-text-inverse: #f8f7f2;
-  --color-text-inverse-muted: #babbb4;
+  --color-text: #3a362f;
+  --color-text-soft: #6e6659;
+  --color-text-muted: #81796d;
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-muted: #c5c0b7;
 
   /* Functional */
   --color-border: #d0cdc3;
@@ -31,7 +31,7 @@
   --color-focus: #c1a86f;
 
   /* Typography */
-  --font-sans: var(--font-manrope), 'Segoe UI', sans-serif;
+  --font-sans: var(--font-poppins), var(--font-manrope), 'Segoe UI', sans-serif;
   --font-size-display: clamp(3.15rem, 7.2vw, 7rem);
   --font-size-h1: clamp(2.75rem, 5.5vw, 5.5rem);
   --font-size-h2: clamp(2rem, 3.75vw, 3.875rem);
@@ -99,7 +99,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   font-size: var(--font-size-body);
-  font-weight: 350;
+  font-weight: 300;
   line-height: var(--line-height-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

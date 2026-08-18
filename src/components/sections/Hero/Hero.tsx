@@ -75,14 +75,15 @@ export function Hero() {
             </motion.p>
             <h1 className={styles.title} id="hero-title">
               <span className={styles.titleLine}>
-                <motion.span variants={maskedLineVariants}>Всё над головой —</motion.span>
+                <motion.span variants={maskedLineVariants}>Потолок, свет и климат —</motion.span>
               </span>
               <span className={styles.titleLine}>
-                <motion.span variants={maskedLineVariants}>берём на себя</motion.span>
+                <motion.strong variants={maskedLineVariants}>одна ответственность</motion.strong>
               </span>
             </h1>
             <motion.p className={styles.lead} variants={maskedLineVariants}>
-              Подключаемся к проекту на этапе чертежей. <br/> Ведём потолки и свет до спокойной сдачи
+              Включаемся на этапе чертежей, находим ошибки в узлах до монтажа и ведём объект до
+              сдачи. Ваш проект реализуется так, как нарисован.
             </motion.p>
           </motion.div>
 

@@ -56,7 +56,7 @@
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #171813;
+  background: var(--color-brand);
 }
 
 .imageFrame img {
