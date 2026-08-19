@@ -1,0 +1,168 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  width: 100%;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.figure {
+  margin: 0;
+}
+
+.imageButton {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+  background: var(--color-surface-strong);
+  box-shadow: 0 0.5rem 1.5rem rgb(35 32 26 / 12%);
+  cursor: pointer;
+}
+
+.imageButton img {
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-emphasized);
+}
+
+.imageButton:hover img {
+  transform: scale(1.025);
+}
+
+.figure figcaption {
+  padding-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: clamp(1rem, 4vw, 3rem);
+  border: 0;
+  background: transparent;
+  color: var(--color-text-inverse);
+  opacity: 0;
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    display var(--duration-base) allow-discrete,
+    overlay var(--duration-base) allow-discrete;
+}
+
+.dialog::backdrop {
+  background: rgb(12 13 10 / 88%);
+  opacity: 0;
+  backdrop-filter: blur(0.35rem);
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    display var(--duration-base) allow-discrete,
+    overlay var(--duration-base) allow-discrete;
+}
+
+.dialog[open] {
+  display: grid;
+  place-items: center;
+  opacity: 1;
+}
+
+.dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .dialog[open],
+  .dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+.close {
+  position: fixed;
+  z-index: 2;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 0.0625rem solid rgb(255 255 255 / 42%);
+  border-radius: 50%;
+  background: rgb(20 21 17 / 45%);
+  color: var(--color-white);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+}
+
+.close:hover {
+  border-color: var(--color-accent-hover);
+  background: var(--color-accent-active);
+}
+
+.close svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.lightboxFigure {
+  display: grid;
+  max-width: 100%;
+  margin: 0;
+  gap: var(--space-3);
+  pointer-events: none;
+}
+
+.lightboxImage {
+  position: relative;
+  width: min(90vw, 90rem);
+  height: min(82dvh, 67.5rem);
+  pointer-events: auto;
+}
+
+.lightboxImage img {
+  object-fit: contain;
+}
+
+.lightboxFigure figcaption {
+  color: var(--color-text-inverse-muted);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-label);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lightboxImage {
+    width: calc(100vw - 2rem);
+    height: calc(100dvh - 7rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageButton img,
+  .dialog,
+  .dialog::backdrop,
+  .close {
+    transition: none;
+  }
+}

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { ArrowRightIcon } from '@/components/ui/Icons/Icons'
 import { Container } from '@/components/ui/Container/Container'
 import { siteConfig } from '@/config/site'
@@ -9,10 +11,10 @@ export function Footer() {
     <footer className={styles.footer} id="contacts">
       <Container>
         <div className={styles.topline}>
-          <a className={styles.logo} href="#home" aria-label="Азбука Потолков — на главную">
+          <Link className={styles.logo} href="/" aria-label="Азбука Потолков — на главную">
             <span>{siteConfig.name}</span>
             <small>Потолки · Свет · Климат</small>
-          </a>
+          </Link>
           <p>Наш продукт — спокойный день сдачи.</p>
         </div>
 
@@ -53,7 +55,7 @@ export function Footer() {
           <a href={siteConfig.reviewsUrl} target="_blank" rel="noreferrer">
             Отзывы на 2ГИС
           </a>
-          <a href="#home">Наверх ↑</a>
+          <Link href="#home">Наверх ↑</Link>
         </div>
       </Container>
     </footer>

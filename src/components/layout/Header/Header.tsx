@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { ContactDialogButton } from '@/components/forms/ContactDialog/ContactDialogButton'
@@ -42,16 +43,16 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.logo} href="#home" aria-label="Азбука Потолков — на главную">
+        <Link className={styles.logo} href="/" aria-label="Азбука Потолков — на главную">
           <span>Азбука Потолков</span>
           <small>Потолки · Свет · Климат</small>
-        </a>
+        </Link>
 
         <nav className={styles.desktopNav} aria-label="Основная навигация">
           {primaryNavigation.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link key={item.href} href={`/${item.href}`}>
               {item.label}
-            </a>
+            </Link>
           ))}
           <div className={styles.more}>
             <button
@@ -64,9 +65,9 @@ export function Header() {
             </button>
             <div className={styles.morePanel} id="desktop-more-navigation" data-open={moreOpen}>
               {secondaryNavigation.map((item) => (
-                <a key={item.href} href={item.href} onClick={closeNavigation}>
+                <Link key={item.href} href={`/${item.href}`} onClick={closeNavigation}>
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -98,10 +99,10 @@ export function Header() {
       <div className={styles.mobilePanel} id="mobile-navigation" data-open={menuOpen}>
         <nav aria-label="Мобильная навигация">
           {allNavigation.map((item, index) => (
-            <a key={item.href} href={item.href} onClick={closeNavigation}>
+            <Link key={item.href} href={`/${item.href}`} onClick={closeNavigation}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className={styles.mobileFooter}>

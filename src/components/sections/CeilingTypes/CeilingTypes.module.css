@@ -34,8 +34,19 @@
 }
 
 .card {
+  position: relative;
   height: 100%;
   cursor: default;
+}
+
+.cardLink {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+}
+
+.cardLink:focus-visible {
+  outline-offset: 0.35rem;
 }
 
 .imageFrame {
@@ -43,7 +54,6 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: var(--color-surface);
-  cursor: pointer;
 }
 
 .imageFrame::after {
@@ -139,19 +149,19 @@
   transition: transform var(--duration-base) var(--ease-standard);
 }
 
-.card:hover .imageFrame img {
+.card[data-linked='true']:hover .imageFrame img {
   transform: scale(1.035);
 }
 
-.card:hover .content {
+.card[data-linked='true']:hover .content {
   border-color: var(--color-accent);
 }
 
-.card:hover h3 {
+.card[data-linked='true']:hover h3 {
   color: var(--color-accent-active);
 }
 
-.card:hover .more svg {
+.card[data-linked='true']:hover .more svg {
   transform: translateX(0.35rem);
 }
 
