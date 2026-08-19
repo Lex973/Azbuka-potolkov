@@ -50,7 +50,7 @@
   width: 100%;
   min-height: 100svh;
   align-content: end;
-  padding: 7rem var(--page-gutter) 1.35rem;
+  padding: 7rem var(--page-gutter) clamp(3rem, 7vh, 5.5rem);
 }
 
 .headline {
@@ -115,14 +115,16 @@
 }
 
 .actionArea .cta {
-  min-height: 3.75rem;
-  padding-inline: 2.65rem;
+  min-height: 3.35rem;
+  justify-content: center;
+  padding-inline: 1.5rem;
   border-color: #ded7c8;
   border-radius: 0;
   background: #ded7c8;
   color: #2a2924;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
+  text-align: center;
 }
 
 .cta svg {
@@ -186,7 +188,7 @@
 
   .content {
     padding-top: 6.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2.5rem;
   }
 
   .headline {

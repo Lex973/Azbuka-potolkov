@@ -27,6 +27,8 @@
 }
 
 .project {
+  width: min(100%, 82rem);
+  margin-inline: auto;
   touch-action: pan-y;
 }
 

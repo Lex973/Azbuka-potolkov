@@ -55,6 +55,7 @@
   --container-max: 90rem;
   --container-text: 48rem;
   --page-gutter: clamp(1rem, 3.4vw, 3.5rem);
+  --section-gutter: clamp(1rem, 2.4vw, 2.5rem);
   --section-space: clamp(2rem, 4vw, 4.5rem);
   --grid-gap: clamp(1rem, 2vw, 2rem);
 

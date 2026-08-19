@@ -22,12 +22,6 @@ export type CeilingTypeDetail = {
     description: string
     images: readonly CeilingTypeImage[]
   }
-  feature: {
-    eyebrow: string
-    title: string
-    description: string
-    points: readonly string[]
-  }
   installation: {
     eyebrow: string
     title: string

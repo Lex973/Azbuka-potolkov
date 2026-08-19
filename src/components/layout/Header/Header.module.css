@@ -203,6 +203,7 @@
 
 .actions .cta {
   min-height: 3.125rem;
+  gap: var(--space-3);
   padding-inline: 1.25rem;
   font-size: 0.75rem;
 }

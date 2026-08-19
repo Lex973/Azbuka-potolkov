@@ -16,13 +16,7 @@ export function Testimonials() {
             <SectionHeading
               number="09"
               eyebrow="Отзывы"
-              title={
-                <>
-                  Доверие складывается
-                  <br />
-                  из деталей
-                </>
-              }
+              title="Доверие складывается из деталей"
               description="В отзывах чаще всего говорят о точности, порядке на объекте и внимании к проекту — от замера до сдачи."
               className={styles.heading}
               id="reviews-title"

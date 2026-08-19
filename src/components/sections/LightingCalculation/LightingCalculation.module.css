@@ -165,14 +165,14 @@
 
 @media (max-width: 40rem) {
   .visualization {
-    margin-inline: calc(var(--page-gutter) * -1);
+    margin-inline: calc(var(--section-gutter) * -1);
     margin-top: var(--space-6);
     border-right: 0;
     border-left: 0;
   }
 
   .panel {
-    padding: var(--space-3) var(--page-gutter) var(--space-5, 1.25rem);
+    padding: var(--space-3) var(--section-gutter) var(--space-5, 1.25rem);
   }
 
   .panelHeading {

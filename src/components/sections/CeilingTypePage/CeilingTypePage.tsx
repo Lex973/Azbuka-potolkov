@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { ContactDialogButton } from '@/components/forms/ContactDialog/ContactDialogButton'
 import { Footer } from '@/components/layout/Footer/Footer'
@@ -69,23 +68,6 @@ export function CeilingTypePage({ content }: CeilingTypePageProps) {
           </Container>
         </section>
 
-        <section className={styles.feature} aria-labelledby="ceiling-feature-title">
-          <Container className={styles.featureGrid}>
-            <Reveal className={styles.featureCopy}>
-              <p className={styles.inverseEyebrow}>{content.feature.eyebrow}</p>
-              <h2 id="ceiling-feature-title">{content.feature.title}</h2>
-              <p>{content.feature.description}</p>
-            </Reveal>
-            <ul className={styles.featurePoints}>
-              {content.feature.points.map((point, index) => (
-                <Reveal key={point} delay={index * 0.07}>
-                  <li>{point}</li>
-                </Reveal>
-              ))}
-            </ul>
-          </Container>
-        </section>
-
         <section className={styles.installation} aria-labelledby="ceiling-installation-title">
           <Container>
             <Reveal className={styles.installationCopy}>
@@ -97,7 +79,7 @@ export function CeilingTypePage({ content }: CeilingTypePageProps) {
               {content.installation.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-              <ContactDialogButton className={styles.cta} size="large">
+              <ContactDialogButton className={styles.cta} size="large" showArrow={false}>
                 {content.installation.ctaLabel}
               </ContactDialogButton>
             </Reveal>

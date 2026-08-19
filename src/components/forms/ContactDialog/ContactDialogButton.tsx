@@ -13,6 +13,7 @@ type ContactDialogButtonProps = {
   size?: 'small' | 'medium' | 'large'
   variant?: 'primary' | 'secondary'
   tone?: 'default' | 'inverse'
+  showArrow?: boolean
   className?: string
   onOpen?: () => void
 }
@@ -22,6 +23,7 @@ export function ContactDialogButton({
   size = 'medium',
   variant = 'primary',
   tone = 'default',
+  showArrow = true,
   className,
   onOpen,
 }: ContactDialogButtonProps) {
@@ -46,7 +48,7 @@ export function ContactDialogButton({
         size={size}
         variant={variant}
         tone={tone}
-        showArrow
+        showArrow={showArrow}
         onClick={() => {
           onOpen?.()
           setSubmitted(false)
