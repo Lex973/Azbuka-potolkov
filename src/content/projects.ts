@@ -3,9 +3,13 @@ import type { Project } from '@/types/project'
 export const privateProjects: Project[] = [
   {
     slug: 'skyline-apartment',
+    category: 'Частный интерьер',
     title: 'Квартира над городом',
     city: 'Новосибирск',
     area: '118 м²',
+    year: '2025',
+    duration: '14 дней',
+    price: '1 280 000 ₽',
     description:
       'Единая спокойная плоскость объединила гостиную и кухню. Треки, ниши и встроенный свет согласовали ещё на чертежах.',
     image: '/images/projects/private-skyline.webp',
@@ -19,9 +23,13 @@ export const privateProjects: Project[] = [
   },
   {
     slug: 'quiet-line-apartment',
+    category: 'Частный интерьер',
     title: 'Тихая линия',
     city: 'Новосибирск',
     area: '146 м²',
+    year: '2025',
+    duration: '18 дней',
+    price: '1 640 000 ₽',
     description:
       'Свет, вентиляция и примыкания собраны в одну геометрию. Потолок не спорит с интерьером — он удерживает его ритм.',
     image: '/images/projects/private-quiet-line.webp',
@@ -38,9 +46,13 @@ export const privateProjects: Project[] = [
 export const commercialProjects: Project[] = [
   {
     slug: 'ember-restaurant',
+    category: 'Коммерческий объект',
     title: 'Ресторан «Тёплый свет»',
     city: 'Новосибирск',
     area: '420 м²',
+    year: '2024',
+    duration: '32 дня',
+    price: '3 960 000 ₽',
     description:
       'Мягкий свет ведёт гостя по залу, а инженерные линии остаются частью архитектуры. Все потолочные узлы сведены до начала отделки.',
     image: '/images/projects/commercial-restaurant.webp',
@@ -54,9 +66,13 @@ export const commercialProjects: Project[] = [
   },
   {
     slug: 'material-studio',
+    category: 'Коммерческий объект',
     title: 'Студия материалов',
     city: 'Новосибирск',
     area: '280 м²',
+    year: '2025',
+    duration: '24 дня',
+    price: '2 740 000 ₽',
     description:
       'Рабочий свет, климат и чистая плоскость потолка собраны без визуального шума — для пространства, где важны образцы и детали.',
     image: '/images/projects/commercial-studio.webp',
@@ -69,3 +85,9 @@ export const commercialProjects: Project[] = [
     features: ['Магнитные треки', 'Щелевой климат', 'Теневое примыкание'],
   },
 ]
+
+export const projects: readonly Project[] = [...privateProjects, ...commercialProjects]
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug)
+}
