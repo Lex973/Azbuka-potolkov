@@ -5,10 +5,6 @@
   background: var(--color-brand);
   color: var(--color-text-inverse);
 }
-.footerText {
-  max-width: 30rem !important;
-}
-
 .footer::before {
   position: absolute;
   top: 0;
@@ -24,7 +20,7 @@
   grid-template-columns: 1fr;
   align-items: start;
   gap: var(--space-8);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-block: clamp(2rem, 4vw, 3rem);
   border-bottom: 0.0625rem solid var(--color-border-inverse);
 }
 
@@ -62,9 +58,10 @@
   justify-self: start;
   max-width: 42rem;
   color: var(--color-text-inverse-muted);
-  font-size: var(--font-size-h5);
+  font-family: var(--font-manrope), var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
   font-weight: 300;
-  letter-spacing: var(--letter-spacing-heading);
+  letter-spacing: -0.02em;
   line-height: 1.3;
 }
 
