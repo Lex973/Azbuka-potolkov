@@ -45,7 +45,15 @@ export function Header() {
       <div className={styles.inner}>
         <Link className={styles.logo} href="/" aria-label="Азбука Потолков — на главную">
           <span>Азбука Потолков</span>
-          <small>Потолки · Свет · Климат</small>
+          <small>
+            <span>Потолки</span>
+            <span aria-hidden="true">·</span>
+            <span>Свет</span>
+            <span aria-hidden="true">·</span>
+            <span>Климат</span>
+            <span aria-hidden="true">·</span>
+            <span>Тихие стены</span>
+          </small>
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Основная навигация">

@@ -46,15 +46,16 @@ export function ApproachSection() {
             number="02"
             eyebrow="Подход"
             title="Подключаемся к проекту первыми"
-            description="Не просто устанавливаем потолок, а собираем все решения над головой в понятную систему — от чертежа до финальной проверки."
+            description="Не просто устанавливаем потолок, а собираем все решения на потолке в понятную систему — от чертежа до финальной сдачи"
             tone="inverse"
-            className={styles.heading}
             id="approach-title"
           />
         </motion.div>
 
         <div className={styles.reasonsBlock}>
-          <p className={styles.label}>[ Почему выбирают именно нас? ]</p>
+          <div className={styles.sectionLead}>
+            <p className={styles.label}>Вы получаете систему и порядок на объекте</p>
+          </div>
           <div className={styles.reasons}>
             {reasons.map((reason, index) => (
               <Reveal key={reason.number} className={styles.reason} delay={index * 0.12}>
@@ -64,6 +65,13 @@ export function ApproachSection() {
               </Reveal>
             ))}
           </div>
+          <p className={styles.costNote}>
+            <span>Исправить ошибку в чертеже стоит ноль рублей.</span>
+            <span>
+              Исправить её в готовом ремонте — в среднем <strong>40 000 ₽–80 000 ₽</strong>, иногда{' '}
+              <strong>200 000 ₽ и 500 000 ₽</strong>
+            </span>
+          </p>
         </div>
       </Container>
     </section>

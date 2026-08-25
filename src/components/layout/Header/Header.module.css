@@ -67,7 +67,10 @@
 }
 
 .logo {
+  position: relative;
   display: grid;
+  width: max-content;
+  padding-bottom: 0.95rem;
   justify-self: start;
   line-height: 1;
   text-transform: uppercase;
@@ -80,10 +83,17 @@
 }
 
 .logo small {
-  margin-top: 0.45rem;
+  position: absolute;
+  top: calc(100% - 0.5rem);
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   color: var(--color-text-inverse-muted);
   font-size: 0.5rem;
   letter-spacing: 0.18em;
+  text-wrap: nowrap;
 }
 
 .desktopNav,

@@ -37,7 +37,7 @@ export function Hero() {
           <div className={styles.actionArea}>
             <p>
               <span>Включаемся на этапе чертежей и ведём проект до сдачи.</span>
-              <span>Без переделок и без переплат.</span>
+              <span>Без переделок, без переплат и в точные сроки.</span>
             </p>
             <ContactDialogButton className={styles.cta} size="small" tone="inverse">
               Обсудить проект

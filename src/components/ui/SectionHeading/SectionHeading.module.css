@@ -16,7 +16,6 @@
 }
 
 .title {
-  max-width: 13ch;
   margin-top: var(--space-6);
   font-size: var(--font-size-h2);
   font-weight: 300;

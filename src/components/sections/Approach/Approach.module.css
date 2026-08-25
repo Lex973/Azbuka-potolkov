@@ -10,7 +10,12 @@
 }
 
 .heading :global(h2) {
-  max-width: 22ch;
+  max-width: none !important;
+  width: 100%;
+}
+
+.reasonsBlock {
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .label {
@@ -18,23 +23,36 @@
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: var(--letter-spacing-label);
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
-.reasonsBlock {
-  margin-top: clamp(2rem, 4vw, 3rem);
+.costNote {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 0.0625rem solid var(--color-border-inverse);
+  background: var(--color-brand-raised);
+  color: var(--color-text-inverse-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.costNote strong {
+  color: var(--color-text-inverse);
+  font-weight: 400;
 }
 
 .reasons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: var(--space-6);
-  border-top: 0.0625rem solid var(--color-border-inverse);
 }
 
 .reason {
   position: relative;
-  min-height: 11.5rem;
+  min-height: 10rem;
   overflow: hidden;
   padding: var(--space-5, 1.25rem) var(--space-5, 1.25rem) var(--space-5, 1.25rem) 0;
   border-right: 0.0625rem solid var(--color-border-inverse);
@@ -96,6 +114,10 @@
 }
 
 @media (max-width: 64rem) {
+  .label {
+    max-width: none;
+  }
+
   .reasons {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -112,6 +134,15 @@
 @media (max-width: 40rem) {
   .reasonsBlock {
     margin-top: var(--space-8);
+  }
+
+  .sectionLead {
+    padding-bottom: var(--space-6);
+  }
+
+  .costNote {
+    margin-top: var(--space-6);
+    font-size: 0.9375rem;
   }
 
   .reasons {

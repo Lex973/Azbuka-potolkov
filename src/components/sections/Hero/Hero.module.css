@@ -108,10 +108,14 @@
 
 .actionArea p {
   display: grid;
+  max-width: 42rem;
   margin-block: 0.55rem 0.45rem;
-  color: rgb(255 255 255 / 76%);
-  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
-  line-height: 1.45;
+  color: rgb(255 255 255 / 88%);
+  font-family: var(--font-manrope), var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
 }
 
 .actionArea .cta {

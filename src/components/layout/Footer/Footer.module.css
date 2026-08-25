@@ -5,6 +5,9 @@
   background: var(--color-brand);
   color: var(--color-text-inverse);
 }
+.footerText {
+  max-width: 30rem !important;
+}
 
 .footer::before {
   position: absolute;
@@ -17,16 +20,20 @@
 }
 
 .topline {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem);
+  align-items: center;
   gap: var(--space-12);
   padding-bottom: clamp(3rem, 6vw, 5rem);
   border-bottom: 0.0625rem solid var(--color-border-inverse);
 }
 
 .logo {
+  position: relative;
   display: grid;
+  min-width: 0;
+  width: max-content;
+  padding-bottom: 1.2rem;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -38,14 +45,22 @@
 }
 
 .logo small {
-  margin-top: 0.65rem;
+  position: absolute;
+  top: calc(100% - 0.55rem);
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   color: var(--color-text-inverse-muted);
   font-size: 0.55rem;
   letter-spacing: 0.18em;
+  text-wrap: nowrap;
 }
 
 .topline > p {
-  max-width: 22ch;
+  justify-self: end;
+  max-width: 30rem;
   color: var(--color-text-inverse-muted);
   font-size: var(--font-size-h5);
   font-weight: 300;
@@ -155,10 +170,22 @@
   }
 }
 
+@media (max-width: 52rem) {
+  .topline {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: var(--space-8);
+  }
+
+  .topline > p {
+    justify-self: start;
+    max-width: 32rem;
+  }
+}
+
 @media (max-width: 40rem) {
   .topline {
-    align-items: start;
-    flex-direction: column;
+    gap: var(--space-6);
   }
 
   .contacts {

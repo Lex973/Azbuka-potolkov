@@ -13,9 +13,17 @@ export function Footer() {
         <div className={styles.topline}>
           <Link className={styles.logo} href="/" aria-label="Азбука Потолков — на главную">
             <span>{siteConfig.name}</span>
-            <small>Потолки · Свет · Климат</small>
+            <small>
+              <span>Потолки</span>
+              <span aria-hidden="true">·</span>
+              <span>Свет</span>
+              <span aria-hidden="true">·</span>
+              <span>Климат</span>
+              <span aria-hidden="true">·</span>
+              <span>Тихие стены</span>
+            </small>
           </Link>
-          <p>Наш продукт — спокойный день сдачи.</p>
+          <p className={styles.footerText}>Наш продукт — счастливый день переезда, где учтены все технические и визуальные задачи.</p>
         </div>
 
         <div className={styles.contacts}>
