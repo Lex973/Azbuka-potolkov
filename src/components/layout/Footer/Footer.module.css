@@ -21,9 +21,9 @@
 
 .topline {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem);
-  align-items: center;
-  gap: var(--space-12);
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-8);
   padding-bottom: clamp(3rem, 6vw, 5rem);
   border-bottom: 0.0625rem solid var(--color-border-inverse);
 }
@@ -59,8 +59,8 @@
 }
 
 .topline > p {
-  justify-self: end;
-  max-width: 30rem;
+  justify-self: start;
+  max-width: 42rem;
   color: var(--color-text-inverse-muted);
   font-size: var(--font-size-h5);
   font-weight: 300;
@@ -167,19 +167,6 @@
   .contacts {
     grid-template-columns: repeat(2, 1fr);
     row-gap: var(--space-12);
-  }
-}
-
-@media (max-width: 52rem) {
-  .topline {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: var(--space-8);
-  }
-
-  .topline > p {
-    justify-self: start;
-    max-width: 32rem;
   }
 }
 
