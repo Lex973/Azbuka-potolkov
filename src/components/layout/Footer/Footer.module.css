@@ -16,11 +16,13 @@
 }
 
 .topline {
+  --topline-space: clamp(1.5rem, 3vw, 2.25rem);
   display: grid;
   grid-template-columns: 1fr;
   align-items: start;
-  gap: var(--space-8);
-  padding-block: clamp(2rem, 4vw, 3rem);
+  gap: var(--topline-space);
+  padding-top: var(--topline-space);
+  padding-bottom: var(--topline-space);
   border-bottom: 0.0625rem solid var(--color-border-inverse);
 }
 
@@ -169,7 +171,7 @@
 
 @media (max-width: 40rem) {
   .topline {
-    gap: var(--space-6);
+    --topline-space: 1.25rem;
   }
 
   .contacts {
