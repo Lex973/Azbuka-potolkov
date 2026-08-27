@@ -1,20 +1,10 @@
 .footer {
   position: relative;
-  padding-block: clamp(4rem, 8vw, 7rem) var(--space-8);
+  padding-block: clamp(2rem, 4vw, 3.5rem) var(--space-8);
   overflow: hidden;
   background: var(--color-brand);
   color: var(--color-text-inverse);
 }
-.footer::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 0.125rem;
-  background: linear-gradient(90deg, var(--color-accent) 0 28%, transparent 28%);
-  content: '';
-}
-
 .topline {
   --topline-space: clamp(1.5rem, 3vw, 2.25rem);
   display: grid;

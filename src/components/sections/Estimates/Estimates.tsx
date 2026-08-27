@@ -30,7 +30,7 @@ export function Estimates() {
         <div className={styles.intro}>
           <Reveal>
             <SectionHeading
-              number="08"
+              number="09"
               eyebrow="Сметы"
               title="Подробный расчёт сметы"
               description="Готовим смету в двух форматах: наглядную по основным блокам с изображениями и подробную по каждой позиции. Согласованную стоимость фиксируем при заключении договора."

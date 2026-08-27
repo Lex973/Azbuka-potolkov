@@ -1,0 +1,73 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(4.5rem, 9vw, 8rem) clamp(3rem, 6vw, 5rem);
+  background:
+    linear-gradient(rgb(34 34 31 / 46%), rgb(34 34 31 / 60%)),
+    url('/images/final-cta-studio.png') center / cover;
+  color: var(--color-text-inverse);
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.content h2 {
+  display: grid;
+  gap: 0.15em;
+  max-width: 62rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+  white-space: nowrap;
+}
+
+.content h2 strong {
+  font-weight: 600;
+}
+
+.description {
+  max-width: 43rem;
+  margin-top: var(--space-8);
+  color: var(--color-text-inverse-muted);
+  font-size: clamp(1rem, 1.55vw, 1.3rem);
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.primaryAction {
+  border-color: var(--color-accent) !important;
+  background: var(--color-accent) !important;
+  color: var(--color-brand) !important;
+}
+
+.primaryAction:hover {
+  border-color: var(--color-accent-hover) !important;
+  background: var(--color-accent-hover) !important;
+}
+
+@media (max-width: 40rem) {
+  .content h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    white-space: normal;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+}

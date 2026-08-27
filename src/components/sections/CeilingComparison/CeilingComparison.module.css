@@ -1,0 +1,187 @@
+.section {
+  scroll-margin-top: 5.5rem;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+.heading {
+  max-width: 64rem;
+}
+
+.sliderReveal {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.comparison {
+  --comparison-position: 50%;
+  position: relative;
+  width: min(100%, 82rem);
+  aspect-ratio: 1280 / 851;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--color-surface-strong);
+  isolation: isolate;
+  user-select: none;
+}
+
+.afterImage,
+.beforeImage {
+  position: absolute;
+  inset: 0;
+}
+
+.afterImage img,
+.beforeImage img {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.beforeImage {
+  z-index: 1;
+  clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+}
+
+.comparison::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(12 13 10 / 28%), transparent 24%);
+  content: '';
+  pointer-events: none;
+}
+
+.label {
+  position: absolute;
+  z-index: 3;
+  top: var(--space-6);
+  padding: 0.55rem 0.75rem;
+  background: rgb(25 25 22 / 68%);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-label);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-label);
+  line-height: 1;
+  text-transform: uppercase;
+  backdrop-filter: blur(0.35rem);
+  pointer-events: none;
+}
+
+.beforeLabel {
+  left: var(--space-6);
+}
+
+.afterLabel {
+  right: var(--space-6);
+}
+
+.range {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+  opacity: 0;
+  touch-action: pan-y;
+}
+
+.divider {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: var(--comparison-position);
+  width: 0.125rem;
+  background: var(--color-white);
+  box-shadow: 0 0 0.75rem rgb(0 0 0 / 18%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: clamp(3rem, 5vw, 3.75rem);
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0.45rem 1.5rem rgb(0 0 0 / 24%);
+  transform: translate(-50%, -50%);
+}
+
+.arrowLeft,
+.arrowRight {
+  width: 0;
+  height: 0;
+  border-block: 0.35rem solid transparent;
+}
+
+.arrowLeft {
+  border-right: 0.45rem solid var(--color-brand);
+}
+
+.arrowRight {
+  border-left: 0.45rem solid var(--color-brand);
+}
+
+.range:focus-visible + .divider .handle {
+  outline: 0.1875rem solid var(--color-focus);
+  outline-offset: 0.25rem;
+}
+
+.caption {
+  position: absolute;
+  z-index: 3;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  padding: 0.45rem 0.65rem;
+  background: rgb(25 25 22 / 62%);
+  color: var(--color-text-inverse-muted);
+  font-size: var(--font-size-small);
+  line-height: 1.3;
+  backdrop-filter: blur(0.35rem);
+  pointer-events: none;
+}
+
+@media (max-width: 40rem) {
+  .comparison {
+    aspect-ratio: 4 / 3;
+  }
+
+  .afterImage img,
+  .beforeImage img {
+    object-position: center;
+  }
+
+  .label {
+    top: var(--space-4);
+    padding: 0.45rem 0.55rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+  }
+
+  .beforeLabel {
+    left: var(--space-4);
+  }
+
+  .afterLabel {
+    right: var(--space-4);
+  }
+
+  .caption {
+    right: var(--space-4);
+    bottom: var(--space-4);
+    max-width: 11rem;
+    font-size: 0.75rem;
+    text-align: right;
+  }
+}

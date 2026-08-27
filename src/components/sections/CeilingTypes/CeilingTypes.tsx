@@ -62,7 +62,7 @@ export function CeilingTypes() {
       <Container>
         <Reveal>
           <SectionHeading
-            number="07"
+            number="08"
             eyebrow="Потолочные системы"
             title="Виды потолков"
             description="У каждой системы своя роль: подчеркнуть геометрию, растворить примыкание или превратить плоскость в мягкий свет. Подбираем решение под архитектуру."

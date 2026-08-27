@@ -17,7 +17,7 @@ export function LightingCalculation() {
         <div className={styles.intro}>
           <Reveal>
             <SectionHeading
-              number="06"
+              number="07"
               eyebrow="Светотехнический расчёт"
               title="Проверка освещённости"
               description="До монтажа проверяем, как свет будет работать в реальном помещении — не только визуально, но и в точных значениях."

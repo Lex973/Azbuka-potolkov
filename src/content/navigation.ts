@@ -11,6 +11,7 @@ export const primaryNavigation: NavigationItem[] = [
 ]
 
 export const secondaryNavigation: NavigationItem[] = [
+  { label: 'Роль потолка', href: '#ceiling-comparison' },
   { label: 'Свет', href: '#light' },
   { label: 'Виды потолков', href: '#ceiling-types' },
   { label: 'Сметы', href: '#estimates' },

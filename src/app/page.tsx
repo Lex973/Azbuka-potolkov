@@ -2,8 +2,10 @@ import { Header } from '@/components/layout/Header/Header'
 import { Footer } from '@/components/layout/Footer/Footer'
 import { ApproachSection } from '@/components/sections/Approach/ApproachSection'
 import { CeilingTypes } from '@/components/sections/CeilingTypes/CeilingTypes'
+import { CeilingComparison } from '@/components/sections/CeilingComparison/CeilingComparison'
 import { ContactSection } from '@/components/sections/Contact/ContactSection'
 import { Estimates } from '@/components/sections/Estimates/Estimates'
+import { FinalCtaSection } from '@/components/sections/FinalCta/FinalCtaSection'
 import { FounderSection } from '@/components/sections/Founder/FounderSection'
 import { Hero } from '@/components/sections/Hero/Hero'
 import { LightingCalculation } from '@/components/sections/LightingCalculation/LightingCalculation'
@@ -33,12 +35,14 @@ export default function HomePage() {
           projects={commercialProjects}
           mirrored
         />
+        <CeilingComparison />
         <LightingCalculation />
         <CeilingTypes />
         <Estimates />
         <Testimonials />
         <ContactSection />
         <FounderSection />
+        <FinalCtaSection />
       </main>
       <Footer />
     </div>
