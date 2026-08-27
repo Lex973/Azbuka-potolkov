@@ -53,6 +53,11 @@
   margin-top: var(--space-8);
 }
 
+.actions a {
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 500;
+}
+
 .note {
   margin-top: var(--space-6);
   color: var(--color-text-inverse-muted);
