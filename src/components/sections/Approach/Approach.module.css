@@ -48,6 +48,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: var(--space-6);
+  border-top: 0.0625rem solid var(--color-border-inverse);
 }
 
 .reason {

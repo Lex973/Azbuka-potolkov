@@ -36,7 +36,7 @@
   text-transform: uppercase;
 }
 
-.logo span {
+.logo > span {
   font-size: clamp(1.35rem, 2.2vw, 2rem);
   font-weight: 450;
   letter-spacing: 0.09em;
@@ -51,9 +51,14 @@
   align-items: baseline;
   justify-content: space-between;
   color: var(--color-text-inverse-muted);
-  font-size: 0.55rem;
+  font-size: clamp(0.625rem, 0.7vw, 0.7rem);
   letter-spacing: 0.18em;
   text-wrap: nowrap;
+}
+
+.logo small > span[aria-hidden='true'] {
+  font-size: 1.25em;
+  letter-spacing: 0;
 }
 
 .topline > p {
