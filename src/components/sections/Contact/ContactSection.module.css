@@ -1,58 +1,81 @@
 .section {
   scroll-margin-top: 5.5rem;
   padding-block: var(--section-space);
-  border-top: 0.0625rem solid var(--color-border);
-  background: var(--color-paper);
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
 }
 
-.layout {
+.content {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.28fr);
-  align-items: end;
-  gap: clamp(3rem, 8vw, 8rem);
-}
-
-.copy {
-  max-width: 34rem;
+  justify-items: center;
+  max-width: 58rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .eyebrow {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-label);
+  color: var(--color-accent-hover);
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
   font-weight: 500;
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }
 
-.eyebrow span {
-  color: var(--color-accent);
-}
-
-.copy h2 {
-  margin-top: var(--space-6);
-  font-size: var(--font-size-h3);
-  font-weight: 300;
+.content h2 {
+  max-width: 64rem;
+  margin-top: var(--space-8);
+  font-family: 'Segoe UI Light', var(--font-manrope), sans-serif;
+  font-synthesis: none;
+  font-size: var(--font-size-h2);
+  font-weight: 200;
+  font-variation-settings: 'wght' 200;
   letter-spacing: var(--letter-spacing-heading);
   line-height: var(--line-height-heading);
   text-wrap: balance;
 }
 
-.copy > p:last-child {
-  max-width: 30rem;
+.description {
+  max-width: 48rem;
   margin-top: var(--space-6);
-  color: var(--color-text-soft);
+  color: var(--color-text-inverse-muted);
+  font-family: 'Segoe UI Light', var(--font-manrope), sans-serif;
+  font-size: var(--font-size-lead);
+  font-weight: 200;
+  font-variation-settings: 'wght' 200;
+  line-height: 1.5;
 }
 
-.formWrap {
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border: 0.0625rem solid var(--color-border);
-  border-top-color: var(--color-accent);
-  background: var(--color-canvas);
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
 }
 
-@media (max-width: 64rem) {
-  .layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-12);
+.note {
+  margin-top: var(--space-6);
+  color: var(--color-text-inverse-muted);
+  font-size: var(--font-size-small);
+}
+
+@media (max-width: 40rem) {
+  .content h2 {
+    margin-top: var(--space-6);
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+
+  .actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .actions a {
+    width: 100%;
   }
 }

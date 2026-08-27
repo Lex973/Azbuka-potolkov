@@ -4,6 +4,7 @@ import { ApproachSection } from '@/components/sections/Approach/ApproachSection'
 import { CeilingTypes } from '@/components/sections/CeilingTypes/CeilingTypes'
 import { ContactSection } from '@/components/sections/Contact/ContactSection'
 import { Estimates } from '@/components/sections/Estimates/Estimates'
+import { FounderSection } from '@/components/sections/Founder/FounderSection'
 import { Hero } from '@/components/sections/Hero/Hero'
 import { LightingCalculation } from '@/components/sections/LightingCalculation/LightingCalculation'
 import { ProjectShowcase } from '@/components/sections/Projects/ProjectShowcase'
@@ -37,6 +38,7 @@ export default function HomePage() {
         <Estimates />
         <Testimonials />
         <ContactSection />
+        <FounderSection />
       </main>
       <Footer />
     </div>

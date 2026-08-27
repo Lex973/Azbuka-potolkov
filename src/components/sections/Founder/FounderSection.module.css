@@ -1,0 +1,88 @@
+.section {
+  padding-block: var(--section-space);
+  background: var(--color-paper);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+}
+
+.photo {
+  position: relative;
+  display: grid;
+  min-height: 28rem;
+  place-items: center;
+  overflow: hidden;
+  border: 1px dashed var(--color-border);
+  background: var(--color-canvas);
+  color: var(--color-text-soft);
+}
+
+.photo img {
+  object-fit: cover;
+}
+.photo figcaption {
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+}
+.eyebrow {
+  color: var(--color-accent);
+  font-size: var(--font-size-label);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+.copy h2 {
+  margin-top: var(--space-6);
+  font-size: var(--font-size-h2);
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
+}
+.text {
+  display: grid;
+  gap: var(--space-6);
+  max-width: 38rem;
+  margin-top: var(--space-8);
+  color: var(--color-text-soft);
+  font-size: var(--font-size-lead);
+  line-height: 1.5;
+}
+.rule {
+  display: block;
+  width: 4.75rem;
+  height: 0.125rem;
+  margin-top: var(--space-8);
+  background: var(--color-accent);
+}
+.signature {
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+
+@media (max-width: 64rem) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+  .photo {
+    min-height: min(65vw, 30rem);
+  }
+}
+@media (max-width: 40rem) {
+  .photo {
+    min-height: 18rem;
+  }
+  .copy h2 {
+    margin-top: var(--space-4);
+    font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+  .text {
+    margin-top: var(--space-6);
+    font-size: 1rem;
+  }
+}

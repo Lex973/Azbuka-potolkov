@@ -8,6 +8,8 @@ export const siteConfig = {
   hours: 'Пн–Пт, 10:00–19:00',
   hoursNote: 'По предварительному звонку',
   reviewsUrl: 'https://2gis.ru/novosibirsk/firm/70000001019224822/tab/reviews',
+  telegramUrl: 'https://t.me/+79059303000',
+  maxUrl: 'https://max.ru/',
   socialLinks: [
     { label: 'Telegram', href: 'https://t.me/+79059303000' },
     { label: 'WhatsApp', href: 'https://wa.me/79059303000' },
