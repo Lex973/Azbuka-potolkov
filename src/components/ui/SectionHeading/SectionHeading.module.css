@@ -31,7 +31,7 @@
 }
 
 .description {
-  max-width: 38rem;
+  max-width: var(--heading-description-max-width, 38rem);
   margin-top: var(--space-8);
   color: var(--color-text-soft);
   font-size: var(--font-size-lead);

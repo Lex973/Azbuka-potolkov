@@ -106,7 +106,6 @@ export function LightboxGallery({ images, columns = 4 }: LightboxGalleryProps) {
             <div className={styles.lightboxImage}>
               <Image src={selectedImage.src} alt={selectedImage.alt} fill sizes="100vw" />
             </div>
-            <figcaption>{selectedImage.caption}</figcaption>
           </figure>
         ) : null}
       </dialog>

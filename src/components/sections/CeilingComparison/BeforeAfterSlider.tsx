@@ -24,7 +24,7 @@ export function BeforeAfterSlider() {
     <figure className={styles.comparison} style={comparisonStyle}>
       <div className={styles.afterImage}>
         <Image
-          src="/images/ceiling-comparison/living-room-after-finished.png"
+          src="/images/ceiling-comparison/living-room-after-finished-v3.png"
           alt="Завершённая гостиная с готовым потолком"
           fill
           sizes="(max-width: 90rem) 94vw, 82rem"
@@ -33,7 +33,7 @@ export function BeforeAfterSlider() {
 
       <div className={styles.beforeImage}>
         <Image
-          src="/images/ceiling-comparison/living-room-before-raw.png"
+          src="/images/ceiling-comparison/living-room-before-raw-v4.png"
           alt="Та же гостиная без чистовой отделки потолка"
           fill
           sizes="(max-width: 90rem) 94vw, 82rem"
