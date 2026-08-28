@@ -27,7 +27,7 @@
 }
 
 .logo > span {
-  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
   font-weight: 450;
   letter-spacing: 0.09em;
 }
@@ -53,10 +53,10 @@
 
 .topline > p {
   justify-self: start;
-  max-width: 42rem;
+  max-width: 26rem;
   color: var(--color-text-inverse-muted);
   font-family: var(--font-manrope), var(--font-sans);
-  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-size: clamp(0.85rem, 0.95vw, 1rem);
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.3;

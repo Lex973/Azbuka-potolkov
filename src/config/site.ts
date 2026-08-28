@@ -12,6 +12,6 @@ export const siteConfig = {
   maxUrl: 'https://max.ru/',
   socialLinks: [
     { label: 'Telegram', href: 'https://t.me/+79059303000' },
-    { label: 'WhatsApp', href: 'https://wa.me/79059303000' },
+    { label: 'MAX', href: 'https://max.ru/' },
   ],
 } as const

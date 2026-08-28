@@ -9,8 +9,7 @@ export function FinalCtaSection() {
       <Container>
         <div className={styles.content}>
           <h2 id="final-cta-title">
-            <span>Мы не устанавливаем потолки.</span>
-            <strong>Мы сдаём их без замечаний.</strong>
+            <span>Наш продукт — счастливый день переезда, где учтены все технические и визуальные задачи.</span>
           </h2>
           <p className={styles.description}>
             Приезжайте в студию на Кирова, 27 — покажем узлы вживую и примерим свет под ваш проект.

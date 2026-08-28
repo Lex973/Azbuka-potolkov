@@ -24,11 +24,6 @@
 .photo img {
   object-fit: cover;
 }
-.photo figcaption {
-  position: relative;
-  z-index: 1;
-  font-style: italic;
-}
 .eyebrow {
   color: var(--color-accent);
   font-size: var(--font-size-label);
@@ -59,11 +54,6 @@
   margin-top: var(--space-8);
   background: var(--color-accent);
 }
-.signature {
-  margin-top: var(--space-6);
-  color: var(--color-text);
-}
-
 @media (max-width: 64rem) {
   .layout {
     grid-template-columns: 1fr;

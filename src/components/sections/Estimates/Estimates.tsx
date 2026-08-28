@@ -1,25 +1,28 @@
-import Image from 'next/image'
-
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading'
 
+import { EstimateImage } from './EstimateImage'
 import styles from './Estimates.module.css'
 
 const estimates = [
   {
     title: 'По блокам, с изображениями',
     description:
-      'Полотна, свет, карнизы и монтаж собраны в отдельные понятные блоки. Сразу видно, за что отвечает каждая часть бюджета.',
-    image: '/images/estimates/visual-estimate.png',
-    imageAlt: 'Пример визуальной сметы по блокам с изображениями и стоимостью',
+      'В смете по разделам видны виды полотен, профильные системы, системы для штор и интеграция света — с изображениями и итогами по каждому блоку.',
+    image: '/images/estimates/real-estimate-visual.png',
+    imageAlt: 'Реальная наглядная смета по блокам с изображениями и стоимостью',
+    width: 1366,
+    height: 1634,
   },
   {
     title: 'Подробная смета',
     description:
       'Каждая позиция раскрыта отдельно: наименование, объём, единица измерения, цена и итоговая сумма.',
-    image: '/images/estimates/detailed-estimate.png',
-    imageAlt: 'Пример подробной сметы с перечнем материалов и работ',
+    image: '/images/estimates/real-estimate-detailed.png',
+    imageAlt: 'Реальная подробная смета с перечнем материалов и работ',
+    width: 2088,
+    height: 1718,
   },
 ] as const
 
@@ -46,12 +49,12 @@ export function Estimates() {
             <Reveal key={estimate.title} className={styles.reveal} delay={index * 0.12}>
               <article className={styles.card}>
                 <div className={styles.imageFrame}>
-                  <Image
+                  <EstimateImage
                     src={estimate.image}
                     alt={estimate.imageAlt}
-                    width={1024}
-                    height={1536}
-                    sizes="(max-width: 48rem) 92vw, 46vw"
+                    title={estimate.title}
+                    width={estimate.width}
+                    height={estimate.height}
                   />
                 </div>
                 <div className={styles.cardContent}>

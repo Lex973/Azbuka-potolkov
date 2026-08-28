@@ -81,7 +81,6 @@ export function LightboxGallery({ images, columns = 4 }: LightboxGalleryProps) {
                   style={{ objectPosition: image.objectPosition }}
                 />
               </button>
-              <figcaption>{image.caption}</figcaption>
             </figure>
           </Reveal>
         ))}

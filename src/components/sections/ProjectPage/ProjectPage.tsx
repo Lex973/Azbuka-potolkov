@@ -82,7 +82,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
             <Reveal className={styles.contactInner}>
               <div>
                 <p className={styles.eyebrow}>Следующий проект</p>
-                <h2 id="project-contact-title">Хотите заказать проект?</h2>
+                <h2 id="project-contact-title">Хотите обсудить проект?</h2>
                 <p>Расскажите о пространстве — подключимся к задаче и предложим решение.</p>
               </div>
               <ContactDialogButton className={styles.cta} size="large" showArrow={false}>

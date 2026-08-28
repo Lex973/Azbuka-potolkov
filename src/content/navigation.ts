@@ -24,6 +24,11 @@ export const secondaryNavigation: NavigationItem[] = [
 export const allNavigation = [...primaryNavigation, ...secondaryNavigation]
 
 export const socialLinks = [
-  { label: 'VK', href: '#contacts', ariaLabel: 'ВКонтакте' },
-  { label: 'TG', href: '#contacts', ariaLabel: 'Telegram' },
+  { label: 'Instagram', href: '#contacts', ariaLabel: 'Instagram' },
+  { label: 'TG', href: 'https://t.me/+79059303000', ariaLabel: 'Telegram' },
+  {
+    label: 'Журнал',
+    href: 'https://sibhome.pro/eksperty/otdelka-remont/azbuka-potolkov-proektno-montazhnaya-kompaniya-po-ustanovke-natyazhnyh-potolkov/',
+    ariaLabel: 'Публикация в журнале Sibhome',
+  },
 ] as const

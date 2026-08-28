@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { ContactDialogButton } from '@/components/forms/ContactDialog/ContactDialogButton'
-import { TelegramIcon, VkIcon } from '@/components/ui/Icons/Icons'
+import { InstagramIcon, JournalIcon, TelegramIcon } from '@/components/ui/Icons/Icons'
 import {
   allNavigation,
   primaryNavigation,
@@ -85,7 +85,7 @@ export function Header() {
           <div className={styles.socials} aria-label="Социальные сети">
             {socialLinks.map((item) => (
               <a key={item.label} href={item.href} aria-label={item.ariaLabel}>
-                {item.label === 'VK' ? <VkIcon /> : <TelegramIcon />}
+                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon />}
               </a>
             ))}
           </div>
@@ -118,7 +118,7 @@ export function Header() {
           <div className={styles.mobileSocials}>
             {socialLinks.map((item) => (
               <a key={item.label} href={item.href} aria-label={item.ariaLabel}>
-                {item.label === 'VK' ? <VkIcon /> : <TelegramIcon />}
+                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon />}
               </a>
             ))}
           </div>

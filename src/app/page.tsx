@@ -22,6 +22,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ApproachSection />
+        <CeilingComparison />
         <ProjectShowcase
           id="private-projects"
           number="04"
@@ -35,14 +36,13 @@ export default function HomePage() {
           projects={commercialProjects}
           mirrored
         />
-        <CeilingComparison />
         <LightingCalculation />
         <CeilingTypes />
         <Estimates />
         <Testimonials />
         <ContactSection />
-        <FounderSection />
         <FinalCtaSection />
+        <FounderSection />
       </main>
       <Footer />
     </div>

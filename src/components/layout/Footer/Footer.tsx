@@ -60,9 +60,6 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
-          <a href={siteConfig.reviewsUrl} target="_blank" rel="noreferrer">
-            Отзывы на 2ГИС
-          </a>
           <Link href="#home">Наверх ↑</Link>
         </div>
       </Container>
