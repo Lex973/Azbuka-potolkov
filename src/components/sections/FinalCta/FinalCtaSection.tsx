@@ -12,7 +12,7 @@ export function FinalCtaSection() {
             <span>Наш продукт — счастливый день переезда, где учтены все технические и визуальные задачи.</span>
           </h2>
           <p className={styles.description}>
-            Приезжайте в студию на Кирова, 27 — покажем узлы вживую и примерим свет под ваш проект.
+            Приезжайте в студию на Кирова, 27 — покажем узлы вживую и подберем решения под ваш проект.
           </p>
           <div className={styles.actions}>
             <ContactDialogButton className={styles.primaryAction} showArrow={false}>

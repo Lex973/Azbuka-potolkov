@@ -310,12 +310,14 @@
 .mobilePanel nav a {
   display: flex;
   align-items: baseline;
+  justify-content: flex-start;
   gap: var(--space-6);
   padding-block: 0.75rem;
   border-bottom: 0.0625rem solid var(--color-border-inverse);
   font-size: clamp(1.45rem, 5vw, 2.25rem);
   letter-spacing: var(--letter-spacing-heading);
   line-height: 1.1;
+  text-align: left;
   opacity: 0;
   transform: translateY(0.8rem);
   transition:

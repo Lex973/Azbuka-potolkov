@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header/Header'
 import { Footer } from '@/components/layout/Footer/Footer'
 import { ApproachSection } from '@/components/sections/Approach/ApproachSection'
+import { AirConditionersSection } from '@/components/sections/AirConditioners/AirConditionersSection'
 import { CeilingTypes } from '@/components/sections/CeilingTypes/CeilingTypes'
 import { CeilingComparison } from '@/components/sections/CeilingComparison/CeilingComparison'
 import { ContactSection } from '@/components/sections/Contact/ContactSection'
@@ -10,6 +11,7 @@ import { FounderSection } from '@/components/sections/Founder/FounderSection'
 import { Hero } from '@/components/sections/Hero/Hero'
 import { LightingCalculation } from '@/components/sections/LightingCalculation/LightingCalculation'
 import { ProjectShowcase } from '@/components/sections/Projects/ProjectShowcase'
+import { QuietWallsSection } from '@/components/sections/QuietWalls/QuietWallsSection'
 import { Testimonials } from '@/components/sections/Testimonials/Testimonials'
 import { commercialProjects, privateProjects } from '@/content/projects'
 
@@ -43,6 +45,8 @@ export default function HomePage() {
         <ContactSection />
         <FinalCtaSection />
         <FounderSection />
+        <QuietWallsSection />
+        <AirConditionersSection />
       </main>
       <Footer />
     </div>

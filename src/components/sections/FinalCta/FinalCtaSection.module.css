@@ -52,12 +52,18 @@
   background: var(--color-accent-hover) !important;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 48rem) {
   .content h2 {
-    font-size: clamp(2rem, 9vw, 3rem);
+    font-size: clamp(1.45rem, 5.2vw, 2rem);
     white-space: normal;
   }
 
+  .description {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+}
+
+@media (max-width: 40rem) {
   .actions {
     width: 100%;
     flex-direction: column;

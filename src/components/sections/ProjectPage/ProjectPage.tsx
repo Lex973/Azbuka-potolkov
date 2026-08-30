@@ -70,7 +70,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
           <Container>
             <Reveal className={styles.galleryHeading}>
               <p className={styles.eyebrow}>Детали проекта</p>
-              <h2 id="project-gallery-title">Результат виден в линиях</h2>
+              <h2 id="project-gallery-title">Результат виден в деталях</h2>
               <p>Нажмите на фотографию, чтобы рассмотреть её в полном размере.</p>
             </Reveal>
             <LightboxGallery images={galleryImages} columns={3} />
