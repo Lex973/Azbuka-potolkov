@@ -77,6 +77,7 @@ export function ProjectShowcase({
         >
           <SectionHeading
             number={number}
+            showEyebrow
             eyebrow="Портфолио"
             title={title}
             className={styles.heading}

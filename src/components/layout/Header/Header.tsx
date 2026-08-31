@@ -84,8 +84,13 @@ export function Header() {
         <div className={styles.actions}>
           <div className={styles.socials} aria-label="Социальные сети">
             {socialLinks.map((item) => (
-              <a key={item.label} href={item.href} aria-label={item.ariaLabel}>
-                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon />}
+              <a
+                key={item.label}
+                href={item.href}
+                aria-label={item.ariaLabel}
+                data-tooltip={item.label === 'Instagram' ? 'Instagram' : item.label === 'TG' ? 'Telegram' : 'Журнал'}
+              >
+                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon className={styles.journalIcon} />}
               </a>
             ))}
           </div>
@@ -117,8 +122,13 @@ export function Header() {
           <ContactDialogButton size="large" tone="inverse" onOpen={closeNavigation} />
           <div className={styles.mobileSocials}>
             {socialLinks.map((item) => (
-              <a key={item.label} href={item.href} aria-label={item.ariaLabel}>
-                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon />}
+              <a
+                key={item.label}
+                href={item.href}
+                aria-label={item.ariaLabel}
+                data-tooltip={item.label === 'Instagram' ? 'Instagram' : item.label === 'TG' ? 'Telegram' : 'Журнал'}
+              >
+                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon className={styles.journalIcon} />}
               </a>
             ))}
           </div>

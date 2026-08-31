@@ -61,8 +61,8 @@ export function VkIcon(props: IconProps) {
 export function InstagramIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
       <circle cx="17.5" cy="6.7" r="1" fill="currentColor" />
     </svg>
   )
@@ -71,8 +71,9 @@ export function InstagramIcon(props: IconProps) {
 export function JournalIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <path d="M5 4.5h10.5A3.5 3.5 0 0 1 19 8v11.5H8.5A3.5 3.5 0 0 1 5 16V4.5Z" stroke="currentColor" strokeWidth="1.35" />
-      <path d="M5 16a3.5 3.5 0 0 1 3.5-3.5H19M9 8h6M9 10.5h4" stroke="currentColor" strokeWidth="1.35" />
+      <path d="M4 4h11a5 5 0 0 1 5 5v11H9a5 5 0 0 1-5-5V4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M4 15a5 5 0 0 1 5-5h11M10 7h6M10 10h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M15 20v-4l2 1.5L19 16v4" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
     </svg>
   )
 }

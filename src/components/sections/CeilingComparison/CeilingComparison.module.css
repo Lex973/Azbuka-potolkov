@@ -2,7 +2,7 @@
   scroll-margin-top: 5.5rem;
   padding-block: var(--section-space);
   overflow: hidden;
-  background: var(--color-paper);
+  background: var(--color-canvas);
 }
 
 .heading {

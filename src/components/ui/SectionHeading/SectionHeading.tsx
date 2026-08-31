@@ -3,7 +3,8 @@ import type { ElementType, ReactNode } from 'react'
 import styles from './SectionHeading.module.css'
 
 type SectionHeadingProps = {
-  number: string
+  /** Kept for backwards compatibility; section headings no longer display numbering. */
+  number?: string
   eyebrow: string
   title: ReactNode
   description?: string
@@ -11,10 +12,10 @@ type SectionHeadingProps = {
   as?: ElementType
   className?: string
   id?: string
+  showEyebrow?: boolean
 }
 
 export function SectionHeading({
-  number,
   eyebrow,
   title,
   description,
@@ -22,14 +23,13 @@ export function SectionHeading({
   as: Heading = 'h2',
   className,
   id,
+  showEyebrow = false,
 }: SectionHeadingProps) {
   const classes = [styles.heading, styles[tone], className ?? ''].filter(Boolean).join(' ')
 
   return (
     <div className={classes}>
-      <p className={styles.eyebrow}>
-        <span>{number}</span> / {eyebrow}
-      </p>
+      {showEyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
       <Heading className={styles.title} id={id}>
         {title}
       </Heading>
