@@ -24,6 +24,8 @@
 
 .mainMedia img {
   object-fit: cover;
+  /* Кадр смещён вверх: в проектах важен потолок, а не пол. */
+  object-position: 50% 15%;
 }
 
 .summary {
@@ -34,8 +36,9 @@
 
 .eyebrow {
   color: var(--color-accent);
+  font-family: var(--font-accent);
   font-size: clamp(0.8rem, 1.1vw, 1rem);
-  font-weight: 600;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }

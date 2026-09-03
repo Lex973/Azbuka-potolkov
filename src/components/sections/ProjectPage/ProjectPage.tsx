@@ -14,6 +14,9 @@ type ProjectPageProps = {
   project: Project
 }
 
+/** Превью галереи кадрируем выше центра: в проектах важен потолок, а не пол. */
+const galleryFocus = '50% 15%'
+
 export function ProjectPage({ project }: ProjectPageProps) {
   const facts = [
     ['Тип объекта', project.category],
@@ -24,12 +27,21 @@ export function ProjectPage({ project }: ProjectPageProps) {
     ['Стоимость', project.price],
   ] as const
 
-  const galleryImages = project.details.map((detail, index) => ({
-    src: project.image,
-    alt: detail.alt,
-    caption: project.features[index] ?? project.title,
-    objectPosition: detail.position,
-  }))
+  const hasPhotoGallery = Boolean(project.gallery)
+
+  const galleryImages = project.gallery
+    ? project.gallery.map((photo) => ({
+        src: photo.src,
+        alt: photo.alt,
+        caption: photo.alt,
+        objectPosition: galleryFocus,
+      }))
+    : project.details.map((detail, index) => ({
+        src: detail.image,
+        alt: detail.alt,
+        caption: project.features[index] ?? project.title,
+        objectPosition: detail.position,
+      }))
 
   return (
     <div className={styles.page}>
@@ -45,6 +57,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 fill
                 preload
                 sizes="(max-width: 64rem) 100vw, 66vw"
+                quality={95}
               />
             </Reveal>
 
@@ -73,7 +86,11 @@ export function ProjectPage({ project }: ProjectPageProps) {
               <h2 id="project-gallery-title">Результат виден в деталях</h2>
               <p>Нажмите на фотографию, чтобы рассмотреть её в полном размере.</p>
             </Reveal>
-            <LightboxGallery images={galleryImages} columns={3} />
+            <LightboxGallery
+              images={galleryImages}
+              columns={3}
+              aspect={hasPhotoGallery ? 'tall' : 'wide'}
+            />
           </Container>
         </section>
 

@@ -100,6 +100,8 @@
 
 .introEyebrow {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .introTitle {
@@ -187,7 +189,9 @@
 
 .kitNav a span {
   color: var(--color-accent);
+  font-family: var(--font-accent);
   font-size: 0.625rem;
+  font-weight: var(--font-weight-accent);
 }
 
 .section {
@@ -206,6 +210,8 @@
 .sectionIndex {
   padding-top: 0.7rem;
   color: var(--color-accent);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .sectionTitle {
@@ -385,7 +391,9 @@
   display: grid;
   gap: var(--space-2);
   color: var(--color-accent-active);
+  font-family: var(--font-accent);
   font-size: var(--font-size-small);
+  font-weight: var(--font-weight-accent);
 }
 
 .typeDisplay,
@@ -456,6 +464,8 @@
 .sampleLabel {
   margin-bottom: var(--space-8);
   color: var(--color-accent);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .leadText {
@@ -523,6 +533,8 @@
 
 .subsectionLabel {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .darkButtons,
@@ -610,6 +622,8 @@
 
 .modalNumber {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .modalCallout h3 {
@@ -693,8 +707,9 @@
 
 .surfaceNote span {
   color: var(--color-accent-active);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
-  font-weight: 600;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }
@@ -729,7 +744,9 @@
 
 .cardIndex {
   color: var(--color-accent);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
 }
 
@@ -740,6 +757,8 @@
 
 .cardLabel {
   color: var(--color-accent);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .editorialCard h3 {
@@ -762,6 +781,8 @@
 .projectCardBlock > .subsectionLabel {
   margin-bottom: var(--space-8);
   color: var(--color-accent-active);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .gridDemo {
@@ -777,7 +798,9 @@
   padding-top: var(--space-4);
   background: rgb(157 130 78 / 13%);
   color: var(--color-accent-active);
+  font-family: var(--font-accent);
   font-size: 0.625rem;
+  font-weight: var(--font-weight-accent);
   text-align: center;
 }
 
@@ -931,6 +954,8 @@
 .iconPanel > .subsectionLabel {
   margin-bottom: clamp(3rem, 7vw, 7rem);
   color: var(--color-accent-active);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .iconGrid {
@@ -992,8 +1017,9 @@
 
 .motionTokens span {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
-  font-weight: 600;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }

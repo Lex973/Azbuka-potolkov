@@ -1,6 +1,13 @@
 export type ProjectDetail = {
+  image: string
   alt: string
-  position: string
+  /** Кадрирование, если деталь показывает фрагмент общего фото проекта. */
+  position?: string
+}
+
+export type ProjectGalleryImage = {
+  src: string
+  alt: string
 }
 
 export type Project = {
@@ -16,5 +23,7 @@ export type Project = {
   image: string
   imageAlt: string
   details: ProjectDetail[]
+  /** Фотографии для страницы проекта. Если не заданы, галерея собирается из деталей. */
+  gallery?: ProjectGalleryImage[]
   features: string[]
 }

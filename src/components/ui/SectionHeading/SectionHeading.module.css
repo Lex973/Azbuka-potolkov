@@ -13,6 +13,8 @@
 
 .eyebrow span {
   color: var(--color-accent);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-accent);
 }
 
 .title {

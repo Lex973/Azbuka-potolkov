@@ -15,7 +15,7 @@ export function Hero() {
       <div className={styles.imageFrame}>
         <Image
           className={styles.image}
-          src="/images/hero/interior-main-enhanced-v3.png"
+          src="/images/hero/interior-main-enhanced-v4.png"
           alt="Современная гостиная с потолочными световыми линиями"
           fill
           priority

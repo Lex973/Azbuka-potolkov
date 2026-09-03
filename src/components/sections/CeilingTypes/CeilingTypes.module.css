@@ -137,8 +137,9 @@
   gap: var(--space-3);
   margin-top: var(--space-2);
   color: var(--color-accent-active);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
-  font-weight: 600;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }

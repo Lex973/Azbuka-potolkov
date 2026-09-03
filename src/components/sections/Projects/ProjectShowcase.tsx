@@ -130,6 +130,7 @@ export function ProjectShowcase({
                       alt={activeProject.imageAlt}
                       fill
                       sizes="(max-width: 90rem) 92vw, 83rem"
+                      quality={95}
                     />
                     <span className={styles.projectNumber} aria-hidden="true">
                       {String(activeIndex + 1).padStart(2, '0')}
@@ -145,7 +146,9 @@ export function ProjectShowcase({
                 {activeProject.details.slice(0, 3).map((detail, detailIndex) => (
                   <motion.figure
                     key={`${activeProject.slug}-${detail.alt}`}
-                    className={styles.detailImage}
+                    className={[styles.detailImage, detail.position ? styles.detailCrop : '']
+                      .filter(Boolean)
+                      .join(' ')}
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -155,7 +158,7 @@ export function ProjectShowcase({
                     }}
                   >
                     <Image
-                      src={activeProject.image}
+                      src={detail.image}
                       alt={detail.alt}
                       fill
                       sizes="(max-width: 40rem) 33vw, 30vw"

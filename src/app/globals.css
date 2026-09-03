@@ -32,6 +32,12 @@
 
   /* Typography */
   --font-sans: var(--font-poppins), var(--font-manrope), 'Segoe UI', sans-serif;
+
+  /* Золотые надписи набираются одной тонкой гарнитурой во всех секциях.
+     Poppins не содержит кириллицы, поэтому акцентный шрифт — Manrope. */
+  --font-accent: var(--font-manrope), var(--font-sans);
+  --font-weight-accent: 300;
+
   --font-size-display: clamp(3.15rem, 7.2vw, 7rem);
   --font-size-h1: clamp(2.75rem, 5.5vw, 5.5rem);
   --font-size-h2: clamp(2rem, 3.75vw, 3.875rem);

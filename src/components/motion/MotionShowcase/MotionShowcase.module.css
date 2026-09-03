@@ -15,8 +15,9 @@
 
 .label {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
-  font-weight: 600;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }
@@ -52,7 +53,9 @@
   border-radius: 50%;
   background: var(--color-brand-raised);
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
 }
 

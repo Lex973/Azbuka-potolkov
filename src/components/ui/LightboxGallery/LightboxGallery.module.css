@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
+.tall {
+  aspect-ratio: 3 / 4;
+}
+
 .imageButton img {
   object-fit: cover;
   transition: transform var(--duration-slow) var(--ease-emphasized);

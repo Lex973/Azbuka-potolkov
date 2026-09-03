@@ -50,8 +50,9 @@
 
 .eyebrow {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: clamp(0.8rem, 1.1vw, 1rem);
-  font-weight: 500;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }

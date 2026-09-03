@@ -163,8 +163,9 @@
 
 .more > button span {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: var(--font-weight-accent);
   transition: transform var(--duration-base) var(--ease-standard);
 }
 
@@ -404,7 +405,9 @@
 
 .mobilePanel nav a span {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: var(--font-size-label);
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
 }
 

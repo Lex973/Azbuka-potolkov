@@ -26,7 +26,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${poppins.variable} ${manrope.variable}`}>
+    <html
+      lang="ru"
+      className={`${poppins.variable} ${manrope.variable}`}
+      // Плавная прокрутка нужна для якорей, но при переходе между страницами
+      // Next должен отключать её, иначе новая страница открывается не сверху.
+      data-scroll-behavior="smooth"
+    >
       <body>{children}</body>
     </html>
   )

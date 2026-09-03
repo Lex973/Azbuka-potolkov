@@ -20,8 +20,9 @@
 
 .label {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
   line-height: 1.4;
   text-transform: uppercase;
@@ -86,7 +87,9 @@
 
 .reason > span {
   color: var(--color-accent-hover);
+  font-family: var(--font-accent);
   font-size: 0.75rem;
+  font-weight: var(--font-weight-accent);
   letter-spacing: var(--letter-spacing-label);
 }
 

@@ -61,6 +61,8 @@
 
 .imageFrame img {
   object-fit: cover;
+  /* Кадр смещён вверх: в проектах важен потолок, а не пол. */
+  object-position: 50% 15%;
   transition: transform var(--duration-slow) var(--ease-emphasized);
 }
 
@@ -111,18 +113,27 @@
 
 .detailImage {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--color-surface);
 }
 
 .detailImage img {
   object-fit: cover;
-  transform: scale(1.25);
+  object-position: 50% 15%;
   transition: transform var(--duration-slow) var(--ease-emphasized);
 }
 
 .detailImage:hover img {
+  transform: scale(1.04);
+}
+
+/* Деталь показывает фрагмент общего фото проекта — приближаем кадр. */
+.detailCrop img {
+  transform: scale(1.25);
+}
+
+.detailCrop:hover img {
   transform: scale(1.31);
 }
 

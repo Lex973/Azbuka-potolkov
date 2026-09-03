@@ -26,3 +26,6 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# исходники фотографий (в сборку не идут, на сайте используются webp из public/)
+/projects/
