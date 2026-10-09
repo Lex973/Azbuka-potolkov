@@ -1,5 +1,53 @@
 import type { CeilingTypeDetail } from '@/types/ceiling-type'
 
+export const ceilingTypeCards = [
+  {
+    number: '01',
+    title: 'Теневой потолок',
+    description:
+      'Чёткий тёмный контур отделяет потолок от стен и подчёркивает геометрию помещения.',
+    image: '/images/ceiling-types/shadow.webp',
+    imageAlt: 'Гостиная с теневым потолком и чётким тёмным зазором по периметру',
+    href: '/ceiling-types/shadow',
+  },
+  {
+    number: '02',
+    title: 'Бесщелевой потолок',
+    description:
+      'Полотно подходит к стене без декоративной вставки — линия примыкания остаётся почти незаметной.',
+    image: '/images/ceiling-types/gapless.webp',
+    imageAlt: 'Гостиная с бесщелевым потолком и незаметным примыканием к стенам',
+    href: null,
+  },
+  {
+    number: '03',
+    title: 'Парящий потолок',
+    description:
+      'Скрытая подсветка по периметру визуально отделяет плоскость и добавляет мягкий вечерний свет.',
+    image: '/images/ceiling-types/floating.webp',
+    imageAlt: 'Гостиная вечером с парящим потолком и тёплой подсветкой по периметру',
+    href: null,
+  },
+  {
+    number: '04',
+    title: 'Световой потолок',
+    description:
+      'Весь потолок или его часть работает как большой ровный источник света без видимых приборов.',
+    image: '/images/ceiling-types/luminous.webp',
+    imageAlt: 'Гостиная с большой равномерно светящейся плоскостью потолка',
+    href: null,
+  },
+  {
+    number: '05',
+    title: 'Стандартный потолок',
+    description:
+      'Аккуратное базовое решение с тонкой вставкой по периметру — практично и спокойно.',
+    image: '/images/ceiling-types/standard.webp',
+    imageAlt: 'Гостиная со стандартным натяжным потолком, белой вставкой и точечными светильниками',
+    href: null,
+  },
+] as const
+
 export const ceilingTypes: readonly CeilingTypeDetail[] = [
   {
     slug: 'shadow',

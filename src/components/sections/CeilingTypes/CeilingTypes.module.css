@@ -56,37 +56,10 @@
   background: var(--color-surface);
 }
 
-.imageFrame::after {
-  position: absolute;
-  inset: 58% 0 0;
-  background: linear-gradient(transparent, rgb(20 21 17 / 30%));
-  content: '';
-  pointer-events: none;
-}
-
 .imageFrame img {
   object-fit: cover;
+  object-position: center top;
   transition: transform var(--duration-slow) var(--ease-emphasized);
-}
-
-.reveal:nth-child(1) img {
-  object-position: 58% center;
-}
-
-.reveal:nth-child(2) img {
-  object-position: 48% 42%;
-}
-
-.reveal:nth-child(3) img {
-  object-position: 52% 18%;
-}
-
-.reveal:nth-child(4) img {
-  object-position: center 24%;
-}
-
-.reveal:nth-child(5) img {
-  object-position: center 28%;
 }
 
 .number {
