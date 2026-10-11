@@ -6,7 +6,7 @@ export const ceilingTypeCards = [
     title: 'Теневой потолок',
     description:
       'Чёткий тёмный контур отделяет потолок от стен и подчёркивает геометрию помещения.',
-    image: '/images/ceiling-types/shadow-upward-v2.webp',
+    image: '/images/ceiling-types/shadow-v3.webp',
     imageAlt: 'Гостиная с теневым потолком и чётким тёмным зазором по периметру',
     href: '/ceiling-types/shadow',
   },
@@ -42,7 +42,7 @@ export const ceilingTypeCards = [
     title: 'Стандартный потолок',
     description:
       'Аккуратное базовое решение с тонкой вставкой по периметру — практично и спокойно.',
-    image: '/images/ceiling-types/standard-upward-v2.webp',
+    image: '/images/ceiling-types/standard-v3.webp',
     imageAlt: 'Гостиная со стандартным натяжным потолком, белой вставкой и точечными светильниками',
     href: null,
   },
