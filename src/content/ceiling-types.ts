@@ -42,7 +42,7 @@ export const ceilingTypeCards = [
     title: 'Стандартный потолок',
     description:
       'Аккуратное базовое решение с тонкой вставкой по периметру — практично и спокойно.',
-    image: '/images/ceiling-types/standard-v4.webp',
+    image: '/images/ceiling-types/standard-v5.webp',
     imageAlt: 'Гостиная со стандартным натяжным потолком, белой вставкой и точечными светильниками',
     href: null,
   },
