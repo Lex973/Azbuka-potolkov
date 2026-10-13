@@ -569,6 +569,34 @@ export const commercialProjects: Project[] = [
     ],
     features: ['Линейный свет', 'Встроенные светильники', 'Контурная подсветка'],
   },
+  {
+    slug: 'spa-zone',
+    category: 'Коммерческий объект',
+    objectType: 'Спа зона',
+    title: 'Спа-зона',
+    area: '160 м²',
+    year: '2024',
+    duration: '40 дней монтажа',
+    description:
+      'Небесный рисунок над бассейном и звёздный потолок у сауны поддерживают спокойную атмосферу спа-зоны.',
+    image: '/images/projects/spa-zone/spa-pool-overview.webp',
+    imageAlt: 'Спа-зона с бассейном, небесным потолком и подсвеченной декоративной стеной',
+    details: [
+      {
+        image: '/images/projects/spa-zone/spa-pool-sky-ceiling.webp',
+        alt: 'Бассейн со светлым потолком и изображением неба',
+      },
+      {
+        image: '/images/projects/spa-zone/spa-sauna-starry-ceiling.webp',
+        alt: 'Зона отдыха у сауны под потолком «звёздное небо»',
+      },
+      {
+        image: '/images/projects/spa-zone/spa-sauna-entrance.webp',
+        alt: 'Вход в сауну и звёздный потолок с контурной подсветкой',
+      },
+    ],
+    features: ['Небесный рисунок потолка', 'Потолок «звёздное небо»', 'Контурная подсветка'],
+  },
 ]
 
 export const projects: readonly Project[] = [...privateProjects, ...commercialProjects]
