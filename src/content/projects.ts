@@ -330,36 +330,32 @@ export const privateProjects: Project[] = [
 
 export const commercialProjects: Project[] = [
   {
-    slug: 'ember-restaurant',
+    slug: 'conference-hall',
     category: 'Коммерческий объект',
-    title: 'Ресторан «Тёплый свет»',
-    city: 'Новосибирск',
-    area: '420 м²',
+    objectType: 'Конференц зал',
+    title: 'Конференц-зал',
+    area: '170 м²',
     year: '2024',
-    duration: '32 дня',
-    price: '3 960 000 ₽',
+    duration: '30 дней монтажа',
     description:
-      'Мягкий свет ведёт гостя по залу, а инженерные линии остаются частью архитектуры. Все потолочные узлы сведены до начала отделки.',
-    image: '/images/projects/commercial-restaurant.webp',
-    imageAlt: 'Интерьер ресторана с многоуровневым потолком и скрытой подсветкой',
+      'Ровную плоскость потолка дополнили линейным светом, встроенной вентиляцией и центральной зоной «звёздное небо».',
+    image: '/images/projects/conference-hall/starry-ceiling-main.webp',
+    imageAlt: 'Конференц-зал с рядами кресел и потолочной зоной «звёздное небо»',
     details: [
       {
-        image: '/images/projects/commercial-restaurant.webp',
-        alt: 'Закруглённый световой контур потолка',
-        position: '48% 8%',
+        image: '/images/projects/conference-hall/conference-room-overview.webp',
+        alt: 'Конференц-зал с рядами кресел, встроенными светильниками и вентиляцией',
       },
       {
-        image: '/images/projects/commercial-restaurant.webp',
-        alt: 'Встроенные вентиляционные решётки',
-        position: '62% 22%',
+        image: '/images/projects/conference-hall/starry-ceiling-reverse.webp',
+        alt: 'Вид на потолок «звёздное небо» и линейную подсветку конференц-зала',
       },
       {
-        image: '/images/projects/commercial-restaurant.webp',
-        alt: 'Точечный свет над посадочной зоной',
-        position: '77% 42%',
+        image: '/images/projects/conference-hall/illuminated-awards-wall.webp',
+        alt: 'Стена с наградами и тёплой подсветкой полок',
       },
     ],
-    features: ['Световой контур', 'Климатические щели', 'Сценарный свет'],
+    features: ['Встроенный свет и вентиляция', 'Потолок «звёздное небо»', 'Подсветка экспозиции'],
   },
   {
     slug: 'material-studio',
