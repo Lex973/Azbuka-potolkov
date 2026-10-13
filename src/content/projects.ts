@@ -469,6 +469,8 @@ export const commercialProjects: Project[] = [
       'В кабинетах руководителей световые линии, встроенные светильники и мягкая подсветка подчёркивают геометрию потолка.',
     image: '/images/projects/executive-offices/executive-office-main.webp',
     imageAlt: 'Кабинет руководителя с переговорным столом и геометричным освещением потолка',
+    pageImage: '/images/projects/executive-offices/executive-office-interior.webp',
+    pageImageAlt: 'Кабинет руководителя с переговорным столом и геометричным потолочным освещением',
     details: [
       {
         image: '/images/projects/executive-offices/classic-executive-office.webp',
@@ -481,6 +483,88 @@ export const commercialProjects: Project[] = [
       {
         image: '/images/projects/executive-offices/executive-office-meeting-area.webp',
         alt: 'Рабочая и переговорная зоны кабинета с линейной подсветкой потолка',
+      },
+    ],
+    gallery: [
+      {
+        src: '/images/projects/executive-offices/executive-office-interior.webp',
+        alt: 'Кабинет руководителя с переговорным столом и геометричным потолочным освещением',
+      },
+      {
+        src: '/images/projects/executive-offices/meeting-table-front.webp',
+        alt: 'Переговорный стол и световые линии в кабинете руководителя',
+      },
+      {
+        src: '/images/projects/executive-offices/meeting-table-reverse.webp',
+        alt: 'Рабочая зона кабинета с подвесными светильниками и треками',
+      },
+      {
+        src: '/images/projects/executive-offices/executive-desk.webp',
+        alt: 'Рабочий стол руководителя с контурной подсветкой у окна',
+      },
+      {
+        src: '/images/projects/executive-offices/rest-room-green-sofa.webp',
+        alt: 'Комната отдыха с зелёным кожаным диваном и подсветкой потолка',
+      },
+      {
+        src: '/images/projects/executive-offices/rest-room-green-seating.webp',
+        alt: 'Комната отдыха с зелёной мебелью и потолочной вентиляцией',
+      },
+      {
+        src: '/images/projects/executive-offices/tropical-washroom.webp',
+        alt: 'Санузел с растительным рисунком и контурной подсветкой',
+      },
+      {
+        src: '/images/projects/executive-offices/office-linear-lighting.webp',
+        alt: 'Кабинет с линейным потолочным светом и переговорным столом',
+      },
+      {
+        src: '/images/projects/executive-offices/office-unlit-lines.webp',
+        alt: 'Кабинет с потолочными световыми линиями без подсветки',
+      },
+      {
+        src: '/images/projects/executive-offices/office-pendant-lights.webp',
+        alt: 'Рабочая зона кабинета с подвесными светильниками',
+      },
+      {
+        src: '/images/projects/executive-offices/office-warm-lighting.webp',
+        alt: 'Кабинет с линейной и контурной подсветкой',
+      },
+      {
+        src: '/images/projects/executive-offices/classic-office-wide.webp',
+        alt: 'Классический кабинет с многоуровневым потолком и рабочим столом',
+      },
+      {
+        src: '/images/projects/executive-offices/classic-office-cove-light.webp',
+        alt: 'Классический кабинет с включённой контурной подсветкой',
+      },
+      {
+        src: '/images/projects/executive-offices/classic-office-desk-view.webp',
+        alt: 'Рабочий стол классического кабинета и встроенные светильники',
+      },
+      {
+        src: '/images/projects/executive-offices/classic-office-reverse-view.webp',
+        alt: 'Классический кабинет со световой нишей и люстрой',
+      },
+      {
+        src: '/images/projects/executive-offices/classic-office-ceiling.webp',
+        alt: 'Потолок классического кабинета с нишей и точечными светильниками',
+      },
+      {
+        src: '/images/projects/executive-offices/classic-office-cabinet-detail.webp',
+        alt: 'Стеклянные дверцы шкафа и мебель в кабинете',
+      },
+      {
+        src: '/images/projects/executive-offices/rest-room-armchair.webp',
+        alt: 'Кресло в комнате отдыха под ровной плоскостью потолка',
+      },
+      {
+        src: '/images/projects/executive-offices/rest-room-entry.webp',
+        alt: 'Проход из кабинета в комнату отдыха',
+      },
+      {
+        src: '/images/projects/executive-offices/marble-washroom.webp',
+        alt: 'Санузел с мраморной стеной и контурной подсветкой',
       },
     ],
     features: ['Линейный свет', 'Встроенные светильники', 'Контурная подсветка'],
