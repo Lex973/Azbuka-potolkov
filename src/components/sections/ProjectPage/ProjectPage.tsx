@@ -21,7 +21,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
   const facts = [
     ['Тип объекта', project.objectType ?? project.category],
     ['Площадь', project.area],
-    ['Город', project.city],
+    ...(project.city ? ([['Город', project.city]] as const) : []),
     ['Год', project.year],
     ['Срок монтажа', project.duration],
     ...(project.price ? ([['Стоимость', project.price]] as const) : []),

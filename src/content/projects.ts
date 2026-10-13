@@ -6,7 +6,6 @@ export const privateProjects: Project[] = [
     category: 'Частный интерьер',
     objectType: 'КП Малые Поляны',
     title: 'Квартира над городом',
-    city: 'Новосибирск',
     area: '135 м²',
     year: '2024',
     duration: '20 дней',

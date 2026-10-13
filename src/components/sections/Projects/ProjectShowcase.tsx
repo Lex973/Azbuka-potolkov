@@ -173,8 +173,12 @@ export function ProjectShowcase({
                   <h3>{activeProject.title}</h3>
                 </Link>
                 <p>
-                  <span>{activeProject.city}</span>
-                  <span aria-hidden="true">·</span>
+                  {activeProject.city && (
+                    <>
+                      <span>{activeProject.city}</span>
+                      <span aria-hidden="true">·</span>
+                    </>
+                  )}
                   <span>{activeProject.area}</span>
                 </p>
               </div>
