@@ -12,10 +12,10 @@ export type ProjectGalleryImage = {
 
 export type Project = {
   slug: string
-  category: 'Частный интерьер' | 'Коммерческий объект'
+  category?: 'Частный интерьер' | 'Коммерческий объект'
   objectType?: string
   title: string
-  city: string
+  city?: string
   area: string
   year: string
   duration: string

@@ -90,10 +90,8 @@ export const privateProjects: Project[] = [
   },
   {
     slug: 'shadow-contour-apartment',
-    category: 'Частный интерьер',
     objectType: 'ЖК Европейский',
     title: 'Теневой контур',
-    city: 'Новосибирск',
     area: '52 м²',
     year: '2025',
     duration: '6 дней монтажа',
@@ -103,19 +101,35 @@ export const privateProjects: Project[] = [
     imageAlt: 'Гостиная с ТВ-зоной, деревянными панелями и ровной плоскостью потолка',
     details: [
       {
-        image: '/images/projects/shadow-contour-apartment/shadow-profile-junction.webp',
-        alt: 'Теневое примыкание потолка к стене у оконного проёма крупным планом',
+        image: '/images/projects/shadow-contour-apartment/bedroom-visualization.webp',
+        alt: 'Визуализация спальни с деревянными панелями и встроенным трековым светом',
       },
       {
-        image: '/images/projects/shadow-contour-apartment/shadow-profile-corner.webp',
-        alt: 'Угол потолка с теневым профилем крупным планом',
+        image: '/images/projects/shadow-contour-apartment/tv-wall-visualization.webp',
+        alt: 'Визуализация ТВ-зоны с подвесной тумбой, зеркалом и встроенным светом',
       },
       {
-        image: '/images/projects/shadow-contour-apartment/detail-3.webp',
-        alt: 'Примыкание потолка к каменной поверхности через теневой зазор',
+        image: '/images/projects/shadow-contour-apartment/kitchen-living-visualization.webp',
+        alt: 'Визуализация кухни-гостиной с зелёным диваном, трековым и точечным светом',
       },
     ],
     gallery: [
+      {
+        src: '/images/projects/shadow-contour-apartment/hallway-visualization.webp',
+        alt: 'Визуализация прихожей с деревянными панелями, зеркалом и скрытой подсветкой',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/shadow-profile-junction.webp',
+        alt: 'Теневое примыкание потолка к стене у оконного проёма крупным планом',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/shadow-profile-corner.webp',
+        alt: 'Угол потолка с теневым профилем крупным планом',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/detail-3.webp',
+        alt: 'Примыкание потолка к каменной поверхности через теневой зазор',
+      },
       {
         src: '/images/projects/shadow-contour-apartment/gallery-03.webp',
         alt: 'Визуализация гостиной с диваном, стеллажом и встроенной подсветкой',
@@ -172,22 +186,33 @@ export const privateProjects: Project[] = [
         src: '/images/projects/shadow-contour-apartment/gallery-10.webp',
         alt: 'Угол потолочного короба с чёрным теневым профилем',
       },
+      {
+        src: '/images/projects/shadow-contour-apartment/apartment-floor-plan.webp',
+        alt: 'План квартиры с расстановкой мебели и размерами помещений',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/apartment-layout-3d.webp',
+        alt: 'Объёмная планировка квартиры с расстановкой мебели',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/ceiling-plan.webp',
+        alt: 'План потолков с нишами под шторы, профилями подсветки и вентиляцией',
+      },
     ],
     features: ['Теневой профиль', 'Скрытая инженерия', 'Лазерная разметка'],
   },
   {
     slug: 'cornice-light-apartment',
     category: 'Частный интерьер',
+    objectType: 'ЖК Сакура',
     title: 'Свет в карнизе',
-    city: 'Новосибирск',
-    area: '132 м²',
+    area: '95 м²',
     year: '2025',
-    duration: '21 день',
-    price: '1 450 000 ₽',
+    duration: '10 дней монтажа',
     description:
       'Классические карнизы и скруглённые переходы держат геометрию комнат, а подсветка убрана в нишу: свет читается, источник не виден.',
-    image: '/images/projects/cornice-light-apartment/main.webp',
-    imageAlt: 'Квартира в классическом стиле с карнизами и встроенным светом',
+    image: '/images/projects/cornice-light-apartment/bedroom-main.webp',
+    imageAlt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
     details: [
       {
         image: '/images/projects/cornice-light-apartment/detail-1.webp',
