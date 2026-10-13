@@ -228,6 +228,42 @@ export const privateProjects: Project[] = [
     ],
     gallery: [
       {
+        src: '/images/projects/cornice-light-apartment/mirrored-hallway-ceiling.webp',
+        alt: 'Прихожая с зеркальным шкафом и круглым потолочным светильником',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/hallway-recessed-lights.webp',
+        alt: 'Коридор с парными точечными светильниками и скруглёнными стенами',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/kitchen-passage-lighting.webp',
+        alt: 'Проход к гостиной с точечными светильниками и подсветкой у окна',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/kitchen-living-gold-track.webp',
+        alt: 'Кухня-гостиная с золотым потолочным треком и хрустальным подвесом',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/living-room-curved-track.webp',
+        alt: 'Гостиная с синим диваном и изогнутым золотым треком на потолке',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/childrens-room-lighting.webp',
+        alt: 'Детская комната с рисунком космонавта и подсветкой вдоль стены',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/room-ceiling-cove.webp',
+        alt: 'Комната с рабочим столом, диваном и скрытой подсветкой потолка',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/bedroom-track-light.webp',
+        alt: 'Спальня с тонким встроенным треком над кроватью и молдингами на стене',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/dining-room-chandelier.webp',
+        alt: 'Обеденная зона с хрустальной люстрой и потолочным треком',
+      },
+      {
         src: '/images/projects/cornice-light-apartment/gallery-01.webp',
         alt: 'Потолок со встроенными светильниками над линией шкафов',
       },
