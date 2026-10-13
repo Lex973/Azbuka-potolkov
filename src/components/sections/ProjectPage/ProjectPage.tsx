@@ -52,8 +52,8 @@ export function ProjectPage({ project }: ProjectPageProps) {
           <Container className={styles.overviewGrid}>
             <Reveal className={styles.mainMedia}>
               <Image
-                src={project.image}
-                alt={project.imageAlt}
+                src={project.pageImage ?? project.image}
+                alt={project.pageImageAlt ?? project.imageAlt}
                 fill
                 preload
                 sizes="(max-width: 64rem) 100vw, 66vw"

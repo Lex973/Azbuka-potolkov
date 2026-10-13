@@ -341,6 +341,8 @@ export const commercialProjects: Project[] = [
       'Ровную плоскость потолка дополнили линейным светом, встроенной вентиляцией и центральной зоной «звёздное небо».',
     image: '/images/projects/conference-hall/starry-ceiling-main.webp',
     imageAlt: 'Конференц-зал с рядами кресел и потолочной зоной «звёздное небо»',
+    pageImage: '/images/projects/conference-hall/concept-conference-overview.webp',
+    pageImageAlt: 'Визуализация конференц-зала с овальным столом и потолком «звёздное небо»',
     details: [
       {
         image: '/images/projects/conference-hall/conference-room-overview.webp',
@@ -353,6 +355,104 @@ export const commercialProjects: Project[] = [
       {
         image: '/images/projects/conference-hall/illuminated-awards-wall.webp',
         alt: 'Стена с наградами и тёплой подсветкой полок',
+      },
+    ],
+    gallery: [
+      {
+        src: '/images/projects/conference-hall/concept-conference-overview.webp',
+        alt: 'Визуализация конференц-зала с овальным столом и потолком «звёздное небо»',
+      },
+      {
+        src: '/images/projects/conference-hall/concept-conference-side-view.webp',
+        alt: 'Визуализация конференц-зала с рядами кресел и линейным светом',
+      },
+      {
+        src: '/images/projects/conference-hall/concept-audience-view.webp',
+        alt: 'Визуализация вида из переговорной зоны на ряды кресел',
+      },
+      {
+        src: '/images/projects/conference-hall/concept-stage-wall.webp',
+        alt: 'Визуализация стены зала с подсвеченными полками',
+      },
+      {
+        src: '/images/projects/conference-hall/finished-starry-ceiling.webp',
+        alt: 'Готовый потолок конференц-зала со звёздным небом и контурной подсветкой',
+      },
+      {
+        src: '/images/projects/conference-hall/finished-linear-ceiling.webp',
+        alt: 'Световые линии на готовом потолке конференц-зала',
+      },
+      {
+        src: '/images/projects/conference-hall/linear-lighting-installation.webp',
+        alt: 'Монтаж линейного освещения над конференц-залом',
+      },
+      {
+        src: '/images/projects/conference-hall/led-line-profile.webp',
+        alt: 'Узел световой линии и потолочного профиля',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-wall-lighting-junction.webp',
+        alt: 'Стык потолочной конструкции и подсветки стены',
+      },
+      {
+        src: '/images/projects/conference-hall/wall-light-line-detail.webp',
+        alt: 'Вертикальная световая линия на деревянной стене',
+      },
+      {
+        src: '/images/projects/conference-hall/starry-ceiling-installation-front.webp',
+        alt: 'Монтаж полотна звёздного потолка в конференц-зале',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-frame-ventilation.webp',
+        alt: 'Каркас потолка и встроенная вентиляция во время монтажа',
+      },
+      {
+        src: '/images/projects/conference-hall/fiber-optic-strands.webp',
+        alt: 'Нити оптоволокна для потолка «звёздное небо»',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-frame-workers.webp',
+        alt: 'Монтаж каркаса потолка и световых линий',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-lighting-plan.webp',
+        alt: 'План потолка конференц-зала с линиями освещения',
+      },
+      {
+        src: '/images/projects/conference-hall/conference-furniture-plan.webp',
+        alt: 'План расстановки мебели в конференц-зале',
+      },
+      {
+        src: '/images/projects/conference-hall/hall-before-installation.webp',
+        alt: 'Конференц-зал до монтажа потолка',
+      },
+      {
+        src: '/images/projects/conference-hall/linear-lighting-before-ceiling.webp',
+        alt: 'Световые линии и открытый каркас до установки потолка',
+      },
+      {
+        src: '/images/projects/conference-hall/led-lines-before-ceiling.webp',
+        alt: 'Световые линии на открытой потолочной конструкции',
+      },
+      {
+        src: '/images/projects/conference-hall/ventilation-unit-detail.webp',
+        alt: 'Вентиляционный блок внутри потолочной конструкции',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-frame-before-cladding.webp',
+        alt: 'Каркас потолка с проводкой во время монтажа',
+      },
+      {
+        src: '/images/projects/conference-hall/wide-ceiling-installation.webp',
+        alt: 'Общий вид монтажа световых линий и потолочного каркаса',
+      },
+      {
+        src: '/images/projects/conference-hall/partial-black-ceiling-installation.webp',
+        alt: 'Монтаж чёрного полотна звёздного потолка',
+      },
+      {
+        src: '/images/projects/conference-hall/starry-ceiling-installation-angle.webp',
+        alt: 'Звёздный потолок в процессе монтажа с другого ракурса',
       },
     ],
     features: ['Встроенный свет и вентиляция', 'Потолок «звёздное небо»', 'Подсветка экспозиции'],

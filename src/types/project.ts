@@ -23,6 +23,9 @@ export type Project = {
   description: string
   image: string
   imageAlt: string
+  /** Отдельное главное изображение страницы проекта, если оно отличается от карточки на главной. */
+  pageImage?: string
+  pageImageAlt?: string
   details: ProjectDetail[]
   /** Фотографии для страницы проекта. Если не заданы, галерея собирается из деталей. */
   gallery?: ProjectGalleryImage[]
