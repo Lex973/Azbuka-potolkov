@@ -19,12 +19,12 @@ const galleryFocus = '50% 15%'
 
 export function ProjectPage({ project }: ProjectPageProps) {
   const facts = [
-    ['Тип объекта', project.category],
+    ['Тип объекта', project.objectType ?? project.category],
     ['Площадь', project.area],
     ['Город', project.city],
     ['Год', project.year],
     ['Срок монтажа', project.duration],
-    ['Стоимость', project.price],
+    ...(project.price ? ([['Стоимость', project.price]] as const) : []),
   ] as const
 
   const hasPhotoGallery = Boolean(project.gallery)

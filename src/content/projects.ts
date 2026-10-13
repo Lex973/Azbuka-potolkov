@@ -4,12 +4,12 @@ export const privateProjects: Project[] = [
   {
     slug: 'skyline-apartment',
     category: 'Частный интерьер',
+    objectType: 'КП Малые Поляны',
     title: 'Квартира над городом',
     city: 'Новосибирск',
-    area: '118 м²',
-    year: '2025',
-    duration: '14 дней',
-    price: '1 280 000 ₽',
+    area: '135 м²',
+    year: '2024',
+    duration: '20 дней',
     description:
       'Единая спокойная плоскость объединила гостиную и кухню. Треки, ниши и встроенный свет согласовали ещё на чертежах.',
     image: '/images/projects/skyline-apartment/main.webp',
@@ -91,23 +91,23 @@ export const privateProjects: Project[] = [
   {
     slug: 'shadow-contour-apartment',
     category: 'Частный интерьер',
+    objectType: 'ЖК Европейский',
     title: 'Теневой контур',
     city: 'Новосибирск',
-    area: '94 м²',
+    area: '52 м²',
     year: '2025',
-    duration: '12 дней',
-    price: '980 000 ₽',
+    duration: '6 дней монтажа',
     description:
       'Теневой профиль по всему периметру: потолок отделён от стен ровной линией, без плинтуса и без багета. Вентиляцию и электрику развели до монтажа, поэтому плоскость осталась чистой.',
     image: '/images/projects/shadow-contour-apartment/main.webp',
     imageAlt: 'Гостиная с ТВ-зоной, деревянными панелями и ровной плоскостью потолка',
     details: [
       {
-        image: '/images/projects/shadow-contour-apartment/detail-1.webp',
-        alt: 'Разметка линии теневого профиля лазерным уровнем перед монтажом',
+        image: '/images/projects/shadow-contour-apartment/shadow-profile-junction.webp',
+        alt: 'Теневое примыкание потолка к стене у оконного проёма крупным планом',
       },
       {
-        image: '/images/projects/shadow-contour-apartment/detail-2.webp',
+        image: '/images/projects/shadow-contour-apartment/shadow-profile-corner.webp',
         alt: 'Угол потолка с теневым профилем крупным планом',
       },
       {

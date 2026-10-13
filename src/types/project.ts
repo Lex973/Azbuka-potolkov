@@ -13,12 +13,13 @@ export type ProjectGalleryImage = {
 export type Project = {
   slug: string
   category: 'Частный интерьер' | 'Коммерческий объект'
+  objectType?: string
   title: string
   city: string
   area: string
   year: string
   duration: string
-  price: string
+  price?: string
   description: string
   image: string
   imageAlt: string
