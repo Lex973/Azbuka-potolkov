@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { ButtonLink } from '@/components/ui/Button/Button'
 import { Container } from '@/components/ui/Container/Container'
 import { siteConfig } from '@/config/site'
@@ -7,7 +9,15 @@ import styles from './ContactSection.module.css'
 export function ContactSection() {
   return (
     <section className={styles.section} id="contact-form" aria-labelledby="contact-form-title">
-      <Container>
+      <Image
+        className={styles.backgroundImage}
+        src="/images/final-cta-studio.png"
+        alt=""
+        fill
+        sizes="100vw"
+        quality={95}
+      />
+      <Container className={styles.foreground}>
         <div className={styles.content}>
           <p className={styles.eyebrow}>Бесплатно для дизайнеров и архитекторов</p>
           <h2 id="contact-form-title">
@@ -42,6 +52,10 @@ export function ContactSection() {
             </ButtonLink>
           </div>
           <p className={styles.note}>Ответим в течение часа в рабочее время</p>
+          <p className={styles.studioInvitation}>
+            Приезжайте в студию на Кирова, 27 — покажем узлы вживую и подберем решения под ваш
+            проект.
+          </p>
         </div>
       </Container>
     </section>

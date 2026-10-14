@@ -1,8 +1,30 @@
 .section {
+  position: relative;
+  isolation: isolate;
   scroll-margin-top: 5.5rem;
-  padding-block: var(--section-space);
+  padding-block: clamp(5rem, 8vw, 7rem);
+  overflow: hidden;
   background: var(--color-brand);
   color: var(--color-text-inverse);
+}
+
+.section::before {
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(rgb(20 20 18 / 72%), rgb(20 20 18 / 78%));
+  content: '';
+  inset: 0;
+}
+
+.backgroundImage {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.foreground {
+  position: relative;
+  z-index: 2;
 }
 
 .content {
@@ -63,6 +85,17 @@
   margin-top: var(--space-6);
   color: var(--color-text-inverse-muted);
   font-size: var(--font-size-small);
+}
+
+.studioInvitation {
+  max-width: 43rem;
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 0.0625rem solid var(--color-border-inverse);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-lead);
+  line-height: 1.5;
+  text-wrap: balance;
 }
 
 @media (max-width: 40rem) {

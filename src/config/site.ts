@@ -4,7 +4,7 @@ export const siteConfig = {
     display: '+7 905 930-30-00',
     href: 'tel:+79059303000',
   },
-  address: 'ул. Кирова, 27, Новосибирск',
+  addresses: ['ул. Кирова, 27, Новосибирск', 'ул. Короленко, 11, Новосибирск'],
   hours: 'Пн–Пт, 10:00–19:00',
   hoursNote: 'По предварительному звонку',
   reviewsUrl: 'https://2gis.ru/novosibirsk/firm/70000001019224822/tab/reviews',

@@ -6,7 +6,6 @@ import { CeilingTypes } from '@/components/sections/CeilingTypes/CeilingTypes'
 import { CeilingComparison } from '@/components/sections/CeilingComparison/CeilingComparison'
 import { ContactSection } from '@/components/sections/Contact/ContactSection'
 import { Estimates } from '@/components/sections/Estimates/Estimates'
-import { FinalCtaSection } from '@/components/sections/FinalCta/FinalCtaSection'
 import { FounderSection } from '@/components/sections/Founder/FounderSection'
 import { Hero } from '@/components/sections/Hero/Hero'
 import { LightingCalculation } from '@/components/sections/LightingCalculation/LightingCalculation'
@@ -43,7 +42,6 @@ export default function HomePage() {
         <Estimates />
         <Testimonials />
         <ContactSection />
-        <FinalCtaSection />
         <FounderSection />
         <QuietWallsSection />
         <AirConditionersSection />

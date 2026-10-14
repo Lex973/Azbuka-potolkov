@@ -23,7 +23,6 @@ export function Footer() {
               <span>Тихие стены</span>
             </small>
           </Link>
-          <p className={styles.footerText}>Наш продукт — счастливый день переезда, где учтены все технические и визуальные задачи.</p>
         </div>
 
         <div className={styles.contacts}>
@@ -33,8 +32,12 @@ export function Footer() {
           </div>
 
           <div className={styles.contactGroup}>
-            <p>Студия</p>
-            <address>{siteConfig.address}</address>
+            <p>Студии</p>
+            <div className={styles.addresses}>
+              {siteConfig.addresses.map((address) => (
+                <address key={address}>{address}</address>
+              ))}
+            </div>
           </div>
 
           <div className={styles.contactGroup}>
