@@ -19,7 +19,8 @@ export function Hero() {
           alt="Современная гостиная с потолочными световыми линиями"
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 40rem) 300vw, (max-width: 64rem) 200vw, 100vw"
+          quality={95}
         />
       </div>
 

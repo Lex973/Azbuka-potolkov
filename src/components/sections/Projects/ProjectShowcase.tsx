@@ -162,6 +162,7 @@ export function ProjectShowcase({
                       alt={detail.alt}
                       fill
                       sizes="(max-width: 40rem) 33vw, 30vw"
+                      quality={95}
                       style={{ objectPosition: detail.position }}
                     />
                   </motion.figure>
