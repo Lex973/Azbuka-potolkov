@@ -5,6 +5,7 @@
   --color-brand: #22221f;
   --color-brand-raised: #2a2a26;
   --color-accent: #9c8355;
+  --color-accent-text: #80683d;
   --color-accent-hover: #b19a70;
   --color-accent-active: #7e6944;
 
@@ -18,7 +19,7 @@
   /* Text */
   --color-text: #3a362f;
   --color-text-soft: #6e6659;
-  --color-text-muted: #81796d;
+  --color-text-muted: #6e6659;
   --color-text-inverse: #ffffff;
   --color-text-inverse-muted: #c5c0b7;
 
@@ -31,12 +32,9 @@
   --color-focus: #c1a86f;
 
   /* Typography */
-  --font-sans: var(--font-poppins), var(--font-manrope), 'Segoe UI', sans-serif;
-
-  /* Золотые надписи набираются одной тонкой гарнитурой во всех секциях.
-     Poppins не содержит кириллицы, поэтому акцентный шрифт — Manrope. */
-  --font-accent: var(--font-manrope), var(--font-sans);
-  --font-weight-accent: 300;
+  --font-sans: var(--font-manrope), 'Segoe UI', sans-serif;
+  --font-accent: var(--font-sans);
+  --font-weight-accent: 500;
 
   --font-size-display: clamp(3.15rem, 7.2vw, 7rem);
   --font-size-h1: clamp(2.75rem, 5.5vw, 5.5rem);
@@ -48,14 +46,14 @@
   --font-size-lead: clamp(1.0625rem, 1.25vw, 1.25rem);
   --font-size-body: 1rem;
   --font-size-small: 0.875rem;
-  --font-size-label: 0.6875rem;
+  --font-size-label: 0.75rem;
 
   --line-height-tight: 0.96;
   --line-height-heading: 1.08;
   --line-height-body: 1.65;
   --letter-spacing-tight: -0.045em;
   --letter-spacing-heading: -0.03em;
-  --letter-spacing-label: 0.16em;
+  --letter-spacing-label: 0.1em;
 
   /* Layout */
   --container-max: 90rem;
@@ -106,7 +104,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   font-size: var(--font-size-body);
-  font-weight: 300;
+  font-weight: 400;
   line-height: var(--line-height-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
