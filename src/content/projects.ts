@@ -581,6 +581,8 @@ export const commercialProjects: Project[] = [
       'Небесный рисунок над бассейном и звёздный потолок у сауны поддерживают спокойную атмосферу спа-зоны.',
     image: '/images/projects/spa-zone/spa-pool-overview.webp',
     imageAlt: 'Спа-зона с бассейном, небесным потолком и подсвеченной декоративной стеной',
+    pageImage: '/images/projects/spa-zone/spa-lounge-sky-ceiling.webp',
+    pageImageAlt: 'Зона отдыха у бассейна с небесным и звёздным потолками',
     details: [
       {
         image: '/images/projects/spa-zone/spa-pool-sky-ceiling.webp',
@@ -593,6 +595,56 @@ export const commercialProjects: Project[] = [
       {
         image: '/images/projects/spa-zone/spa-sauna-entrance.webp',
         alt: 'Вход в сауну и звёздный потолок с контурной подсветкой',
+      },
+    ],
+    gallery: [
+      {
+        src: '/images/projects/spa-zone/spa-lounge-sky-ceiling.webp',
+        alt: 'Зона отдыха у бассейна с небесным и звёздным потолками',
+      },
+      {
+        src: '/images/projects/spa-zone/spa-pool-sky-detail.webp',
+        alt: 'Бассейн под потолком с изображением неба и голубой подсветкой',
+      },
+      {
+        src: '/images/projects/spa-zone/spa-lounge-pool-overview.webp',
+        alt: 'Вид из зоны отдыха на бассейн, подсвеченную колонну и потолок',
+      },
+      {
+        src: '/images/projects/spa-zone/spa-pool-wide-view.webp',
+        alt: 'Общий вид бассейна с небесным потолком и стеклянной стеной',
+      },
+      {
+        src: '/images/projects/spa-zone/sauna-lounge-starry-ceiling.webp',
+        alt: 'Зона отдыха у сауны со звёздным потолком и фиолетовой подсветкой',
+      },
+      {
+        src: '/images/projects/spa-zone/sauna-entrance-starry-ceiling.webp',
+        alt: 'Вход в сауну под звёздным потолком с контурной подсветкой',
+      },
+      {
+        src: '/images/projects/spa-zone/sauna-lounge-lights-off.webp',
+        alt: 'Зона отдыха у сауны с тёмным потолком без включённой подсветки',
+      },
+      {
+        src: '/images/projects/spa-zone/blue-steam-room-entrance.webp',
+        alt: 'Вход в парную с синим светом и небольшими светильниками в потолке',
+      },
+      {
+        src: '/images/projects/spa-zone/purple-steam-room-entrance.webp',
+        alt: 'Вход в парную с фиолетовой подсветкой и звёздным потолком',
+      },
+      {
+        src: '/images/projects/spa-zone/spa-lounge-dining-area.webp',
+        alt: 'Обеденная зона спа с диваном, креслами и контурной подсветкой потолка',
+      },
+      {
+        src: '/images/projects/spa-zone/spa-lounge-seating-area.webp',
+        alt: 'Зона отдыха спа с диваном, столом и тёплой подсветкой потолка',
+      },
+      {
+        src: '/images/projects/spa-zone/spa-lounge-entry-area.webp',
+        alt: 'Зона ожидания спа с креслами, шкафом и потолочными светильниками',
       },
     ],
     features: ['Небесный рисунок потолка', 'Потолок «звёздное небо»', 'Контурная подсветка'],
