@@ -210,23 +210,41 @@ export const privateProjects: Project[] = [
     duration: '10 дней монтажа',
     description:
       'Классические карнизы и скруглённые переходы держат геометрию комнат, а подсветка убрана в нишу: свет читается, источник не виден.',
-    image: '/images/projects/cornice-light-apartment/bedroom-main.webp',
-    imageAlt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
+    image: '/images/projects/cornice-light-apartment/hallway-mirror-round-light.webp',
+    imageAlt: 'Прихожая с зеркальным шкафом, круглым потолочным светильником и мягкими пуфами',
+    pageImage: '/images/projects/cornice-light-apartment/bedroom-main.webp',
+    pageImageAlt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
     details: [
       {
-        image: '/images/projects/cornice-light-apartment/detail-1.webp',
-        alt: 'Стык потолочных плоскостей с ровным теневым швом',
+        image: '/images/projects/cornice-light-apartment/hallway-curved-wall-lights.webp',
+        alt: 'Коридор со скруглёнными стенами и парными точечными светильниками',
       },
       {
-        image: '/images/projects/cornice-light-apartment/detail-2.webp',
-        alt: 'Скруглённый угол потолка с профилем и молдингом',
+        image: '/images/projects/cornice-light-apartment/passage-to-living-room.webp',
+        alt: 'Проход из прихожей в гостиную с точечными светильниками и синим диваном',
       },
       {
-        image: '/images/projects/cornice-light-apartment/detail-3.webp',
-        alt: 'Ниша со скрытой тёплой подсветкой в потолке',
+        image: '/images/projects/cornice-light-apartment/kitchen-living-chandelier.webp',
+        alt: 'Кухня-гостиная с золотым потолочным треком и хрустальной люстрой',
       },
     ],
     gallery: [
+      {
+        src: '/images/projects/cornice-light-apartment/bedroom-main.webp',
+        alt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/detail-1.webp',
+        alt: 'Стык потолочных плоскостей с ровным теневым швом',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/detail-2.webp',
+        alt: 'Скруглённый угол потолка с профилем и молдингом',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/detail-3.webp',
+        alt: 'Ниша со скрытой тёплой подсветкой в потолке',
+      },
       {
         src: '/images/projects/cornice-light-apartment/mirrored-hallway-ceiling.webp',
         alt: 'Прихожая с зеркальным шкафом и круглым потолочным светильником',
@@ -379,8 +397,8 @@ export const commercialProjects: Project[] = [
         alt: 'Готовый потолок конференц-зала со звёздным небом и контурной подсветкой',
       },
       {
-        src: '/images/projects/conference-hall/finished-linear-ceiling.webp',
-        alt: 'Световые линии на готовом потолке конференц-зала',
+        src: '/images/projects/conference-hall/installer-under-linear-ceiling.webp',
+        alt: 'Монтажник у стремянки под потолком конференц-зала со световыми линиями',
       },
       {
         src: '/images/projects/conference-hall/linear-lighting-installation.webp',
@@ -395,8 +413,8 @@ export const commercialProjects: Project[] = [
         alt: 'Стык потолочной конструкции и подсветки стены',
       },
       {
-        src: '/images/projects/conference-hall/wall-light-line-detail.webp',
-        alt: 'Вертикальная световая линия на деревянной стене',
+        src: '/images/projects/conference-hall/wall-ceiling-light-junction.webp',
+        alt: 'Стык потолочной и вертикальной световых линий у деревянной стены',
       },
       {
         src: '/images/projects/conference-hall/starry-ceiling-installation-front.webp',
