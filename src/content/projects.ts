@@ -28,26 +28,7 @@ export const privateProjects: Project[] = [
       },
     ],
     gallery: [
-      {
-        src: '/images/projects/skyline-apartment/gallery-01.webp',
-        alt: 'Душевая зона с тёмной каменной плиткой и скрытой подсветкой ниши',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-02.webp',
-        alt: 'Декоративное рельефное панно с подсветкой рядом со шторами',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-03.webp',
-        alt: 'Прихожая с рельефным панно и скрытой линией света у стены',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-04.webp',
-        alt: 'Коридор с межкомнатными дверями и встроенными точечными светильниками',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-05.webp',
-        alt: 'Рельефное панно с контурной подсветкой по потолку и стене',
-      },
+      // Готовые интерьеры.
       {
         src: '/images/projects/skyline-apartment/gallery-06.webp',
         alt: 'Кухня-гостиная с островом, обеденным столом и подвесным светильником',
@@ -55,18 +36,6 @@ export const privateProjects: Project[] = [
       {
         src: '/images/projects/skyline-apartment/gallery-07.webp',
         alt: 'Кухонный остров с вытяжкой и трековым освещением над обеденной зоной',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-08.webp',
-        alt: 'Обеденная зона с крупным подвесом и трековой линией в потолке',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-09.webp',
-        alt: 'Обеденный стол с креслами терракотового цвета в дневном свете',
-      },
-      {
-        src: '/images/projects/skyline-apartment/gallery-10.webp',
-        alt: 'Рабочая зона кухни с мойкой, встроенной техникой и подсветкой фартука',
       },
       {
         src: '/images/projects/skyline-apartment/gallery-11.webp',
@@ -77,12 +46,45 @@ export const privateProjects: Project[] = [
         alt: 'Открытые полки и тёмные фасады кухни с линейным освещением',
       },
       {
+        src: '/images/projects/skyline-apartment/gallery-08.webp',
+        alt: 'Обеденная зона с крупным подвесом и трековой линией в потолке',
+      },
+      {
+        src: '/images/projects/skyline-apartment/gallery-09.webp',
+        alt: 'Обеденный стол с креслами терракотового цвета в дневном свете',
+      },
+      {
+        src: '/images/projects/skyline-apartment/gallery-03.webp',
+        alt: 'Прихожая с рельефным панно и скрытой линией света у стены',
+      },
+      {
+        src: '/images/projects/skyline-apartment/gallery-04.webp',
+        alt: 'Коридор с межкомнатными дверями и встроенными точечными светильниками',
+      },
+      {
         src: '/images/projects/skyline-apartment/gallery-13.webp',
         alt: 'Холл с трековыми светильниками и нишей с открытыми полками',
       },
       {
         src: '/images/projects/skyline-apartment/gallery-14.webp',
         alt: 'Коридор с высокими шкафами и проходом в кухню',
+      },
+      {
+        src: '/images/projects/skyline-apartment/gallery-01.webp',
+        alt: 'Душевая зона с тёмной каменной плиткой и скрытой подсветкой ниши',
+      },
+      // Детали готового интерьера и освещения.
+      {
+        src: '/images/projects/skyline-apartment/gallery-10.webp',
+        alt: 'Рабочая зона кухни с мойкой, встроенной техникой и подсветкой фартука',
+      },
+      {
+        src: '/images/projects/skyline-apartment/gallery-02.webp',
+        alt: 'Декоративное рельефное панно с подсветкой рядом со шторами',
+      },
+      {
+        src: '/images/projects/skyline-apartment/gallery-05.webp',
+        alt: 'Рельефное панно с контурной подсветкой по потолку и стене',
       },
     ],
     features: ['Теневой профиль', 'Встроенный трек', 'Ниша под шторы'],
@@ -113,13 +115,31 @@ export const privateProjects: Project[] = [
       },
     ],
     gallery: [
+      // Готовые интерьеры: визуализации.
+      {
+        src: '/images/projects/shadow-contour-apartment/gallery-03.webp',
+        alt: 'Визуализация гостиной с диваном, стеллажом и встроенной подсветкой',
+      },
       {
         src: '/images/projects/shadow-contour-apartment/hallway-visualization.webp',
         alt: 'Визуализация прихожей с деревянными панелями, зеркалом и скрытой подсветкой',
       },
+      // Детали готового потолка.
+      {
+        src: '/images/projects/shadow-contour-apartment/gallery-14.webp',
+        alt: 'Готовый потолок со скрытой подсветкой вдоль стены',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/gallery-02.webp',
+        alt: 'Круглый диффузор приточной вентиляции в плоскости потолка',
+      },
       {
         src: '/images/projects/shadow-contour-apartment/shadow-profile-junction.webp',
         alt: 'Теневое примыкание потолка к стене у оконного проёма крупным планом',
+      },
+      {
+        src: '/images/projects/shadow-contour-apartment/gallery-01.webp',
+        alt: 'Готовое теневое примыкание потолка к стене',
       },
       {
         src: '/images/projects/shadow-contour-apartment/shadow-profile-corner.webp',
@@ -129,22 +149,20 @@ export const privateProjects: Project[] = [
         src: '/images/projects/shadow-contour-apartment/detail-3.webp',
         alt: 'Примыкание потолка к каменной поверхности через теневой зазор',
       },
+      // Чертежи и планировка.
       {
-        src: '/images/projects/shadow-contour-apartment/gallery-03.webp',
-        alt: 'Визуализация гостиной с диваном, стеллажом и встроенной подсветкой',
+        src: '/images/projects/shadow-contour-apartment/apartment-floor-plan.webp',
+        alt: 'План квартиры с расстановкой мебели и размерами помещений',
       },
       {
-        src: '/images/projects/shadow-contour-apartment/gallery-14.webp',
-        alt: 'Готовый потолок со скрытой подсветкой вдоль стены',
+        src: '/images/projects/shadow-contour-apartment/apartment-layout-3d.webp',
+        alt: 'Объёмная планировка квартиры с расстановкой мебели',
       },
       {
-        src: '/images/projects/shadow-contour-apartment/gallery-01.webp',
-        alt: 'Готовое теневое примыкание потолка к стене',
+        src: '/images/projects/shadow-contour-apartment/ceiling-plan.webp',
+        alt: 'План потолков с нишами под шторы, профилями подсветки и вентиляцией',
       },
-      {
-        src: '/images/projects/shadow-contour-apartment/gallery-02.webp',
-        alt: 'Круглый диффузор приточной вентиляции в плоскости потолка',
-      },
+      // Подготовка и монтаж.
       {
         src: '/images/projects/shadow-contour-apartment/gallery-06.webp',
         alt: 'Помещение подготовлено к монтажу: защитная плёнка и инструмент',
@@ -185,18 +203,6 @@ export const privateProjects: Project[] = [
         src: '/images/projects/shadow-contour-apartment/gallery-10.webp',
         alt: 'Угол потолочного короба с чёрным теневым профилем',
       },
-      {
-        src: '/images/projects/shadow-contour-apartment/apartment-floor-plan.webp',
-        alt: 'План квартиры с расстановкой мебели и размерами помещений',
-      },
-      {
-        src: '/images/projects/shadow-contour-apartment/apartment-layout-3d.webp',
-        alt: 'Объёмная планировка квартиры с расстановкой мебели',
-      },
-      {
-        src: '/images/projects/shadow-contour-apartment/ceiling-plan.webp',
-        alt: 'План потолков с нишами под шторы, профилями подсветки и вентиляцией',
-      },
     ],
     features: ['Теневой профиль', 'Скрытая инженерия', 'Лазерная разметка'],
   },
@@ -229,21 +235,22 @@ export const privateProjects: Project[] = [
       },
     ],
     gallery: [
+      // Готовые интерьеры.
       {
-        src: '/images/projects/cornice-light-apartment/bedroom-main.webp',
-        alt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
+        src: '/images/projects/cornice-light-apartment/kitchen-living-gold-track.webp',
+        alt: 'Кухня-гостиная с золотым потолочным треком и хрустальным подвесом',
       },
       {
-        src: '/images/projects/cornice-light-apartment/detail-1.webp',
-        alt: 'Стык потолочных плоскостей с ровным теневым швом',
+        src: '/images/projects/cornice-light-apartment/living-room-curved-track.webp',
+        alt: 'Гостиная с синим диваном и изогнутым золотым треком на потолке',
       },
       {
-        src: '/images/projects/cornice-light-apartment/detail-2.webp',
-        alt: 'Скруглённый угол потолка с профилем и молдингом',
+        src: '/images/projects/cornice-light-apartment/dining-room-chandelier.webp',
+        alt: 'Обеденная зона с хрустальной люстрой и потолочным треком',
       },
       {
-        src: '/images/projects/cornice-light-apartment/detail-3.webp',
-        alt: 'Ниша со скрытой тёплой подсветкой в потолке',
+        src: '/images/projects/cornice-light-apartment/kitchen-passage-lighting.webp',
+        alt: 'Проход к гостиной с точечными светильниками и подсветкой у окна',
       },
       {
         src: '/images/projects/cornice-light-apartment/mirrored-hallway-ceiling.webp',
@@ -254,16 +261,12 @@ export const privateProjects: Project[] = [
         alt: 'Коридор с парными точечными светильниками и скруглёнными стенами',
       },
       {
-        src: '/images/projects/cornice-light-apartment/kitchen-passage-lighting.webp',
-        alt: 'Проход к гостиной с точечными светильниками и подсветкой у окна',
+        src: '/images/projects/cornice-light-apartment/bedroom-main.webp',
+        alt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
       },
       {
-        src: '/images/projects/cornice-light-apartment/kitchen-living-gold-track.webp',
-        alt: 'Кухня-гостиная с золотым потолочным треком и хрустальным подвесом',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/living-room-curved-track.webp',
-        alt: 'Гостиная с синим диваном и изогнутым золотым треком на потолке',
+        src: '/images/projects/cornice-light-apartment/bedroom-track-light.webp',
+        alt: 'Спальня с тонким встроенным треком над кроватью и молдингами на стене',
       },
       {
         src: '/images/projects/cornice-light-apartment/childrens-room-lighting.webp',
@@ -273,13 +276,63 @@ export const privateProjects: Project[] = [
         src: '/images/projects/cornice-light-apartment/room-ceiling-cove.webp',
         alt: 'Комната с рабочим столом, диваном и скрытой подсветкой потолка',
       },
+      // Детали готового потолка и освещения.
       {
-        src: '/images/projects/cornice-light-apartment/bedroom-track-light.webp',
-        alt: 'Спальня с тонким встроенным треком над кроватью и молдингами на стене',
+        src: '/images/projects/cornice-light-apartment/detail-1.webp',
+        alt: 'Стык потолочных плоскостей с ровным теневым швом',
       },
       {
-        src: '/images/projects/cornice-light-apartment/dining-room-chandelier.webp',
-        alt: 'Обеденная зона с хрустальной люстрой и потолочным треком',
+        src: '/images/projects/cornice-light-apartment/gallery-04.webp',
+        alt: 'Стык потолочных панелей с ровным теневым швом крупным планом',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/detail-2.webp',
+        alt: 'Скруглённый угол потолка с профилем и молдингом',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-07.webp',
+        alt: 'Профиль карниза крупным планом',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/detail-3.webp',
+        alt: 'Ниша со скрытой тёплой подсветкой в потолке',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-09.webp',
+        alt: 'Угол ниши с тёплой скрытой подсветкой',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-05.webp',
+        alt: 'Каскадная люстра на фоне ровной плоскости потолка',
+      },
+      // Монтаж и потолки до завершения ремонта.
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-13.webp',
+        alt: 'Монтаж: профиль и электрика в межпотолочном пространстве',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-14.webp',
+        alt: 'Монтаж: угловой профиль до натяжения полотна',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-12.webp',
+        alt: 'Монтаж: скруглённый угол натяжного полотна',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-15.webp',
+        alt: 'Этапы монтажа потолка: профиль, электрика и готовый угол',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-08.webp',
+        alt: 'Комната с трековым светом и видом на кухонную зону',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-10.webp',
+        alt: 'Кухня-гостиная со встроенным светом и скрытым кондиционером',
+      },
+      {
+        src: '/images/projects/cornice-light-apartment/gallery-03.webp',
+        alt: 'Проход с тёмной дверью и точечными светильниками в потолке',
       },
       {
         src: '/images/projects/cornice-light-apartment/gallery-01.webp',
@@ -290,56 +343,12 @@ export const privateProjects: Project[] = [
         alt: 'Коридор со скруглёнными переходами потолка и встроенным светом',
       },
       {
-        src: '/images/projects/cornice-light-apartment/gallery-03.webp',
-        alt: 'Проход с тёмной дверью и точечными светильниками в потолке',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-04.webp',
-        alt: 'Стык потолочных панелей с ровным теневым швом крупным планом',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-05.webp',
-        alt: 'Каскадная люстра на фоне ровной плоскости потолка',
-      },
-      {
         src: '/images/projects/cornice-light-apartment/gallery-06.webp',
         alt: 'Потолок у окна со скруглённым примыканием к стене',
       },
       {
-        src: '/images/projects/cornice-light-apartment/gallery-07.webp',
-        alt: 'Профиль карниза крупным планом',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-08.webp',
-        alt: 'Комната с трековым светом и видом на кухонную зону',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-09.webp',
-        alt: 'Угол ниши с тёплой скрытой подсветкой',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-10.webp',
-        alt: 'Кухня-гостиная со встроенным светом и скрытым кондиционером',
-      },
-      {
         src: '/images/projects/cornice-light-apartment/gallery-11.webp',
         alt: 'Ниша со скрытой подсветкой вдоль оконного проёма',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-12.webp',
-        alt: 'Монтаж: скруглённый угол натяжного полотна',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-13.webp',
-        alt: 'Монтаж: профиль и электрика в межпотолочном пространстве',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-14.webp',
-        alt: 'Монтаж: угловой профиль до натяжения полотна',
-      },
-      {
-        src: '/images/projects/cornice-light-apartment/gallery-15.webp',
-        alt: 'Этапы монтажа потолка: профиль, электрика и готовый угол',
       },
     ],
     features: ['Карнизный контур', 'Скрытая подсветка', 'Скруглённые примыкания'],
@@ -376,6 +385,7 @@ export const commercialProjects: Project[] = [
       },
     ],
     gallery: [
+      // Готовый интерьер: визуализации.
       {
         src: '/images/projects/conference-hall/concept-conference-overview.webp',
         alt: 'Визуализация конференц-зала с овальным столом и потолком «звёздное небо»',
@@ -392,17 +402,47 @@ export const commercialProjects: Project[] = [
         src: '/images/projects/conference-hall/concept-stage-wall.webp',
         alt: 'Визуализация стены зала с подсвеченными полками',
       },
+      // Чертежи.
       {
-        src: '/images/projects/conference-hall/finished-starry-ceiling.webp',
-        alt: 'Готовый потолок конференц-зала со звёздным небом и контурной подсветкой',
+        src: '/images/projects/conference-hall/ceiling-lighting-plan.webp',
+        alt: 'План потолка конференц-зала с линиями освещения',
       },
       {
-        src: '/images/projects/conference-hall/installer-under-linear-ceiling.webp',
-        alt: 'Монтажник у стремянки под потолком конференц-зала со световыми линиями',
+        src: '/images/projects/conference-hall/conference-furniture-plan.webp',
+        alt: 'План расстановки мебели в конференц-зале',
+      },
+      // Подготовка и монтаж, затем потолок до завершения ремонта.
+      {
+        src: '/images/projects/conference-hall/hall-before-installation.webp',
+        alt: 'Конференц-зал до монтажа потолка',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-frame-before-cladding.webp',
+        alt: 'Каркас потолка с проводкой во время монтажа',
+      },
+      {
+        src: '/images/projects/conference-hall/ceiling-frame-workers.webp',
+        alt: 'Монтаж каркаса потолка и световых линий',
+      },
+      {
+        src: '/images/projects/conference-hall/wide-ceiling-installation.webp',
+        alt: 'Общий вид монтажа световых линий и потолочного каркаса',
+      },
+      {
+        src: '/images/projects/conference-hall/linear-lighting-before-ceiling.webp',
+        alt: 'Световые линии и открытый каркас до установки потолка',
+      },
+      {
+        src: '/images/projects/conference-hall/led-lines-before-ceiling.webp',
+        alt: 'Световые линии на открытой потолочной конструкции',
       },
       {
         src: '/images/projects/conference-hall/linear-lighting-installation.webp',
         alt: 'Монтаж линейного освещения над конференц-залом',
+      },
+      {
+        src: '/images/projects/conference-hall/ventilation-unit-detail.webp',
+        alt: 'Вентиляционный блок внутри потолочной конструкции',
       },
       {
         src: '/images/projects/conference-hall/led-line-profile.webp',
@@ -417,60 +457,32 @@ export const commercialProjects: Project[] = [
         alt: 'Стык потолочной и вертикальной световых линий у деревянной стены',
       },
       {
-        src: '/images/projects/conference-hall/starry-ceiling-installation-front.webp',
-        alt: 'Монтаж полотна звёздного потолка в конференц-зале',
-      },
-      {
-        src: '/images/projects/conference-hall/ceiling-frame-ventilation.webp',
-        alt: 'Каркас потолка и встроенная вентиляция во время монтажа',
-      },
-      {
         src: '/images/projects/conference-hall/fiber-optic-strands.webp',
         alt: 'Нити оптоволокна для потолка «звёздное небо»',
       },
       {
-        src: '/images/projects/conference-hall/ceiling-frame-workers.webp',
-        alt: 'Монтаж каркаса потолка и световых линий',
+        src: '/images/projects/conference-hall/starry-ceiling-installation-front.webp',
+        alt: 'Монтаж полотна звёздного потолка в конференц-зале',
       },
       {
-        src: '/images/projects/conference-hall/ceiling-lighting-plan.webp',
-        alt: 'План потолка конференц-зала с линиями освещения',
-      },
-      {
-        src: '/images/projects/conference-hall/conference-furniture-plan.webp',
-        alt: 'План расстановки мебели в конференц-зале',
-      },
-      {
-        src: '/images/projects/conference-hall/hall-before-installation.webp',
-        alt: 'Конференц-зал до монтажа потолка',
-      },
-      {
-        src: '/images/projects/conference-hall/linear-lighting-before-ceiling.webp',
-        alt: 'Световые линии и открытый каркас до установки потолка',
-      },
-      {
-        src: '/images/projects/conference-hall/led-lines-before-ceiling.webp',
-        alt: 'Световые линии на открытой потолочной конструкции',
-      },
-      {
-        src: '/images/projects/conference-hall/ventilation-unit-detail.webp',
-        alt: 'Вентиляционный блок внутри потолочной конструкции',
-      },
-      {
-        src: '/images/projects/conference-hall/ceiling-frame-before-cladding.webp',
-        alt: 'Каркас потолка с проводкой во время монтажа',
-      },
-      {
-        src: '/images/projects/conference-hall/wide-ceiling-installation.webp',
-        alt: 'Общий вид монтажа световых линий и потолочного каркаса',
+        src: '/images/projects/conference-hall/starry-ceiling-installation-angle.webp',
+        alt: 'Звёздный потолок в процессе монтажа с другого ракурса',
       },
       {
         src: '/images/projects/conference-hall/partial-black-ceiling-installation.webp',
         alt: 'Монтаж чёрного полотна звёздного потолка',
       },
       {
-        src: '/images/projects/conference-hall/starry-ceiling-installation-angle.webp',
-        alt: 'Звёздный потолок в процессе монтажа с другого ракурса',
+        src: '/images/projects/conference-hall/ceiling-frame-ventilation.webp',
+        alt: 'Каркас потолка и встроенная вентиляция во время монтажа',
+      },
+      {
+        src: '/images/projects/conference-hall/installer-under-linear-ceiling.webp',
+        alt: 'Монтажник у стремянки под потолком конференц-зала со световыми линиями',
+      },
+      {
+        src: '/images/projects/conference-hall/finished-starry-ceiling.webp',
+        alt: 'Готовый потолок конференц-зала со звёздным небом и контурной подсветкой',
       },
     ],
     features: ['Встроенный свет и вентиляция', 'Потолок «звёздное небо»', 'Подсветка экспозиции'],
@@ -504,6 +516,7 @@ export const commercialProjects: Project[] = [
       },
     ],
     gallery: [
+      // Готовые интерьеры: кабинеты, комнаты отдыха и санузлы.
       {
         src: '/images/projects/executive-offices/executive-office-interior.webp',
         alt: 'Кабинет руководителя с переговорным столом и геометричным потолочным освещением',
@@ -521,20 +534,12 @@ export const commercialProjects: Project[] = [
         alt: 'Рабочий стол руководителя с контурной подсветкой у окна',
       },
       {
-        src: '/images/projects/executive-offices/rest-room-green-sofa.webp',
-        alt: 'Комната отдыха с зелёным кожаным диваном и подсветкой потолка',
-      },
-      {
-        src: '/images/projects/executive-offices/rest-room-green-seating.webp',
-        alt: 'Комната отдыха с зелёной мебелью и потолочной вентиляцией',
-      },
-      {
-        src: '/images/projects/executive-offices/tropical-washroom.webp',
-        alt: 'Санузел с растительным рисунком и контурной подсветкой',
-      },
-      {
         src: '/images/projects/executive-offices/office-linear-lighting.webp',
         alt: 'Кабинет с линейным потолочным светом и переговорным столом',
+      },
+      {
+        src: '/images/projects/executive-offices/office-warm-lighting.webp',
+        alt: 'Кабинет с линейной и контурной подсветкой',
       },
       {
         src: '/images/projects/executive-offices/office-unlit-lines.webp',
@@ -545,32 +550,32 @@ export const commercialProjects: Project[] = [
         alt: 'Рабочая зона кабинета с подвесными светильниками',
       },
       {
-        src: '/images/projects/executive-offices/office-warm-lighting.webp',
-        alt: 'Кабинет с линейной и контурной подсветкой',
+        src: '/images/projects/executive-offices/classic-office-cove-light.webp',
+        alt: 'Классический кабинет с включённой контурной подсветкой',
       },
       {
         src: '/images/projects/executive-offices/classic-office-wide.webp',
         alt: 'Классический кабинет с многоуровневым потолком и рабочим столом',
       },
       {
-        src: '/images/projects/executive-offices/classic-office-cove-light.webp',
-        alt: 'Классический кабинет с включённой контурной подсветкой',
+        src: '/images/projects/executive-offices/classic-office-reverse-view.webp',
+        alt: 'Классический кабинет со световой нишей и люстрой',
       },
       {
         src: '/images/projects/executive-offices/classic-office-desk-view.webp',
         alt: 'Рабочий стол классического кабинета и встроенные светильники',
       },
       {
-        src: '/images/projects/executive-offices/classic-office-reverse-view.webp',
-        alt: 'Классический кабинет со световой нишей и люстрой',
-      },
-      {
         src: '/images/projects/executive-offices/classic-office-ceiling.webp',
         alt: 'Потолок классического кабинета с нишей и точечными светильниками',
       },
       {
-        src: '/images/projects/executive-offices/classic-office-cabinet-detail.webp',
-        alt: 'Стеклянные дверцы шкафа и мебель в кабинете',
+        src: '/images/projects/executive-offices/rest-room-green-sofa.webp',
+        alt: 'Комната отдыха с зелёным кожаным диваном и подсветкой потолка',
+      },
+      {
+        src: '/images/projects/executive-offices/rest-room-green-seating.webp',
+        alt: 'Комната отдыха с зелёной мебелью и потолочной вентиляцией',
       },
       {
         src: '/images/projects/executive-offices/rest-room-armchair.webp',
@@ -581,8 +586,17 @@ export const commercialProjects: Project[] = [
         alt: 'Проход из кабинета в комнату отдыха',
       },
       {
+        src: '/images/projects/executive-offices/tropical-washroom.webp',
+        alt: 'Санузел с растительным рисунком и контурной подсветкой',
+      },
+      {
         src: '/images/projects/executive-offices/marble-washroom.webp',
         alt: 'Санузел с мраморной стеной и контурной подсветкой',
+      },
+      // Деталь готового интерьера.
+      {
+        src: '/images/projects/executive-offices/classic-office-cabinet-detail.webp',
+        alt: 'Стеклянные дверцы шкафа и мебель в кабинете',
       },
     ],
     features: ['Линейный свет', 'Встроенные светильники', 'Контурная подсветка'],
@@ -616,21 +630,18 @@ export const commercialProjects: Project[] = [
       },
     ],
     gallery: [
+      // Готовые интерьеры: бассейн, сауна и комнаты отдыха.
       {
         src: '/images/projects/spa-zone/spa-lounge-sky-ceiling.webp',
         alt: 'Зона отдыха у бассейна с небесным и звёздным потолками',
       },
       {
-        src: '/images/projects/spa-zone/spa-pool-sky-detail.webp',
-        alt: 'Бассейн под потолком с изображением неба и голубой подсветкой',
+        src: '/images/projects/spa-zone/spa-pool-wide-view.webp',
+        alt: 'Общий вид бассейна с небесным потолком и стеклянной стеной',
       },
       {
         src: '/images/projects/spa-zone/spa-lounge-pool-overview.webp',
         alt: 'Вид из зоны отдыха на бассейн, подсвеченную колонну и потолок',
-      },
-      {
-        src: '/images/projects/spa-zone/spa-pool-wide-view.webp',
-        alt: 'Общий вид бассейна с небесным потолком и стеклянной стеной',
       },
       {
         src: '/images/projects/spa-zone/sauna-lounge-starry-ceiling.webp',
@@ -645,14 +656,6 @@ export const commercialProjects: Project[] = [
         alt: 'Зона отдыха у сауны с тёмным потолком без включённой подсветки',
       },
       {
-        src: '/images/projects/spa-zone/blue-steam-room-entrance.webp',
-        alt: 'Вход в парную с синим светом и небольшими светильниками в потолке',
-      },
-      {
-        src: '/images/projects/spa-zone/purple-steam-room-entrance.webp',
-        alt: 'Вход в парную с фиолетовой подсветкой и звёздным потолком',
-      },
-      {
         src: '/images/projects/spa-zone/spa-lounge-dining-area.webp',
         alt: 'Обеденная зона спа с диваном, креслами и контурной подсветкой потолка',
       },
@@ -663,6 +666,19 @@ export const commercialProjects: Project[] = [
       {
         src: '/images/projects/spa-zone/spa-lounge-entry-area.webp',
         alt: 'Зона ожидания спа с креслами, шкафом и потолочными светильниками',
+      },
+      // Более близкие ракурсы потолков и освещения.
+      {
+        src: '/images/projects/spa-zone/spa-pool-sky-detail.webp',
+        alt: 'Бассейн под потолком с изображением неба и голубой подсветкой',
+      },
+      {
+        src: '/images/projects/spa-zone/blue-steam-room-entrance.webp',
+        alt: 'Вход в парную с синим светом и небольшими светильниками в потолке',
+      },
+      {
+        src: '/images/projects/spa-zone/purple-steam-room-entrance.webp',
+        alt: 'Вход в парную с фиолетовой подсветкой и звёздным потолком',
       },
     ],
     features: ['Небесный рисунок потолка', 'Потолок «звёздное небо»', 'Контурная подсветка'],
