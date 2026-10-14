@@ -77,6 +77,7 @@ export function LightboxGallery({ images, columns = 4, aspect = 'wide' }: Lightb
                   src={image.src}
                   alt={image.alt}
                   fill
+                  quality={95}
                   sizes={
                     columns === 3
                       ? '(max-width: 48rem) 100vw, (max-width: 64rem) 50vw, 33vw'
