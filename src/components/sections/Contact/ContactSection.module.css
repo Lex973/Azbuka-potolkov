@@ -98,6 +98,10 @@
   text-wrap: balance;
 }
 
+.studioButton {
+  margin-top: var(--space-6);
+}
+
 @media (max-width: 40rem) {
   .content h2 {
     margin-top: var(--space-6);
@@ -115,6 +119,10 @@
   }
 
   .actions a {
+    width: 100%;
+  }
+
+  .studioButton {
     width: 100%;
   }
 }

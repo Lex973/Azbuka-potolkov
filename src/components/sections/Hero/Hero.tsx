@@ -31,7 +31,7 @@ export function Hero() {
           <h1 className={styles.title} id="hero-title">
             Потолки и свет в интерьерах
           </h1>
-          <p className={styles.subtitle}>Как спроектировал дизайнер, до миллиметра</p>
+          <p className={styles.subtitle}>От чертежей до реализации, без ошибок</p>
         </div>
 
         <div className={styles.bottom}>

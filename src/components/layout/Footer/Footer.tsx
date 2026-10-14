@@ -11,18 +11,21 @@ export function Footer() {
     <footer className={styles.footer} id="contacts">
       <Container>
         <div className={styles.topline}>
-          <Link className={styles.logo} href="/" aria-label="Азбука Потолков — на главную">
-            <span>{siteConfig.name}</span>
-            <small>
-              <span>Потолки</span>
-              <span aria-hidden="true">·</span>
-              <span>Свет</span>
-              <span aria-hidden="true">·</span>
-              <span>Климат</span>
-              <span aria-hidden="true">·</span>
-              <span>Тихие стены</span>
-            </small>
-          </Link>
+          <div className={styles.brand}>
+            <Link className={styles.logo} href="/" aria-label="Азбука Потолков — на главную">
+              <span>{siteConfig.name}</span>
+              <small>
+                <span>Потолки</span>
+                <span aria-hidden="true">·</span>
+                <span>Свет</span>
+                <span aria-hidden="true">·</span>
+                <span>Климат</span>
+                <span aria-hidden="true">·</span>
+                <span>Тихие стены</span>
+              </small>
+            </Link>
+            <p className={styles.tagline}>От чертежей до реализации, без ошибок</p>
+          </div>
         </div>
 
         <div className={styles.contacts}>

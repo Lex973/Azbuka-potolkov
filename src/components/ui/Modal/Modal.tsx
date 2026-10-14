@@ -42,9 +42,7 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
   }, [open])
 
   function handleClose() {
-    document.body.style.overflow = ''
     onClose()
-    requestAnimationFrame(() => restoreFocusRef.current?.focus())
   }
 
   return (
@@ -58,6 +56,7 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
       }}
       onClose={() => {
         document.body.style.overflow = ''
+        requestAnimationFrame(() => restoreFocusRef.current?.focus())
       }}
       onClick={(event) => {
         if (event.target === event.currentTarget) {

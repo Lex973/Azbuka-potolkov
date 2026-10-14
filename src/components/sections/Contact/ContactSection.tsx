@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/Container/Container'
 import { siteConfig } from '@/config/site'
 
 import styles from './ContactSection.module.css'
+import { StudioVisitDialogButton } from './StudioVisitDialogButton'
 
 export function ContactSection() {
   return (
@@ -56,6 +57,7 @@ export function ContactSection() {
             Приезжайте в студию на Кирова, 27 — покажем узлы вживую и подберем решения под ваш
             проект.
           </p>
+          <StudioVisitDialogButton className={styles.studioButton} />
         </div>
       </Container>
     </section>
