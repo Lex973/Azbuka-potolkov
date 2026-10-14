@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { CloseIcon } from '@/components/ui/Icons/Icons'
+import { lockBodyScroll } from '@/lib/scroll-lock'
 
 import styles from './LightboxGallery.module.css'
 
@@ -35,14 +36,11 @@ export function LightboxGallery({ images, columns = 4, aspect = 'wide' }: Lightb
 
     if (selectedImage && !dialog.open) {
       dialog.showModal()
-      document.body.style.overflow = 'hidden'
     }
 
     if (!selectedImage && dialog.open) dialog.close()
 
-    return () => {
-      document.body.style.overflow = ''
-    }
+    if (selectedImage) return lockBodyScroll()
   }, [selectedImage])
 
   function openImage(index: number, trigger: HTMLButtonElement) {
@@ -52,7 +50,6 @@ export function LightboxGallery({ images, columns = 4, aspect = 'wide' }: Lightb
 
   function closeImage() {
     setSelectedIndex(null)
-    requestAnimationFrame(() => triggerRef.current?.focus())
   }
 
   const gridClassName = [styles.grid, columns === 3 ? styles.threeColumns : '']
@@ -95,6 +92,9 @@ export function LightboxGallery({ images, columns = 4, aspect = 'wide' }: Lightb
         ref={dialogRef}
         className={styles.dialog}
         aria-label="Просмотр фотографии"
+        onClose={() => {
+          requestAnimationFrame(() => triggerRef.current?.focus({ preventScroll: true }))
+        }}
         onCancel={(event) => {
           event.preventDefault()
           closeImage()

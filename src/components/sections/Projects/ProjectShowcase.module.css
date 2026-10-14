@@ -144,10 +144,20 @@
 }
 
 .meta h3 {
+  grid-area: 1 / 1;
   font-size: var(--font-size-h4);
   font-weight: 300;
   letter-spacing: var(--letter-spacing-heading);
   line-height: 1.15;
+}
+
+.projectTitle {
+  display: grid;
+}
+
+/* Высоту задаёт самое длинное название, чтобы соседние секции не прыгали. */
+.inactiveTitle {
+  visibility: hidden;
 }
 
 .meta a:hover h3 {

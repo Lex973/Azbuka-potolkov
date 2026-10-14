@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { ContactDialogButton } from '@/components/forms/ContactDialog/ContactDialogButton'
 import { InstagramIcon, JournalIcon, TelegramIcon } from '@/components/ui/Icons/Icons'
@@ -11,12 +11,14 @@ import {
   secondaryNavigation,
   socialLinks,
 } from '@/content/navigation'
+import { lockBodyScroll } from '@/lib/scroll-lock'
 
 import styles from './Header.module.css'
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     function handleEscape(event: KeyboardEvent) {
@@ -27,12 +29,15 @@ export function Header() {
     }
 
     document.addEventListener('keydown', handleEscape)
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
 
     return () => {
       document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = ''
     }
+  }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    return lockBodyScroll()
   }, [menuOpen])
 
   function closeNavigation() {
@@ -71,7 +76,12 @@ export function Header() {
             >
               Разделы <span aria-hidden="true">+</span>
             </button>
-            <div className={styles.morePanel} id="desktop-more-navigation" data-open={moreOpen}>
+            <div
+              className={styles.morePanel}
+              id="desktop-more-navigation"
+              data-open={moreOpen}
+              inert={!moreOpen}
+            >
               {secondaryNavigation.map((item) => (
                 <Link key={item.href} href={`/${item.href}`} onClick={closeNavigation}>
                   {item.label}
@@ -88,14 +98,27 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 aria-label={item.ariaLabel}
-                data-tooltip={item.label === 'Instagram' ? 'Instagram' : item.label === 'TG' ? 'Telegram' : 'Журнал'}
+                data-tooltip={
+                  item.label === 'Instagram'
+                    ? 'Instagram'
+                    : item.label === 'TG'
+                      ? 'Telegram'
+                      : 'Журнал'
+                }
               >
-                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon className={styles.journalIcon} />}
+                {item.label === 'Instagram' ? (
+                  <InstagramIcon />
+                ) : item.label === 'TG' ? (
+                  <TelegramIcon />
+                ) : (
+                  <JournalIcon className={styles.journalIcon} />
+                )}
               </a>
             ))}
           </div>
           <ContactDialogButton className={styles.cta} size="small" tone="inverse" />
           <button
+            ref={menuButtonRef}
             className={styles.menuButton}
             type="button"
             aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
@@ -109,7 +132,12 @@ export function Header() {
         </div>
       </div>
 
-      <div className={styles.mobilePanel} id="mobile-navigation" data-open={menuOpen}>
+      <div
+        className={styles.mobilePanel}
+        id="mobile-navigation"
+        data-open={menuOpen}
+        inert={!menuOpen}
+      >
         <nav aria-label="Мобильная навигация">
           {allNavigation.map((item, index) => (
             <Link key={item.href} href={`/${item.href}`} onClick={closeNavigation}>
@@ -119,16 +147,35 @@ export function Header() {
           ))}
         </nav>
         <div className={styles.mobileFooter}>
-          <ContactDialogButton size="large" tone="inverse" onOpen={closeNavigation} />
+          <ContactDialogButton
+            size="large"
+            tone="inverse"
+            onOpen={() => {
+              closeNavigation()
+              menuButtonRef.current?.focus({ preventScroll: true })
+            }}
+          />
           <div className={styles.mobileSocials}>
             {socialLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 aria-label={item.ariaLabel}
-                data-tooltip={item.label === 'Instagram' ? 'Instagram' : item.label === 'TG' ? 'Telegram' : 'Журнал'}
+                data-tooltip={
+                  item.label === 'Instagram'
+                    ? 'Instagram'
+                    : item.label === 'TG'
+                      ? 'Telegram'
+                      : 'Журнал'
+                }
               >
-                {item.label === 'Instagram' ? <InstagramIcon /> : item.label === 'TG' ? <TelegramIcon /> : <JournalIcon className={styles.journalIcon} />}
+                {item.label === 'Instagram' ? (
+                  <InstagramIcon />
+                ) : item.label === 'TG' ? (
+                  <TelegramIcon />
+                ) : (
+                  <JournalIcon className={styles.journalIcon} />
+                )}
               </a>
             ))}
           </div>

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 import { CloseIcon } from '@/components/ui/Icons/Icons'
+import { lockBodyScroll } from '@/lib/scroll-lock'
 
 import styles from './Estimates.module.css'
 
@@ -24,12 +25,9 @@ export function EstimateImage({ src, alt, title, width, height }: EstimateImageP
     if (!dialog) return
     if (isOpen && !dialog.open) {
       dialog.showModal()
-      document.body.style.overflow = 'hidden'
     }
     if (!isOpen && dialog.open) dialog.close()
-    return () => {
-      document.body.style.overflow = ''
-    }
+    if (isOpen) return lockBodyScroll()
   }, [isOpen])
 
   function close() {
@@ -44,7 +42,13 @@ export function EstimateImage({ src, alt, title, width, height }: EstimateImageP
         onClick={() => setIsOpen(true)}
         aria-label={`Увеличить изображение: ${title}`}
       >
-        <Image src={src} alt={alt} width={width} height={height} sizes="(max-width: 48rem) 92vw, 46vw" />
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes="(max-width: 48rem) 92vw, 46vw"
+        />
       </button>
       <dialog
         ref={dialogRef}
@@ -61,7 +65,14 @@ export function EstimateImage({ src, alt, title, width, height }: EstimateImageP
         <button className={styles.dialogClose} type="button" onClick={close} aria-label="Закрыть">
           <CloseIcon />
         </button>
-        <Image className={styles.modalImage} src={src} alt={alt} width={width} height={height} sizes="90vw" />
+        <Image
+          className={styles.modalImage}
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes="90vw"
+        />
       </dialog>
     </>
   )

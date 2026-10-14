@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, type ReactNode } from 'react'
 
 import { CloseIcon } from '@/components/ui/Icons/Icons'
+import { lockBodyScroll } from '@/lib/scroll-lock'
 
 import styles from './Modal.module.css'
 
@@ -29,16 +30,13 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
     if (open && !dialog.open) {
       restoreFocusRef.current = document.activeElement as HTMLElement | null
       dialog.showModal()
-      document.body.style.overflow = 'hidden'
     }
 
     if (!open && dialog.open) {
       dialog.close()
     }
 
-    return () => {
-      document.body.style.overflow = ''
-    }
+    if (open) return lockBodyScroll()
   }, [open])
 
   function handleClose() {
@@ -55,8 +53,7 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
         handleClose()
       }}
       onClose={() => {
-        document.body.style.overflow = ''
-        requestAnimationFrame(() => restoreFocusRef.current?.focus())
+        requestAnimationFrame(() => restoreFocusRef.current?.focus({ preventScroll: true }))
       }}
       onClick={(event) => {
         if (event.target === event.currentTarget) {

@@ -170,8 +170,18 @@ export function ProjectShowcase({
               </div>
 
               <div className={styles.meta} aria-live="polite">
-                <Link href={projectHref} prefetch={false}>
-                  <h3>{activeProject.title}</h3>
+                <Link className={styles.projectTitle} href={projectHref} prefetch={false}>
+                  {projects.map((project) => (
+                    <h3
+                      key={project.slug}
+                      className={
+                        project.slug === activeProject.slug ? undefined : styles.inactiveTitle
+                      }
+                      aria-hidden={project.slug !== activeProject.slug}
+                    >
+                      {project.title}
+                    </h3>
+                  ))}
                 </Link>
                 <p>
                   {activeProject.city && (
