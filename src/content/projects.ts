@@ -317,6 +317,22 @@ export const privateProjects: Project[] = [
           src: '/images/projects/cornice-light-apartment/gallery-05.webp',
           alt: 'Каскадная люстра на фоне ровной плоскости потолка',
         },
+        {
+          src: '/images/projects/cornice-light-apartment/gallery-01.webp',
+          alt: 'Потолок со встроенными светильниками над линией шкафов',
+        },
+        {
+          src: '/images/projects/cornice-light-apartment/gallery-02.webp',
+          alt: 'Коридор со скруглёнными переходами потолка и встроенным светом',
+        },
+        {
+          src: '/images/projects/cornice-light-apartment/gallery-06.webp',
+          alt: 'Потолок у окна со скруглённым примыканием к стене',
+        },
+        {
+          src: '/images/projects/cornice-light-apartment/gallery-11.webp',
+          alt: 'Ниша со скрытой подсветкой вдоль оконного проёма',
+        },
       ],
       // Черновой ремонт и монтаж.
       process: [
@@ -347,22 +363,6 @@ export const privateProjects: Project[] = [
         {
           src: '/images/projects/cornice-light-apartment/gallery-03.webp',
           alt: 'Проход с тёмной дверью и точечными светильниками в потолке',
-        },
-        {
-          src: '/images/projects/cornice-light-apartment/gallery-01.webp',
-          alt: 'Потолок со встроенными светильниками над линией шкафов',
-        },
-        {
-          src: '/images/projects/cornice-light-apartment/gallery-02.webp',
-          alt: 'Коридор со скруглёнными переходами потолка и встроенным светом',
-        },
-        {
-          src: '/images/projects/cornice-light-apartment/gallery-06.webp',
-          alt: 'Потолок у окна со скруглённым примыканием к стене',
-        },
-        {
-          src: '/images/projects/cornice-light-apartment/gallery-11.webp',
-          alt: 'Ниша со скрытой подсветкой вдоль оконного проёма',
         },
       ],
     },
