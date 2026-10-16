@@ -1,6 +1,7 @@
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading'
+import { blurDataURLs } from '@/lib/image-placeholder'
 
 import { EstimateImage } from './EstimateImage'
 import styles from './Estimates.module.css'
@@ -26,15 +27,17 @@ const estimates = [
   },
 ] as const
 
-export function Estimates() {
+export async function Estimates() {
+  const placeholders = await blurDataURLs(estimates.map((estimate) => estimate.image))
+
   return (
     <section className={styles.section} id="estimates" aria-labelledby="estimates-title">
       <Container>
         <div className={styles.intro}>
           <Reveal>
             <SectionHeading
-            number="09"
-            showEyebrow
+              number="09"
+              showEyebrow
               eyebrow="Сметы"
               title="Подробный расчёт сметы"
               description="Готовим смету в двух форматах: наглядную по основным блокам с изображениями и подробную по каждой позиции. Согласованную стоимость фиксируем при заключении договора."
@@ -56,6 +59,7 @@ export function Estimates() {
                     title={estimate.title}
                     width={estimate.width}
                     height={estimate.height}
+                    blurDataURL={placeholders[estimate.image]}
                   />
                 </div>
                 <div className={styles.cardContent}>

@@ -1,17 +1,21 @@
 import Image from 'next/image'
 
 import { Container } from '@/components/ui/Container/Container'
+import { blurProps } from '@/lib/image-placeholder'
 
 import styles from './FounderSection.module.css'
 
-export function FounderSection() {
+const portraitImage = '/images/roman.png'
+
+export async function FounderSection() {
   return (
     <section className={styles.section} id="founder" aria-labelledby="founder-title">
       <Container>
         <div className={styles.layout}>
           <figure className={styles.photo}>
             <Image
-              src="/images/roman.png"
+              src={portraitImage}
+              {...await blurProps(portraitImage)}
               alt="Роман Аникин на объекте с проектом потолка"
               fill
               sizes="(max-width: 64rem) 100vw, 50vw"

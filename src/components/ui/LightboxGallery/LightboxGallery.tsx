@@ -14,6 +14,8 @@ export type LightboxImage = {
   alt: string
   caption: string
   objectPosition?: string
+  /** Мыльное превью до загрузки, см. lib/image-placeholder. */
+  blurDataURL?: string
 }
 
 type LightboxGalleryProps = {
@@ -84,6 +86,8 @@ export function LightboxGallery({
                 <Image
                   src={image.src}
                   alt={image.alt}
+                  placeholder={image.blurDataURL ? 'blur' : 'empty'}
+                  blurDataURL={image.blurDataURL}
                   fill
                   quality={95}
                   sizes={
@@ -123,6 +127,8 @@ export function LightboxGallery({
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
+                placeholder={selectedImage.blurDataURL ? 'blur' : 'empty'}
+                blurDataURL={selectedImage.blurDataURL}
                 fill
                 sizes="100vw"
                 quality={95}

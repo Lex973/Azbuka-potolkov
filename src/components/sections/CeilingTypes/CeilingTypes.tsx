@@ -6,10 +6,13 @@ import { Container } from '@/components/ui/Container/Container'
 import { ArrowRightIcon } from '@/components/ui/Icons/Icons'
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading'
 import { ceilingTypeCards } from '@/content/ceiling-types'
+import { blurDataURLs } from '@/lib/image-placeholder'
 
 import styles from './CeilingTypes.module.css'
 
-export function CeilingTypes() {
+export async function CeilingTypes() {
+  const placeholders = await blurDataURLs(ceilingTypeCards.map((ceiling) => ceiling.image))
+
   return (
     <section className={styles.section} id="ceiling-types" aria-labelledby="ceiling-types-title">
       <Container>
@@ -40,6 +43,8 @@ export function CeilingTypes() {
                   <Image
                     src={ceiling.image}
                     alt={ceiling.imageAlt}
+                    placeholder="blur"
+                    blurDataURL={placeholders[ceiling.image]}
                     fill
                     quality={95}
                     sizes="(max-width: 40rem) 100vw, (max-width: 48rem) 50vw, (max-width: 72rem) 33vw, 24rem"

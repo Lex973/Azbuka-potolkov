@@ -3,16 +3,20 @@ import Image from 'next/image'
 import { ButtonLink } from '@/components/ui/Button/Button'
 import { Container } from '@/components/ui/Container/Container'
 import { siteConfig } from '@/config/site'
+import { blurProps } from '@/lib/image-placeholder'
 
 import styles from './ContactSection.module.css'
 import { StudioVisitDialogButton } from './StudioVisitDialogButton'
 
-export function ContactSection() {
+const backgroundImage = '/images/final-cta-studio.png'
+
+export async function ContactSection() {
   return (
     <section className={styles.section} id="contact-form" aria-labelledby="contact-form-title">
       <Image
         className={styles.backgroundImage}
-        src="/images/final-cta-studio.png"
+        src={backgroundImage}
+        {...await blurProps(backgroundImage)}
         alt=""
         fill
         sizes="100vw"

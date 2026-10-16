@@ -14,9 +14,10 @@ type EstimateImageProps = {
   title: string
   width: number
   height: number
+  blurDataURL: string
 }
 
-export function EstimateImage({ src, alt, title, width, height }: EstimateImageProps) {
+export function EstimateImage({ src, alt, title, width, height, blurDataURL }: EstimateImageProps) {
   const [isOpen, setIsOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
 
@@ -47,6 +48,8 @@ export function EstimateImage({ src, alt, title, width, height }: EstimateImageP
           alt={alt}
           width={width}
           height={height}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
           sizes="(max-width: 48rem) 92vw, 46vw"
         />
       </button>
@@ -71,6 +74,8 @@ export function EstimateImage({ src, alt, title, width, height }: EstimateImageP
           alt={alt}
           width={width}
           height={height}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
           sizes="90vw"
         />
       </dialog>

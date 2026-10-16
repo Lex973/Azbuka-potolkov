@@ -2,8 +2,11 @@ import Image from 'next/image'
 
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
+import { blurProps } from '@/lib/image-placeholder'
 
 import styles from './AirConditionersSection.module.css'
+
+const backgroundImage = '/images/air-conditioners-bg-v6.png'
 
 const coordinationPoints = [
   'шторные ниши',
@@ -14,7 +17,7 @@ const coordinationPoints = [
   'другие закладные',
 ]
 
-export function AirConditionersSection() {
+export async function AirConditionersSection() {
   return (
     <section
       className={styles.section}
@@ -23,7 +26,8 @@ export function AirConditionersSection() {
     >
       <Image
         className={styles.backgroundImage}
-        src="/images/air-conditioners-bg-v6.png"
+        src={backgroundImage}
+        {...await blurProps(backgroundImage)}
         alt=""
         fill
         quality={95}

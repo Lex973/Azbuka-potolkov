@@ -5,7 +5,12 @@ import Image from 'next/image'
 
 import styles from './LightingCalculation.module.css'
 
-export function LightingVisualization() {
+type LightingVisualizationProps = {
+  /** Мыльные превью интерьера и карты освещённости. */
+  placeholders: { interior: string; map: string }
+}
+
+export function LightingVisualization({ placeholders }: LightingVisualizationProps) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -35,6 +40,8 @@ export function LightingVisualization() {
           <div className={styles.imageFrame}>
             <Image
               src="/images/lighting-calculation/interior-lighting.png"
+              placeholder="blur"
+              blurDataURL={placeholders.interior}
               alt="Интерьер с рассчитанной системой трекового и акцентного освещения"
               fill
               sizes="(max-width: 64rem) 100vw, 50vw"
@@ -63,6 +70,8 @@ export function LightingVisualization() {
           <div className={[styles.imageFrame, styles.calculationFrame].join(' ')}>
             <Image
               src="/images/lighting-calculation/illuminance-map.png"
+              placeholder="blur"
+              blurDataURL={placeholders.map}
               alt="Псевдоцветная карта распределения освещённости в том же интерьере"
               fill
               sizes="(max-width: 64rem) 100vw, 50vw"

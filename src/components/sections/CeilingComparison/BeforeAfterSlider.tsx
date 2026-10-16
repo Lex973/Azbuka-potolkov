@@ -5,11 +5,21 @@ import { useState, type CSSProperties, type ChangeEvent } from 'react'
 
 import styles from './CeilingComparison.module.css'
 
+type ComparisonImage = {
+  src: string
+  blurDataURL: string
+}
+
+type BeforeAfterSliderProps = {
+  before: ComparisonImage
+  after: ComparisonImage
+}
+
 type ComparisonStyle = CSSProperties & {
   '--comparison-position': string
 }
 
-export function BeforeAfterSlider() {
+export function BeforeAfterSlider({ before, after }: BeforeAfterSliderProps) {
   const [position, setPosition] = useState(50)
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -24,7 +34,9 @@ export function BeforeAfterSlider() {
     <figure className={styles.comparison} style={comparisonStyle}>
       <div className={styles.afterImage}>
         <Image
-          src="/images/ceiling-comparison/living-room-after-finished-v3.png"
+          src={after.src}
+          placeholder="blur"
+          blurDataURL={after.blurDataURL}
           alt="Завершённая гостиная с готовым потолком"
           fill
           sizes="(max-width: 90rem) 94vw, 82rem"
@@ -33,7 +45,9 @@ export function BeforeAfterSlider() {
 
       <div className={styles.beforeImage}>
         <Image
-          src="/images/ceiling-comparison/living-room-before-raw-v4.png"
+          src={before.src}
+          placeholder="blur"
+          blurDataURL={before.blurDataURL}
           alt="Та же гостиная без чистовой отделки потолка"
           fill
           sizes="(max-width: 90rem) 94vw, 82rem"

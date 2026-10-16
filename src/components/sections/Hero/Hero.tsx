@@ -1,21 +1,25 @@
 import Image from 'next/image'
 
 import { ContactDialogButton } from '@/components/forms/ContactDialog/ContactDialogButton'
+import { blurProps } from '@/lib/image-placeholder'
 
 import styles from './Hero.module.css'
+
+const heroImage = '/images/hero/interior-main-enhanced-v4.png'
 
 const heroFacts = [
   { value: '100+', label: 'проектов\nв год' },
   { value: '12', label: 'лет\nработы' },
 ]
 
-export function Hero() {
+export async function Hero() {
   return (
     <section className={styles.hero} id="home" aria-labelledby="hero-title">
       <div className={styles.imageFrame}>
         <Image
           className={styles.image}
-          src="/images/hero/interior-main-enhanced-v4.png"
+          src={heroImage}
+          {...await blurProps(heroImage)}
           alt="Современная гостиная с потолочными световыми линиями"
           fill
           priority

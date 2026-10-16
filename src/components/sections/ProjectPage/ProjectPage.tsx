@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header/Header'
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
 import { LightboxGallery } from '@/components/ui/LightboxGallery/LightboxGallery'
+import { blurDataURLs } from '@/lib/image-placeholder'
 import type { Project, ProjectGalleryStage } from '@/types/project'
 
 import styles from './ProjectPage.module.css'
@@ -25,7 +26,14 @@ const galleryStages: readonly { stage: ProjectGalleryStage; title: string }[] = 
   { stage: 'process', title: 'Этапы работ' },
 ]
 
-export function ProjectPage({ project }: ProjectPageProps) {
+export async function ProjectPage({ project }: ProjectPageProps) {
+  const mainImage = project.pageImage ?? project.image
+  const placeholders = await blurDataURLs([
+    mainImage,
+    ...Object.values(project.gallery ?? {}).flatMap((photos) => photos.map((photo) => photo.src)),
+    ...project.details.map((detail) => detail.image),
+  ])
+
   const facts = [
     ['Тип объекта', project.objectType ?? project.category],
     ['Площадь', project.area],
@@ -48,6 +56,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
             alt: photo.alt,
             caption: photo.alt,
             objectPosition: galleryFocus,
+            blurDataURL: placeholders[photo.src],
           })),
         }
       })
@@ -60,6 +69,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
             alt: detail.alt,
             caption: project.features[index] ?? project.title,
             objectPosition: detail.position,
+            blurDataURL: placeholders[detail.image],
           })),
         },
       ]
@@ -73,7 +83,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
           <Container className={styles.overviewGrid}>
             <Reveal className={styles.mainMedia}>
               <Image
-                src={project.pageImage ?? project.image}
+                src={mainImage}
+                placeholder="blur"
+                blurDataURL={placeholders[mainImage]}
                 alt={project.pageImageAlt ?? project.imageAlt}
                 fill
                 preload

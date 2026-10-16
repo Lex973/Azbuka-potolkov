@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer/Footer'
 import { Header } from '@/components/layout/Header/Header'
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
+import { blurDataURLs, blurProps } from '@/lib/image-placeholder'
 import type { CeilingTypeDetail } from '@/types/ceiling-type'
 
 import { CeilingGallery } from './CeilingGallery'
@@ -14,7 +15,9 @@ type CeilingTypePageProps = {
   content: CeilingTypeDetail
 }
 
-export function CeilingTypePage({ content }: CeilingTypePageProps) {
+export async function CeilingTypePage({ content }: CeilingTypePageProps) {
+  const galleryPlaceholders = await blurDataURLs(content.gallery.images.map((image) => image.src))
+
   return (
     <div className={styles.page}>
       <Header />
@@ -24,6 +27,7 @@ export function CeilingTypePage({ content }: CeilingTypePageProps) {
           <Image
             className={styles.heroImage}
             src={content.heroImage.src}
+            {...await blurProps(content.heroImage.src)}
             alt={content.heroImage.alt}
             fill
             preload
@@ -64,7 +68,12 @@ export function CeilingTypePage({ content }: CeilingTypePageProps) {
               <p>{content.gallery.description}</p>
             </Reveal>
 
-            <CeilingGallery images={content.gallery.images} />
+            <CeilingGallery
+              images={content.gallery.images.map((image) => ({
+                ...image,
+                blurDataURL: galleryPlaceholders[image.src],
+              }))}
+            />
           </Container>
         </section>
 

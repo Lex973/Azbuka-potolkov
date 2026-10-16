@@ -17,6 +17,7 @@ import { Testimonials } from '@/components/sections/Testimonials/Testimonials'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { siteConfig } from '@/config/site'
 import { commercialProjects, privateProjects } from '@/content/projects'
+import { blurDataURLs } from '@/lib/image-placeholder'
 import { organizationSchema, pageMetadata, websiteSchema } from '@/lib/seo'
 
 import styles from './page.module.css'
@@ -35,7 +36,14 @@ export const metadata: Metadata = {
   }),
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const projectPlaceholders = await blurDataURLs(
+    [...privateProjects, ...commercialProjects].flatMap((project) => [
+      project.image,
+      ...project.details.map((detail) => detail.image),
+    ]),
+  )
+
   return (
     <div className={styles.page}>
       <JsonLd data={organizationSchema()} />
@@ -50,12 +58,14 @@ export default function HomePage() {
           number="04"
           title="Частные проекты"
           projects={privateProjects}
+          placeholders={projectPlaceholders}
         />
         <ProjectShowcase
           id="commercial-projects"
           number="05"
           title="Коммерческие проекты"
           projects={commercialProjects}
+          placeholders={projectPlaceholders}
           mirrored
         />
         <LightingCalculation />

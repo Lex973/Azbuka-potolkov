@@ -2,10 +2,13 @@ import Image from 'next/image'
 
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
+import { blurProps } from '@/lib/image-placeholder'
 
 import styles from './QuietWallsSection.module.css'
 
-export function QuietWallsSection() {
+const textileImage = '/images/tihie-steni-enhanced.png'
+
+export async function QuietWallsSection() {
   return (
     <section className={styles.section} id="quiet-walls" aria-labelledby="quiet-walls-title">
       <Container>
@@ -42,7 +45,8 @@ export function QuietWallsSection() {
 
           <Reveal className={styles.media} delay={0.12}>
             <Image
-              src="/images/tihie-steni-enhanced.png"
+              src={textileImage}
+              {...await blurProps(textileImage)}
               alt="Зона отдыха с акустическими панелями и мягкими вертикальными линиями света"
               fill
               sizes="(max-width: 64rem) 100vw, 50vw"

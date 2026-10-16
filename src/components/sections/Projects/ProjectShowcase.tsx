@@ -18,6 +18,8 @@ type ProjectShowcaseProps = {
   number: string
   title: string
   projects: Project[]
+  /** Мыльные превью по `src` для главных фото и деталей всех слайдов. */
+  placeholders: Record<string, string>
   mirrored?: boolean
 }
 
@@ -26,6 +28,7 @@ export function ProjectShowcase({
   number,
   title,
   projects,
+  placeholders,
   mirrored = false,
 }: ProjectShowcaseProps) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -128,6 +131,8 @@ export function ProjectShowcase({
                     <Image
                       src={activeProject.image}
                       alt={activeProject.imageAlt}
+                      placeholder="blur"
+                      blurDataURL={placeholders[activeProject.image]}
                       fill
                       sizes="(max-width: 90rem) 92vw, 83rem"
                       quality={95}
@@ -160,6 +165,8 @@ export function ProjectShowcase({
                     <Image
                       src={detail.image}
                       alt={detail.alt}
+                      placeholder="blur"
+                      blurDataURL={placeholders[detail.image]}
                       fill
                       sizes="(max-width: 40rem) 33vw, 30vw"
                       quality={95}

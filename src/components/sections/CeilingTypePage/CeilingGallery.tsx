@@ -1,8 +1,10 @@
-import { LightboxGallery } from '@/components/ui/LightboxGallery/LightboxGallery'
-import type { CeilingTypeImage } from '@/types/ceiling-type'
+import {
+  LightboxGallery,
+  type LightboxImage,
+} from '@/components/ui/LightboxGallery/LightboxGallery'
 
 type CeilingGalleryProps = {
-  images: readonly CeilingTypeImage[]
+  images: readonly LightboxImage[]
 }
 
 export function CeilingGallery({ images }: CeilingGalleryProps) {
