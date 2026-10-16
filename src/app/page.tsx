@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import { Header } from '@/components/layout/Header/Header'
 import { Footer } from '@/components/layout/Footer/Footer'
 import { ApproachSection } from '@/components/sections/Approach/ApproachSection'
@@ -12,13 +14,32 @@ import { LightingCalculation } from '@/components/sections/LightingCalculation/L
 import { ProjectShowcase } from '@/components/sections/Projects/ProjectShowcase'
 import { QuietWallsSection } from '@/components/sections/QuietWalls/QuietWallsSection'
 import { Testimonials } from '@/components/sections/Testimonials/Testimonials'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/config/site'
 import { commercialProjects, privateProjects } from '@/content/projects'
+import { organizationSchema, pageMetadata, websiteSchema } from '@/lib/seo'
 
 import styles from './page.module.css'
+
+const title = `Натяжные потолки и свет по дизайн-проектам в ${siteConfig.cityLocative}`
+const description = `${siteConfig.description} С ${siteConfig.foundingYear} года, около 100 объектов в год.`
+
+export const metadata: Metadata = {
+  title: { absolute: `${title} — ${siteConfig.name}` },
+  ...pageMetadata({
+    title,
+    description,
+    path: '/',
+    ogImage: '/images/og/home.jpg',
+    ogImageAlt: 'Интерьер с потолком и встроенным светом',
+  }),
+}
 
 export default function HomePage() {
   return (
     <div className={styles.page}>
+      <JsonLd data={organizationSchema()} />
+      <JsonLd data={websiteSchema()} />
       <Header />
       <main>
         <Hero />

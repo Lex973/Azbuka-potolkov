@@ -140,6 +140,7 @@ export function Header() {
     setSectionsOpen(false)
   }
 
+  /** На главной прокручиваем к секции сами, на внутренних страницах ссылка ведёт на `/#секция`. */
   function navigate(event: MouseEvent<HTMLAnchorElement>, href: string) {
     const target = document.getElementById(href.slice(1))
     const modified = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey
@@ -159,15 +160,15 @@ export function Header() {
 
   function renderLink(item: NavigationItem, style?: CSSProperties) {
     return (
-      <a
+      <Link
         key={item.href}
-        href={item.href}
+        href={`/${item.href}`}
         aria-current={isActive(item, activeId) ? 'location' : undefined}
         style={style}
         onClick={(event) => navigate(event, item.href)}
       >
         {item.label}
-      </a>
+      </Link>
     )
   }
 
@@ -197,15 +198,15 @@ export function Header() {
 
         <nav className={styles.desktopNav} aria-label="Основная навигация">
           {primaryNavigation.map((item) => (
-            <a
+            <Link
               key={item.href}
-              href={item.href}
+              href={`/${item.href}`}
               data-compact={item.compact}
               aria-current={isActive(item, activeId) ? 'location' : undefined}
               onClick={(event) => navigate(event, item.href)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <button
             ref={sectionsButtonRef}

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 
+import { siteConfig } from '@/config/site'
+
 import './globals.css'
 
 const manrope = Manrope({
@@ -10,11 +12,14 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Азбука Потолков',
-    template: '%s — Азбука Потолков',
+    default: siteConfig.name,
+    template: `%s — ${siteConfig.name}`,
   },
-  description: 'Технический партнёр дизайнеров и архитекторов Новосибирска по потолкам и свету.',
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  formatDetection: { telephone: false },
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

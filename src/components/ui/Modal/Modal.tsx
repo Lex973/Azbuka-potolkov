@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useId, useRef, type ReactNode } from 'react'
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
 
 import { CloseIcon } from '@/components/ui/Icons/Icons'
 import { lockBodyScroll } from '@/lib/scroll-lock'
@@ -19,6 +19,11 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const restoreFocusRef = useRef<HTMLElement | null>(null)
   const titleId = useId()
+  // Содержимое появляется в DOM только с первым открытием: заголовки окон
+  // не попадают в HTML страницы раньше её собственного h1.
+  const [mounted, setMounted] = useState(open)
+
+  if (open && !mounted) setMounted(true)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -61,16 +66,18 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
         }
       }}
     >
-      <div className={styles.panel}>
-        <button className={styles.close} type="button" onClick={handleClose} aria-label="Закрыть">
-          <CloseIcon />
-        </button>
-        {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
-        <h2 className={styles.title} id={titleId}>
-          {title}
-        </h2>
-        <div className={styles.content}>{children}</div>
-      </div>
+      {mounted ? (
+        <div className={styles.panel}>
+          <button className={styles.close} type="button" onClick={handleClose} aria-label="Закрыть">
+            <CloseIcon />
+          </button>
+          {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
+          <h2 className={styles.title} id={titleId}>
+            {title}
+          </h2>
+          <div className={styles.content}>{children}</div>
+        </div>
+      ) : null}
     </dialog>
   )
 }
