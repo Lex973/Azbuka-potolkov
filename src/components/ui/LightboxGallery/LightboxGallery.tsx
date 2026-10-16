@@ -21,9 +21,16 @@ type LightboxGalleryProps = {
   columns?: 3 | 4
   /** Пропорции превью: горизонтальные по умолчанию, вертикальные для съёмки в высоту. */
   aspect?: 'wide' | 'tall'
+  /** `contain` показывает кадр целиком — для чертежей и планов. */
+  fit?: 'cover' | 'contain'
 }
 
-export function LightboxGallery({ images, columns = 4, aspect = 'wide' }: LightboxGalleryProps) {
+export function LightboxGallery({
+  images,
+  columns = 4,
+  aspect = 'wide',
+  fit = 'cover',
+}: LightboxGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const triggerRef = useRef<HTMLButtonElement | null>(null)
@@ -63,7 +70,11 @@ export function LightboxGallery({ images, columns = 4, aspect = 'wide' }: Lightb
           <Reveal key={`${image.src}-${image.caption}-${index}`} delay={(index % columns) * 0.04}>
             <figure className={styles.figure}>
               <button
-                className={[styles.imageButton, aspect === 'tall' ? styles.tall : '']
+                className={[
+                  styles.imageButton,
+                  aspect === 'tall' ? styles.tall : '',
+                  fit === 'contain' ? styles.contain : '',
+                ]
                   .filter(Boolean)
                   .join(' ')}
                 type="button"

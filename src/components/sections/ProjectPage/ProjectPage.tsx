@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/Header/Header'
 import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { Container } from '@/components/ui/Container/Container'
 import { LightboxGallery } from '@/components/ui/LightboxGallery/LightboxGallery'
-import type { Project } from '@/types/project'
+import type { Project, ProjectGalleryStage } from '@/types/project'
 
 import styles from './ProjectPage.module.css'
 
@@ -16,6 +16,14 @@ type ProjectPageProps = {
 
 /** Превью галереи кадрируем выше центра: в проектах важен потолок, а не пол. */
 const galleryFocus = '50% 15%'
+
+/** Порядок разделов: от замысла к чертежам, результату и процессу. */
+const galleryStages: readonly { stage: ProjectGalleryStage; title: string }[] = [
+  { stage: 'visualization', title: 'Визуализация' },
+  { stage: 'documentation', title: 'Техническая документация' },
+  { stage: 'result', title: 'Результат работы' },
+  { stage: 'process', title: 'Этапы работ' },
+]
 
 export function ProjectPage({ project }: ProjectPageProps) {
   const facts = [
@@ -27,21 +35,34 @@ export function ProjectPage({ project }: ProjectPageProps) {
     ...(project.price ? ([['Стоимость', project.price]] as const) : []),
   ] as const
 
-  const hasPhotoGallery = Boolean(project.gallery)
+  const gallerySections = project.gallery
+    ? galleryStages.flatMap(({ stage, title }) => {
+        const photos = project.gallery?.[stage] ?? []
+        if (photos.length === 0) return []
 
-  const galleryImages = project.gallery
-    ? project.gallery.map((photo) => ({
-        src: photo.src,
-        alt: photo.alt,
-        caption: photo.alt,
-        objectPosition: galleryFocus,
-      }))
-    : project.details.map((detail, index) => ({
-        src: detail.image,
-        alt: detail.alt,
-        caption: project.features[index] ?? project.title,
-        objectPosition: detail.position,
-      }))
+        return {
+          stage,
+          title,
+          images: photos.map((photo) => ({
+            src: photo.src,
+            alt: photo.alt,
+            caption: photo.alt,
+            objectPosition: galleryFocus,
+          })),
+        }
+      })
+    : [
+        {
+          stage: 'visualization' as const,
+          title: 'Визуализация',
+          images: project.details.map((detail, index) => ({
+            src: detail.image,
+            alt: detail.alt,
+            caption: project.features[index] ?? project.title,
+            objectPosition: detail.position,
+          })),
+        },
+      ]
 
   return (
     <div className={styles.page}>
@@ -86,11 +107,23 @@ export function ProjectPage({ project }: ProjectPageProps) {
               <h2 id="project-gallery-title">Результат виден в деталях</h2>
               <p>Нажмите на фотографию, чтобы рассмотреть её в полном размере.</p>
             </Reveal>
-            <LightboxGallery
-              images={galleryImages}
-              columns={3}
-              aspect={hasPhotoGallery ? 'tall' : 'wide'}
-            />
+            {gallerySections.map(({ stage, title, images }) => (
+              <section
+                key={stage}
+                className={styles.gallerySection}
+                aria-labelledby={`gallery-${stage}-title`}
+              >
+                <Reveal className={styles.stageTitle}>
+                  <h3 id={`gallery-${stage}-title`}>{title}</h3>
+                </Reveal>
+                <LightboxGallery
+                  images={images}
+                  columns={3}
+                  aspect={project.gallery && stage !== 'documentation' ? 'tall' : 'wide'}
+                  fit={stage === 'documentation' ? 'contain' : 'cover'}
+                />
+              </section>
+            ))}
           </Container>
         </section>
 

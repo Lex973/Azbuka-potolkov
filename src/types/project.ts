@@ -10,6 +10,12 @@ export type ProjectGalleryImage = {
   alt: string
 }
 
+/** Разделы галереи в порядке показа на странице проекта. */
+export type ProjectGalleryStage = 'visualization' | 'documentation' | 'result' | 'process'
+
+/** Раздел без фотографий не выводится. */
+export type ProjectGallery = Partial<Record<ProjectGalleryStage, ProjectGalleryImage[]>>
+
 export type Project = {
   slug: string
   category?: 'Частный интерьер' | 'Коммерческий объект'
@@ -28,6 +34,6 @@ export type Project = {
   pageImageAlt?: string
   details: ProjectDetail[]
   /** Фотографии для страницы проекта. Если не заданы, галерея собирается из деталей. */
-  gallery?: ProjectGalleryImage[]
+  gallery?: ProjectGallery
   features: string[]
 }

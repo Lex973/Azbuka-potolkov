@@ -24,7 +24,7 @@ export function Footer() {
                 <span>Тихие стены</span>
               </small>
             </Link>
-            <p className={styles.tagline}>От чертежей до реализации, без ошибок</p>
+            <p className={styles.tagline}>От чертежей до реализации без ошибок</p>
           </div>
         </div>
 
