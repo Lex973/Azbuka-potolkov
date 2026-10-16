@@ -59,9 +59,16 @@
   text-wrap: nowrap;
 }
 
+/* Убираем хвост letter-spacing после слова, чтобы точки стояли посередине. */
+.logo small > span:not([aria-hidden]) {
+  margin-right: -0.18em;
+}
+
 .logo small > span[aria-hidden='true'] {
-  font-size: 1.25em;
+  align-self: center;
+  font-size: 2.25em;
   letter-spacing: 0;
+  line-height: 0;
 }
 
 .contacts {
