@@ -110,21 +110,6 @@
   margin-top: clamp(3rem, 6vw, 5.5rem);
 }
 
-/* Короткая золотая линия слева от названия раздела. */
-.stageTitle {
-  display: flex;
-  align-items: center;
-  gap: clamp(1rem, 2vw, 1.5rem);
-}
-
-.stageTitle::before {
-  width: clamp(2rem, 4vw, 3.5rem);
-  height: 0.0625rem;
-  flex: none;
-  background: var(--color-accent);
-  content: '';
-}
-
 .stageTitle h3 {
   font-size: var(--font-size-h3);
   font-weight: 300;
