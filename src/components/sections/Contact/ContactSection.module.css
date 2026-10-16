@@ -1,7 +1,7 @@
 .section {
   position: relative;
   isolation: isolate;
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: var(--header-height);
   padding-block: clamp(5rem, 8vw, 7rem);
   overflow: hidden;
   background: var(--color-brand);

@@ -1,5 +1,5 @@
 .section {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: var(--header-height);
   padding-block: var(--section-space);
   overflow: hidden;
   background: var(--color-paper);

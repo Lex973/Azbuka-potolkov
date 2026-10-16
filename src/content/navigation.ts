@@ -1,27 +1,65 @@
 export type NavigationItem = {
   label: string
   href: `#${string}`
+  /** Секции, при прокрутке которых пункт считается активным. По умолчанию — цель ссылки. */
+  sections?: string[]
 }
 
-export const primaryNavigation: NavigationItem[] = [
-  { label: 'Главная', href: '#home' },
-  { label: 'Подход', href: '#approach' },
-  { label: 'Частные проекты', href: '#private-projects' },
-  { label: 'Коммерческие проекты', href: '#commercial-projects' },
+export type NavigationGroup = {
+  title: string
+  items: NavigationItem[]
+}
+
+/** Короткий ряд в шапке. `compact: false` — пункт скрывается на средних экранах. */
+export const primaryNavigation: (NavigationItem & { compact: boolean })[] = [
+  { label: 'Подход', href: '#approach', compact: true },
+  {
+    label: 'Проекты',
+    href: '#private-projects',
+    sections: ['private-projects', 'commercial-projects'],
+    compact: true,
+  },
+  { label: 'Виды потолков', href: '#ceiling-types', compact: false },
+  { label: 'Сметы', href: '#estimates', compact: true },
+  { label: 'Отзывы', href: '#reviews', compact: false },
 ]
 
-export const secondaryNavigation: NavigationItem[] = [
-  { label: 'Роль потолка', href: '#ceiling-comparison' },
-  { label: 'Свет', href: '#light' },
-  { label: 'Виды потолков', href: '#ceiling-types' },
-  { label: 'Сметы', href: '#estimates' },
-  { label: 'Отзывы', href: '#reviews' },
-  { label: 'Тихие стены', href: '#quiet-walls' },
-  { label: 'Кондиционеры', href: '#air-conditioners' },
-  { label: 'Контакты', href: '#contacts' },
+/** Все секции главной, сгруппированные по смыслу; порядок внутри группы — как на странице. */
+export const navigationGroups: NavigationGroup[] = [
+  {
+    title: 'Компания',
+    items: [
+      { label: 'Подход', href: '#approach' },
+      { label: 'Роль потолка', href: '#ceiling-comparison' },
+      { label: 'Отзывы', href: '#reviews' },
+      { label: 'Основатель', href: '#founder' },
+    ],
+  },
+  {
+    title: 'Проекты',
+    items: [
+      { label: 'Частные', href: '#private-projects' },
+      { label: 'Коммерческие', href: '#commercial-projects' },
+      { label: 'Виды потолков', href: '#ceiling-types' },
+    ],
+  },
+  {
+    title: 'Решения',
+    items: [
+      { label: 'Расчёт света', href: '#lighting-calculation' },
+      { label: 'Тихие стены', href: '#quiet-walls' },
+      { label: 'Кондиционеры', href: '#air-conditioners' },
+    ],
+  },
+  {
+    title: 'Сотрудничество',
+    items: [
+      { label: 'Сметы', href: '#estimates' },
+      { label: 'Прислать проект', href: '#contact-form' },
+      { label: 'Контакты', href: '#contacts' },
+    ],
+  },
 ]
-
-export const allNavigation = [...primaryNavigation, ...secondaryNavigation]
 
 export const socialLinks = [
   { label: 'Instagram', href: '#contacts', ariaLabel: 'Instagram' },

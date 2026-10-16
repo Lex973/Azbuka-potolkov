@@ -1,7 +1,7 @@
 .section {
   position: relative;
   isolation: isolate;
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: var(--header-height);
   min-height: clamp(27rem, 34vw, 35rem);
   padding-block: clamp(3.25rem, 5vw, 4.5rem);
   background-color: var(--color-brand);
