@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: ProjectRouteProps): Promise<M
       description,
       path: `/projects/${project.slug}`,
       ogImage: `/images/og/projects/${project.slug}.jpg`,
-      ogImageAlt: project.pageImageAlt ?? project.imageAlt,
+      ogImageAlt: project.imageAlt,
       type: 'article',
     }),
   }

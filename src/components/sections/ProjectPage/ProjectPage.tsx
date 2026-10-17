@@ -27,7 +27,7 @@ const galleryStages: readonly { stage: ProjectGalleryStage; title: string }[] = 
 ]
 
 export async function ProjectPage({ project }: ProjectPageProps) {
-  const mainImage = project.pageImage ?? project.image
+  const mainImage = project.image
   const placeholders = await blurDataURLs([
     mainImage,
     ...Object.values(project.gallery ?? {}).flatMap((photos) => photos.map((photo) => photo.src)),
@@ -86,7 +86,7 @@ export async function ProjectPage({ project }: ProjectPageProps) {
                 src={mainImage}
                 placeholder="blur"
                 blurDataURL={placeholders[mainImage]}
-                alt={project.pageImageAlt ?? project.imageAlt}
+                alt={project.imageAlt}
                 fill
                 preload
                 sizes="(max-width: 64rem) 100vw, 66vw"

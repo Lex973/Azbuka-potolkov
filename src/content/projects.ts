@@ -227,8 +227,6 @@ export const privateProjects: Project[] = [
       'Классические карнизы и скруглённые переходы держат геометрию комнат, а подсветка убрана в нишу: свет читается, источник не виден.',
     image: '/images/projects/cornice-light-apartment/hallway-mirror-round-light.webp',
     imageAlt: 'Прихожая с зеркальным шкафом, круглым потолочным светильником и мягкими пуфами',
-    pageImage: '/images/projects/cornice-light-apartment/bedroom-main.webp',
-    pageImageAlt: 'Спальня с молдингами, встроенным треком и подвесными светильниками у кровати',
     details: [
       {
         image: '/images/projects/cornice-light-apartment/hallway-curved-wall-lights.webp',
@@ -333,6 +331,10 @@ export const privateProjects: Project[] = [
           src: '/images/projects/cornice-light-apartment/gallery-11.webp',
           alt: 'Ниша со скрытой подсветкой вдоль оконного проёма',
         },
+        {
+          src: '/images/projects/cornice-light-apartment/gallery-03.webp',
+          alt: 'Проход с тёмной дверью и точечными светильниками в потолке',
+        },
       ],
       // Черновой ремонт и монтаж.
       process: [
@@ -360,10 +362,6 @@ export const privateProjects: Project[] = [
           src: '/images/projects/cornice-light-apartment/gallery-10.webp',
           alt: 'Кухня-гостиная со встроенным светом и скрытым кондиционером',
         },
-        {
-          src: '/images/projects/cornice-light-apartment/gallery-03.webp',
-          alt: 'Проход с тёмной дверью и точечными светильниками в потолке',
-        },
       ],
     },
     features: ['Карнизный контур', 'Скрытая подсветка', 'Скруглённые примыкания'],
@@ -383,8 +381,6 @@ export const commercialProjects: Project[] = [
       'Ровную плоскость потолка дополнили линейным светом, встроенной вентиляцией и центральной зоной «звёздное небо».',
     image: '/images/projects/conference-hall/starry-ceiling-main.webp',
     imageAlt: 'Конференц-зал с рядами кресел и потолочной зоной «звёздное небо»',
-    pageImage: '/images/projects/conference-hall/concept-conference-overview.webp',
-    pageImageAlt: 'Визуализация конференц-зала с овальным столом и потолком «звёздное небо»',
     details: [
       {
         image: '/images/projects/conference-hall/conference-room-overview.webp',
@@ -523,8 +519,6 @@ export const commercialProjects: Project[] = [
       'В кабинетах руководителей световые линии, встроенные светильники и мягкая подсветка подчёркивают геометрию потолка.',
     image: '/images/projects/executive-offices/executive-office-main.webp',
     imageAlt: 'Кабинет руководителя с переговорным столом и геометричным освещением потолка',
-    pageImage: '/images/projects/executive-offices/executive-office-interior.webp',
-    pageImageAlt: 'Кабинет руководителя с переговорным столом и геометричным потолочным освещением',
     details: [
       {
         image: '/images/projects/executive-offices/classic-executive-office.webp',
@@ -638,8 +632,6 @@ export const commercialProjects: Project[] = [
       'Небесный рисунок над бассейном и звёздный потолок у сауны поддерживают спокойную атмосферу спа-зоны.',
     image: '/images/projects/spa-zone/spa-pool-overview.webp',
     imageAlt: 'Спа-зона с бассейном, небесным потолком и подсвеченной декоративной стеной',
-    pageImage: '/images/projects/spa-zone/spa-lounge-sky-ceiling.webp',
-    pageImageAlt: 'Зона отдыха у бассейна с небесным и звёздным потолками',
     details: [
       {
         image: '/images/projects/spa-zone/spa-pool-sky-ceiling.webp',
