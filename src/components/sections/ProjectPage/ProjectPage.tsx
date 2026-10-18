@@ -81,7 +81,8 @@ export async function ProjectPage({ project }: ProjectPageProps) {
       <main>
         <section className={styles.overview} aria-labelledby="project-title">
           <Container className={styles.overviewGrid}>
-            <Reveal className={styles.mainMedia}>
+            {/* Главное фото не анимируем: оно грузится первым, и движение во время загрузки дёргается. */}
+            <div className={styles.mainMedia}>
               <Image
                 src={mainImage}
                 placeholder="blur"
@@ -92,7 +93,7 @@ export async function ProjectPage({ project }: ProjectPageProps) {
                 sizes="(max-width: 64rem) 100vw, 66vw"
                 quality={95}
               />
-            </Reveal>
+            </div>
 
             <Reveal className={styles.summary} delay={0.08}>
               <p className={styles.eyebrow}>{project.category}</p>
