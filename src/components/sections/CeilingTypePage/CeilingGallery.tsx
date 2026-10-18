@@ -8,5 +8,5 @@ type CeilingGalleryProps = {
 }
 
 export function CeilingGallery({ images }: CeilingGalleryProps) {
-  return <LightboxGallery images={images} />
+  return <LightboxGallery images={images} aspect="tall" />
 }

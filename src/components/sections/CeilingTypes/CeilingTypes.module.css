@@ -90,9 +90,10 @@
 
 .content h3 {
   font-size: var(--font-size-h5);
-  font-weight: 350;
-  letter-spacing: var(--letter-spacing-heading);
-  line-height: 1.2;
+  font-weight: 500;
+  /* На мелком кегле сильный минус-трекинг слепляет слова. */
+  letter-spacing: -0.01em;
+  line-height: 1.25;
   transition: color var(--duration-base) var(--ease-standard);
 }
 
@@ -100,7 +101,10 @@
   grid-column: 1 / -1;
   max-width: 35rem;
   color: var(--color-text-soft);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 450;
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .more {
