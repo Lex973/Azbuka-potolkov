@@ -211,7 +211,9 @@ export const ceilingTypes: readonly CeilingTypeDetail[] = [
         galleryPhoto('floating', 'room-before-finish', 'Комната до чистовой отделки'),
         galleryPhoto('floating', 'room-floor-protected', 'Комната с укрытым полом'),
         galleryPhoto('floating', 'floating-panel-installation', 'Парящая плоскость при монтаже'),
-        galleryPhoto('floating', 'frame-installation', 'Монтаж парящего короба'),
+        galleryPhoto('floating', 'restaurant-bar-cove-light', 'Барная зона ресторана с подсветкой'),
+        galleryPhoto('floating', 'restaurant-hall-chandeliers', 'Зал ресторана с люстрами'),
+        galleryPhoto('floating', 'restaurant-booths-cove-light', 'Диваны под парящим контуром'),
       ],
     },
     installation: {
