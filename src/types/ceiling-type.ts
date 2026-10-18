@@ -8,7 +8,8 @@ export type CeilingTypeDetail = {
   slug: string
   title: string
   metaDescription: string
-  heroImage: CeilingTypeImage
+  /** `position` — фокус кадра, если важная часть фото не в центре. */
+  heroImage: CeilingTypeImage & { position?: string }
   lead: string
   intro: {
     eyebrow: string

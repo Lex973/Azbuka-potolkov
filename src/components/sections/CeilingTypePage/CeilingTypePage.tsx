@@ -32,6 +32,7 @@ export async function CeilingTypePage({ content }: CeilingTypePageProps) {
             fill
             preload
             sizes="100vw"
+            style={{ objectPosition: content.heroImage.position }}
           />
           <div className={styles.heroOverlay} aria-hidden="true" />
           <Container className={styles.heroInner}>

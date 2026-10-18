@@ -1,9 +1,10 @@
 'use client'
 
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import Image from 'next/image'
+import { AnimatePresence, motion, useInView, useReducedMotion } from 'motion/react'
+import Image, { getImageProps } from 'next/image'
 import Link from 'next/link'
-import { useRef, useState, type MouseEvent } from 'react'
+import { useEffect, useRef, useState, type MouseEvent } from 'react'
+import { preload } from 'react-dom'
 
 import { useFirstVisit } from '@/components/motion/useFirstVisit'
 import { Container } from '@/components/ui/Container/Container'
@@ -13,6 +14,9 @@ import { SliderControls } from '@/components/ui/SliderControls/SliderControls'
 import type { Project } from '@/types/project'
 
 import styles from './ProjectShowcase.module.css'
+
+const mainImageSizes = '(max-width: 90rem) 92vw, 83rem'
+const slideEase = [0.22, 1, 0.36, 1] as const
 
 type ProjectShowcaseProps = {
   id: string
@@ -35,11 +39,35 @@ export function ProjectShowcase({
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const draggedRef = useRef(false)
+  const sectionRef = useRef<HTMLElement>(null)
   const reduceMotion = useReducedMotion()
   const isFirstVisit = useFirstVisit()
-  // После переключения слайда детали снова появляются с анимацией.
+  // Детали появляются с анимацией только при переключении слайда, а не при загрузке страницы.
   const [hasSwitched, setHasSwitched] = useState(false)
+  const isNearViewport = useInView(sectionRef, { once: true, margin: '600px 0px' })
   const activeProject = projects[activeIndex]
+
+  // Когда карусель подъезжает к экрану, заранее грузим главные фото остальных слайдов:
+  // при переключении картинка уже в кеше и не догружается посреди анимации.
+  useEffect(() => {
+    if (!isNearViewport) return
+
+    for (const project of projects) {
+      const { props } = getImageProps({
+        src: project.image,
+        alt: '',
+        fill: true,
+        sizes: mainImageSizes,
+        quality: 95,
+      })
+      preload(props.src, {
+        as: 'image',
+        imageSrcSet: props.srcSet,
+        imageSizes: props.sizes,
+        fetchPriority: 'low',
+      })
+    }
+  }, [isNearViewport, projects])
 
   function selectProject(index: number) {
     if (index === activeIndex) return
@@ -74,6 +102,7 @@ export function ProjectShowcase({
   return (
     <section
       className={[styles.section, mirrored ? styles.mirroredSection : ''].filter(Boolean).join(' ')}
+      ref={sectionRef}
       id={id}
       aria-labelledby={`${id}-title`}
     >
@@ -105,11 +134,18 @@ export function ProjectShowcase({
               animate="center"
               exit="exit"
               variants={{
-                enter: (move: number) => ({ opacity: 0, x: move * 48 }),
-                center: { opacity: 1, x: 0 },
-                exit: (move: number) => ({ opacity: 0, x: move * -36 }),
+                enter: (move: number) => ({ opacity: 0, x: move * 16 }),
+                center: {
+                  opacity: 1,
+                  x: 0,
+                  transition: { duration: reduceMotion ? 0 : 0.38, ease: slideEase },
+                },
+                exit: (move: number) => ({
+                  opacity: 0,
+                  x: move * -12,
+                  transition: { duration: reduceMotion ? 0 : 0.2, ease: slideEase },
+                }),
               }}
-              transition={{ duration: reduceMotion ? 0 : 0.58, ease: [0.16, 1, 0.3, 1] }}
             >
               <motion.div
                 className={styles.media}
@@ -141,7 +177,7 @@ export function ProjectShowcase({
                       placeholder="blur"
                       blurDataURL={placeholders[activeProject.image]}
                       fill
-                      sizes="(max-width: 90rem) 92vw, 83rem"
+                      sizes={mainImageSizes}
                       quality={95}
                     />
                     <span className={styles.projectNumber} aria-hidden="true">
@@ -161,12 +197,12 @@ export function ProjectShowcase({
                     className={[styles.detailImage, detail.position ? styles.detailCrop : '']
                       .filter(Boolean)
                       .join(' ')}
-                    initial={isFirstVisit || hasSwitched ? { opacity: 0, y: 18 } : false}
+                    initial={hasSwitched ? { opacity: 0, y: 10 } : false}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      duration: reduceMotion ? 0 : 0.5,
-                      delay: reduceMotion ? 0 : 0.08 + detailIndex * 0.08,
-                      ease: [0.16, 1, 0.3, 1],
+                      duration: reduceMotion ? 0 : 0.32,
+                      delay: reduceMotion ? 0 : 0.06 + detailIndex * 0.05,
+                      ease: slideEase,
                     }}
                   >
                     <Image
@@ -176,7 +212,6 @@ export function ProjectShowcase({
                       blurDataURL={placeholders[detail.image]}
                       fill
                       sizes="(max-width: 40rem) 33vw, 30vw"
-                      quality={95}
                       style={{ objectPosition: detail.position }}
                     />
                   </motion.figure>
