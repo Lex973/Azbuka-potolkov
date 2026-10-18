@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
-import { Reveal } from '@/components/motion/Reveal/Reveal'
 import { CloseIcon } from '@/components/ui/Icons/Icons'
 import { lockBodyScroll } from '@/lib/scroll-lock'
 
@@ -69,37 +68,34 @@ export function LightboxGallery({
     <>
       <div className={gridClassName}>
         {images.map((image, index) => (
-          <Reveal key={`${image.src}-${image.caption}-${index}`} delay={(index % columns) * 0.04}>
-            <figure className={styles.figure}>
-              <button
-                className={[
-                  styles.imageButton,
-                  aspect === 'tall' ? styles.tall : '',
-                  fit === 'contain' ? styles.contain : '',
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
-                type="button"
-                aria-label={`Открыть фотографию: ${image.caption}`}
-                onClick={(event) => openImage(index, event.currentTarget)}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  placeholder={image.blurDataURL ? 'blur' : 'empty'}
-                  blurDataURL={image.blurDataURL}
-                  fill
-                  quality={95}
-                  sizes={
-                    columns === 3
-                      ? '(max-width: 48rem) 100vw, (max-width: 64rem) 50vw, 33vw'
-                      : '(max-width: 48rem) 100vw, (max-width: 64rem) 50vw, 25vw'
-                  }
-                  style={{ objectPosition: image.objectPosition }}
-                />
-              </button>
-            </figure>
-          </Reveal>
+          <figure key={`${image.src}-${image.caption}-${index}`} className={styles.figure}>
+            <button
+              className={[
+                styles.imageButton,
+                aspect === 'tall' ? styles.tall : '',
+                fit === 'contain' ? styles.contain : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+              type="button"
+              aria-label={`Открыть фотографию: ${image.caption}`}
+              onClick={(event) => openImage(index, event.currentTarget)}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                placeholder={image.blurDataURL ? 'blur' : 'empty'}
+                blurDataURL={image.blurDataURL}
+                fill
+                sizes={
+                  columns === 3
+                    ? '(max-width: 48rem) 100vw, (max-width: 64rem) 50vw, 33vw'
+                    : '(max-width: 48rem) 100vw, (max-width: 64rem) 50vw, 25vw'
+                }
+                style={{ objectPosition: image.objectPosition }}
+              />
+            </button>
+          </figure>
         ))}
       </div>
 

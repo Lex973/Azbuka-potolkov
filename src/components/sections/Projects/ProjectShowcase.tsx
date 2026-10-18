@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef, useState, type MouseEvent } from 'react'
 
+import { useFirstVisit } from '@/components/motion/useFirstVisit'
 import { Container } from '@/components/ui/Container/Container'
 import { ArrowRightIcon } from '@/components/ui/Icons/Icons'
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading'
@@ -35,6 +36,9 @@ export function ProjectShowcase({
   const [direction, setDirection] = useState(1)
   const draggedRef = useRef(false)
   const reduceMotion = useReducedMotion()
+  const isFirstVisit = useFirstVisit()
+  // После переключения слайда детали снова появляются с анимацией.
+  const [hasSwitched, setHasSwitched] = useState(false)
   const activeProject = projects[activeIndex]
 
   function selectProject(index: number) {
@@ -42,18 +46,21 @@ export function ProjectShowcase({
 
     setDirection(index > activeIndex ? 1 : -1)
     setActiveIndex(index)
+    setHasSwitched(true)
   }
 
   function showPrevious() {
     const nextIndex = (activeIndex - 1 + projects.length) % projects.length
     setDirection(-1)
     setActiveIndex(nextIndex)
+    setHasSwitched(true)
   }
 
   function showNext() {
     const nextIndex = (activeIndex + 1) % projects.length
     setDirection(1)
     setActiveIndex(nextIndex)
+    setHasSwitched(true)
   }
 
   function handleProjectClick(event: MouseEvent<HTMLAnchorElement>) {
@@ -73,7 +80,7 @@ export function ProjectShowcase({
       <Container>
         <motion.div
           className={styles.sectionIntro}
-          initial={{ opacity: 0, y: 18 }}
+          initial={isFirstVisit ? { opacity: 0, y: 18 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -154,7 +161,7 @@ export function ProjectShowcase({
                     className={[styles.detailImage, detail.position ? styles.detailCrop : '']
                       .filter(Boolean)
                       .join(' ')}
-                    initial={{ opacity: 0, y: 18 }}
+                    initial={isFirstVisit || hasSwitched ? { opacity: 0, y: 18 } : false}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: reduceMotion ? 0 : 0.5,

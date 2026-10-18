@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 
 import { Reveal } from '@/components/motion/Reveal/Reveal'
+import { useFirstVisit } from '@/components/motion/useFirstVisit'
 import { Container } from '@/components/ui/Container/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading/SectionHeading'
 
@@ -32,12 +33,14 @@ const reasons = [
 ]
 
 export function ApproachSection() {
+  const isFirstVisit = useFirstVisit()
+
   return (
     <section className={styles.section} id="approach" aria-labelledby="approach-title">
       <Container>
         <motion.div
           className={styles.intro}
-          initial={{ opacity: 0, y: 44 }}
+          initial={isFirstVisit ? { opacity: 0, y: 44 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}

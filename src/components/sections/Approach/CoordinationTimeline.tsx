@@ -2,6 +2,8 @@
 
 import { motion, useReducedMotion } from 'motion/react'
 
+import { useFirstVisit } from '@/components/motion/useFirstVisit'
+
 import styles from './CoordinationTimeline.module.css'
 
 const steps = [
@@ -20,11 +22,12 @@ const steps = [
 
 export function CoordinationTimeline() {
   const reduceMotion = useReducedMotion()
+  const isFirstVisit = useFirstVisit()
 
   return (
     <motion.ol
       className={styles.timeline}
-      initial="hidden"
+      initial={isFirstVisit ? 'hidden' : false}
       whileInView="visible"
       viewport={{ once: true, amount: 0.35 }}
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.24 } } }}
@@ -63,7 +66,7 @@ export function CoordinationTimeline() {
             <motion.span
               className={styles.connector}
               data-tail={index === steps.length - 1}
-              initial={{ scaleX: 0 }}
+              initial={isFirstVisit ? { scaleX: 0 } : false}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, amount: 0.7 }}
               transition={{

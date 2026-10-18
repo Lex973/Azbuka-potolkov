@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 
 import { fadeUpVariants } from '@/components/motion/transitions'
+import { useFirstVisit } from '@/components/motion/useFirstVisit'
 
 type RevealProps = {
   children: ReactNode
@@ -13,12 +14,13 @@ type RevealProps = {
 
 export function Reveal({ children, className, delay = 0 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion()
+  const isFirstVisit = useFirstVisit()
 
   return (
     <motion.div
       className={className}
       variants={fadeUpVariants}
-      initial="hidden"
+      initial={isFirstVisit ? 'hidden' : false}
       whileInView="visible"
       viewport={{ once: true, amount: 0.24 }}
       transition={{

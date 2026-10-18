@@ -3,6 +3,8 @@
 import { motion, useReducedMotion } from 'motion/react'
 import Image from 'next/image'
 
+import { useFirstVisit } from '@/components/motion/useFirstVisit'
+
 import styles from './LightingCalculation.module.css'
 
 type LightingVisualizationProps = {
@@ -12,11 +14,12 @@ type LightingVisualizationProps = {
 
 export function LightingVisualization({ placeholders }: LightingVisualizationProps) {
   const shouldReduceMotion = useReducedMotion()
+  const isFirstVisit = useFirstVisit()
 
   return (
     <motion.div
       className={styles.visualization}
-      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 32 }}
+      initial={isFirstVisit ? { opacity: 0, y: shouldReduceMotion ? 0 : 32 } : false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.16 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.82, ease: [0.16, 1, 0.3, 1] }}
@@ -24,7 +27,7 @@ export function LightingVisualization({ placeholders }: LightingVisualizationPro
       <div className={styles.workspace}>
         <motion.figure
           className={styles.panel}
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          initial={isFirstVisit ? { opacity: 0, y: shouldReduceMotion ? 0 : 20 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{
@@ -54,7 +57,7 @@ export function LightingVisualization({ placeholders }: LightingVisualizationPro
 
         <motion.figure
           className={styles.panel}
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          initial={isFirstVisit ? { opacity: 0, y: shouldReduceMotion ? 0 : 20 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{
