@@ -24,8 +24,9 @@
 
 .tagline {
   color: var(--color-text-inverse-muted);
-  font-size: clamp(0.875rem, 1.2vw, 1rem);
-  font-weight: 400;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 200;
+  letter-spacing: 0.03em;
   line-height: 1.5;
 }
 
