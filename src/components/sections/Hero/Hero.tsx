@@ -33,7 +33,7 @@ export async function Hero() {
       <div className={styles.content}>
         <div className={styles.headline}>
           <h1 className={styles.title} id="hero-title">
-            Потолки и свет в интерьерах Новосибирска
+            Потолки и свет в интерьерах
           </h1>
           <p className={styles.subtitle}>От чертежей до реализации без ошибок</p>
         </div>
