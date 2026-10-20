@@ -22,14 +22,6 @@
   gap: var(--space-6);
 }
 
-.tagline {
-  color: var(--color-text-inverse-muted);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 200;
-  letter-spacing: 0.03em;
-  line-height: 1.5;
-}
-
 .logo {
   position: relative;
   display: grid;
