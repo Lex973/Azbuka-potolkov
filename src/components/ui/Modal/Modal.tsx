@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 
 import { CloseIcon } from '@/components/ui/Icons/Icons'
 import { lockBodyScroll } from '@/lib/scroll-lock'
@@ -19,8 +20,10 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const restoreFocusRef = useRef<HTMLElement | null>(null)
   const titleId = useId()
-  // Содержимое появляется в DOM только с первым открытием: заголовки окон
+  // Окно появляется в DOM только с первым открытием: заголовки окон
   // не попадают в HTML страницы раньше её собственного h1.
+  // Портал в body: иначе стили секции, где стоит кнопка (`.hero p`, `h2`),
+  // протекают внутрь окна.
   const [mounted, setMounted] = useState(open)
 
   if (open && !mounted) setMounted(true)
@@ -48,7 +51,9 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
     onClose()
   }
 
-  return (
+  if (!mounted) return null
+
+  return createPortal(
     <dialog
       ref={dialogRef}
       className={styles.dialog}
@@ -66,18 +71,17 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
         }
       }}
     >
-      {mounted ? (
-        <div className={styles.panel}>
-          <button className={styles.close} type="button" onClick={handleClose} aria-label="Закрыть">
-            <CloseIcon />
-          </button>
-          {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
-          <h2 className={styles.title} id={titleId}>
-            {title}
-          </h2>
-          <div className={styles.content}>{children}</div>
-        </div>
-      ) : null}
-    </dialog>
+      <div className={styles.panel}>
+        <button className={styles.close} type="button" onClick={handleClose} aria-label="Закрыть">
+          <CloseIcon />
+        </button>
+        {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
+        <h2 className={styles.title} id={titleId}>
+          {title}
+        </h2>
+        <div className={styles.content}>{children}</div>
+      </div>
+    </dialog>,
+    document.body,
   )
 }

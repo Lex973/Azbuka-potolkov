@@ -1,0 +1,18 @@
+// Ретранслятор заявок в Telegram. Развёртывание — LEAD_FORMS.md, раздел 6.
+{
+  "name": "azbuka-leads-relay",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  // Версии и превью не должны получать отдельные публичные адреса.
+  "preview_urls": false,
+  // Без этих секретов wrangler deploy откажется публиковать Worker.
+  "secrets": {
+    "required": ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "RELAY_SECRET"],
+  },
+  // Логи в панели Cloudflare: только коды ответов, без текста заявок.
+  // Трейсы (observability.traces) не включать: в URL запроса к Telegram есть токен.
+  "observability": {
+    "enabled": true,
+  },
+}

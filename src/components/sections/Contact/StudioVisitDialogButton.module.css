@@ -97,3 +97,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Фокус ставится программно для скринридеров, рамка вокруг текста не нужна. */
+.resultTitle:focus {
+  outline: none;
+}

@@ -115,6 +115,17 @@
   margin-top: var(--space-12);
 }
 
+/* Ноутбуки с невысоким экраном: кнопка отправки должна помещаться без прокрутки окна. */
+@media (min-width: 40.0625rem) and (max-height: 60rem) {
+  .panel {
+    padding-block: clamp(2rem, 5vh, 3rem);
+  }
+
+  .content {
+    margin-top: var(--space-8);
+  }
+}
+
 @media (max-width: 40rem) {
   .dialog {
     align-items: end;

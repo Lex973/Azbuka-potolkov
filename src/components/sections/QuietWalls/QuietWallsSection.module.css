@@ -60,7 +60,9 @@
   color: var(--color-text);
   font-size: var(--font-size-small);
   font-weight: 500;
-  transition: border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
 }
 
 .download:hover {

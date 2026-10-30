@@ -71,9 +71,24 @@ export function InstagramIcon(props: IconProps) {
 export function JournalIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <path d="M4 4h11a5 5 0 0 1 5 5v11H9a5 5 0 0 1-5-5V4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-      <path d="M4 15a5 5 0 0 1 5-5h11M10 7h6M10 10h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M15 20v-4l2 1.5L19 16v4" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      <path
+        d="M4 4h11a5 5 0 0 1 5 5v11H9a5 5 0 0 1-5-5V4Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4 15a5 5 0 0 1 5-5h11M10 7h6M10 10h4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M15 20v-4l2 1.5L19 16v4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }

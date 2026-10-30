@@ -11,6 +11,7 @@
 # local environment
 .env*
 !.env.example
+.dev.vars*
 
 # logs
 npm-debug.log*
@@ -22,6 +23,9 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 /.idea/
+
+# Cloudflare Wrangler
+.wrangler/
 
 # TypeScript
 *.tsbuildinfo

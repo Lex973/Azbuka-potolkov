@@ -1,11 +1,14 @@
 'use client'
 
-import { useId, useState, type FormEvent } from 'react'
+import { useId, useState } from 'react'
 
+import { LeadFormAlert, LeadHoneypot } from '@/components/forms/LeadForm/LeadFormParts'
+import { useLeadForm } from '@/components/forms/LeadForm/useLeadForm'
 import { Button, ButtonLink } from '@/components/ui/Button/Button'
 import { TextField } from '@/components/ui/FormField/FormField'
 import { Modal } from '@/components/ui/Modal/Modal'
 import { siteConfig } from '@/config/site'
+import { leadLimits } from '@/lib/leads/lead'
 
 import styles from './StudioVisitDialogButton.module.css'
 
@@ -15,18 +18,10 @@ type StudioVisitDialogButtonProps = {
 
 export function StudioVisitDialogButton({ className }: StudioVisitDialogButtonProps) {
   const [open, setOpen] = useState(false)
-  const [submittedName, setSubmittedName] = useState<string | null>(null)
   const fieldId = useId()
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const form = event.currentTarget
-
-    if (!form.reportValidity()) return
-
-    const formData = new FormData(form)
-    setSubmittedName(String(formData.get('name') ?? '').trim())
-  }
+  const { status, errors, submittedName, successRef, handleSubmit, handleInput, reset } =
+    useLeadForm('studio', open)
+  const submitting = status === 'submitting'
 
   return (
     <>
@@ -36,7 +31,7 @@ export function StudioVisitDialogButton({ className }: StudioVisitDialogButtonPr
         tone="inverse"
         showArrow
         onClick={() => {
-          setSubmittedName(null)
+          reset()
           setOpen(true)
         }}
       >
@@ -46,7 +41,7 @@ export function StudioVisitDialogButton({ className }: StudioVisitDialogButtonPr
         open={open}
         onClose={() => setOpen(false)}
         eyebrow="Кирова, 27 · Новосибирск"
-        title="Записаться в студию"
+        title="Записаться в студию"
       >
         <div className={styles.content}>
           <p className={styles.intro}>
@@ -63,16 +58,33 @@ export function StudioVisitDialogButton({ className }: StudioVisitDialogButtonPr
               <span className={styles.detailValue}>{siteConfig.hours}</span>
             </div>
           </div>
-          {submittedName === null ? (
-            <form className={styles.form} onSubmit={handleSubmit}>
+          {status === 'success' ? (
+            <div className={styles.result}>
+              <p className={styles.resultTitle} ref={successRef} tabIndex={-1}>
+                {submittedName}, заявка отправлена
+              </p>
+              <p>
+                Перезвоним, чтобы согласовать время встречи. Если удобнее, свяжитесь с нами сами:
+              </p>
+            </div>
+          ) : (
+            <form
+              className={styles.form}
+              onSubmit={handleSubmit}
+              onInput={handleInput}
+              noValidate
+              aria-busy={submitting}
+            >
               <TextField
                 id={`${fieldId}-name`}
                 name="name"
                 label="Ваше имя"
                 placeholder="Как к вам обращаться"
                 autoComplete="name"
-                minLength={2}
+                minLength={leadLimits.nameMin}
+                maxLength={leadLimits.nameMax}
                 required
+                error={errors.name}
               />
               <TextField
                 id={`${fieldId}-phone`}
@@ -80,29 +92,35 @@ export function StudioVisitDialogButton({ className }: StudioVisitDialogButtonPr
                 label="Телефон"
                 placeholder="+7 999 000-00-00"
                 type="tel"
+                inputMode="tel"
                 autoComplete="tel"
-                minLength={10}
+                maxLength={leadLimits.phoneMax}
                 required
+                error={errors.phone}
               />
               <TextField
                 id={`${fieldId}-time`}
                 name="preferredTime"
                 label="Когда вам удобно"
                 placeholder="Например, в четверг после 15:00"
+                maxLength={leadLimits.preferredTime}
+                error={errors.preferredTime}
               />
-              <Button className={styles.submit} type="submit" size="large" showArrow>
-                Оставить заявку
+              <LeadHoneypot />
+              <LeadFormAlert status={status} formError={errors.form} showContacts={false} />
+              <Button
+                className={styles.submit}
+                type="submit"
+                size="large"
+                showArrow={!submitting}
+                aria-disabled={submitting}
+              >
+                {submitting ? 'Отправляем…' : 'Оставить заявку'}
               </Button>
               <p className={styles.note}>
-                Запись через сайт пока не подключена. Сейчас можно договориться по телефону или в
-                Telegram.
+                Нажимая кнопку, вы соглашаетесь на обработку указанных данных.
               </p>
             </form>
-          ) : (
-            <div className={styles.result} role="status">
-              <p className={styles.resultTitle}>{submittedName}, форма заполнена.</p>
-              <p>Чтобы записаться на встречу сейчас, свяжитесь с нами удобным способом:</p>
-            </div>
           )}
           <div className={styles.actions}>
             <ButtonLink

@@ -25,3 +25,8 @@
   font-size: var(--font-size-h5);
   font-weight: 500;
 }
+
+/* Фокус ставится программно для скринридеров, рамка вокруг текста не нужна. */
+.successTitle:focus {
+  outline: none;
+}
