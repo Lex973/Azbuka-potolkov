@@ -84,9 +84,9 @@ export function shortLeadId(lead: Pick<Lead, 'requestId'>) {
 }
 
 /** Простой текст: сообщение уходит без parse_mode, экранирование не нужно. */
-export function formatLeadMessage(lead: Lead, siteUrl: string) {
+export function formatLeadMessage(lead: Lead, siteUrl: string, number: string) {
   const lines = [
-    `Заявка: ${kindTitles[lead.kind]} · #${shortLeadId(lead)}`,
+    `Заявка: ${kindTitles[lead.kind]} · #${number}`,
     `Имя: ${lead.name}`,
     `Телефон: ${formatPhone(lead.phone)}`,
   ]

@@ -21,6 +21,7 @@ export type LeadHandlerDeps = {
   readConfig: () => TelegramConfig | null
   send: (text: string, config: TelegramConfig) => Promise<DeliveryResult>
   log: (entry: Record<string, unknown>) => void
+  allocateNumber: (date: Date) => Promise<string>
   now?: () => number
 }
 
@@ -93,6 +94,7 @@ export function createLeadHandler({
   readConfig,
   send,
   log,
+  allocateNumber,
   now = Date.now,
 }: LeadHandlerDeps) {
   const origins = new Set(
@@ -104,7 +106,9 @@ export function createLeadHandler({
   // Лимит Telegram для группы — 20 сообщений в минуту.
   const deliveries = createRateLimiter({ limit: 20, windowMs: 60_000, now })
   const deduper = createDeduper<
-    DeliveryResult | { ok: false; reason: 'global_limit'; retryAfterSeconds: number }
+    | (DeliveryResult & { number?: string })
+    | { ok: false; reason: 'number_unavailable' }
+    | { ok: false; reason: 'global_limit'; retryAfterSeconds: number }
   >({ ttlMs: 15 * 60_000, now })
   let privateKeyWarned = false
 
@@ -186,7 +190,15 @@ export function createLeadHandler({
           retryAfterSeconds: delivery.retryAfterSeconds,
         } as const
       }
-      return send(formatLeadMessage(lead, siteUrl), config)
+      let number: string
+      try {
+        number = await allocateNumber(new Date(now()))
+      } catch {
+        log({ event: 'lead_number_unavailable', id })
+        return { ok: false, reason: 'number_unavailable' } as const
+      }
+      const sent = await send(formatLeadMessage(lead, siteUrl, number), config)
+      return { ...sent, number }
     })
 
     if (result.ok) {
@@ -195,6 +207,7 @@ export function createLeadHandler({
         id,
         kind: lead.kind,
         result: result.duplicate ? 'duplicate' : 'delivered',
+        number: result.number,
       })
       return respond(200, { status: 'ok' })
     }

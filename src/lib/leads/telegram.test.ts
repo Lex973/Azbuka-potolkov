@@ -124,10 +124,11 @@ describe('formatLeadMessage', () => {
       formatLeadMessage(
         { ...base, message: 'Квартира 120 м²\nчерновая отделка', page: '/projects/skyline' },
         'https://azbukapotolkov.ru',
+        '01-11-1',
       ),
     ).toBe(
       [
-        'Заявка: обсудить проект · #3F9A1C',
+        'Заявка: обсудить проект · #01-11-1',
         'Имя: Анна',
         'Телефон: +7 999 000-00-00',
         'О проекте: Квартира 120 м²\nчерновая отделка',
@@ -141,10 +142,11 @@ describe('formatLeadMessage', () => {
       formatLeadMessage(
         { ...base, kind: 'studio', preferredTime: 'четверг после 15:00' },
         'https://azbukapotolkov.ru',
+        '01-11-2',
       ),
     ).toBe(
       [
-        'Заявка: запись в студию · #3F9A1C',
+        'Заявка: запись в студию · #01-11-2',
         'Имя: Анна',
         'Телефон: +7 999 000-00-00',
         'Когда удобно: четверг после 15:00',
@@ -153,9 +155,9 @@ describe('formatLeadMessage', () => {
   })
 
   it('оставляет иностранный номер как есть', () => {
-    expect(formatLeadMessage({ ...base, phone: '+442079460958' }, 'https://a.ru')).toContain(
-      'Телефон: +442079460958',
-    )
+    expect(
+      formatLeadMessage({ ...base, phone: '+442079460958' }, 'https://a.ru', '01-11-3'),
+    ).toContain('Телефон: +442079460958')
   })
 })
 

@@ -49,6 +49,7 @@ it('не создаёт две доставки после медленного 
   })
   const config = { mode: 'relay' as const, relayUrl: 'https://relay.test/', relaySecret: 'test' }
   const handle = createLeadHandler({
+    allocateNumber: async () => '01-11-1',
     siteUrl: 'https://site.test',
     allowedOrigins: [],
     allowLocalhost: false,

@@ -60,6 +60,7 @@ function setup(overrides: Partial<LeadHandlerDeps> = {}) {
     readConfig: () => config,
     send: (text) => send(text),
     log,
+    allocateNumber: async () => '01-11-1',
     ...overrides,
   }
   return { handler: createLeadHandler(deps), send, log }
@@ -74,6 +75,31 @@ beforeEach(() => {
 })
 
 describe('createLeadHandler', () => {
+  it('allocates once for a repeated request and shares sequence across form kinds', async () => {
+    let sequence = 0
+    const allocateNumber = vi.fn(async () => `01-11-${++sequence}`)
+    const { handler, send } = setup({ allocateNumber })
+    const requestId = uuid()
+    await handler(post(leadForm({ requestId })))
+    await handler(post(leadForm({ requestId })))
+    await handler(post(leadForm({ kind: 'studio' })))
+    expect(allocateNumber).toHaveBeenCalledTimes(2)
+    expect(send.mock.calls.map(([text]) => text.split('\n')[0])).toEqual([
+      'Заявка: обсудить проект · #01-11-1',
+      'Заявка: запись в студию · #01-11-2',
+    ])
+  })
+
+  it('does not send or report success when number storage fails', async () => {
+    const { handler, send } = setup({
+      allocateNumber: async () => {
+        throw new Error('disk')
+      },
+    })
+    expect((await handler(post(leadForm()))).status).toBe(502)
+    expect(send).not.toHaveBeenCalled()
+  })
+
   it('доставляет корректную заявку', async () => {
     const { handler, send, log } = setup()
     const form = leadForm({ requestId: '3f9a1c2b-0d4e-4f5a-9b6c-7d8e9f0a1b2c' })
@@ -84,7 +110,7 @@ describe('createLeadHandler', () => {
     expect(response.headers.get('cache-control')).toBe('no-store')
     expect(await json(response)).toEqual({ status: 'ok' })
     expect(send).toHaveBeenCalledOnce()
-    expect(send.mock.calls[0][0]).toContain('#3F9A1C')
+    expect(send.mock.calls[0][0]).toContain('#01-11-1')
     expect(send.mock.calls[0][0]).toContain('Страница: https://azbukapotolkov.ru/')
     expect(log).toHaveBeenCalledWith(
       expect.objectContaining({

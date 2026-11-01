@@ -1,3 +1,5 @@
+const maxUrl = 'https://max.ru/u/f9LHodD0cOKKgcDm32MCEGCh_MUR-wR6lSWsPJ1Y9smo7Iuoae2gMJEodFk'
+
 export const siteConfig = {
   name: 'Азбука Потолков',
   /** Временный адрес: canonical, sitemap и превью строятся от него. Заменить на финальный домен. */
@@ -19,9 +21,9 @@ export const siteConfig = {
   twoGisUrl: 'https://2gis.ru/novosibirsk/firm/70000001019224822',
   reviewsUrl: 'https://2gis.ru/novosibirsk/firm/70000001019224822/tab/reviews',
   telegramUrl: 'https://t.me/+79059303000',
-  maxUrl: 'https://max.ru/',
+  maxUrl,
   socialLinks: [
     { label: 'Telegram', href: 'https://t.me/+79059303000' },
-    { label: 'MAX', href: 'https://max.ru/' },
+    { label: 'MAX', href: maxUrl },
   ],
 } as const
